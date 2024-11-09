@@ -1,6 +1,0 @@
-@RoomRentalDB_HostAddress = http://localhost:5082
-
-GET {{RoomRentalDB_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
