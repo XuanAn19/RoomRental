@@ -228,22 +228,17 @@
                 Email không được vượt quá 50 ký tự.
               </p>
             </div>
-            <div class="password-container">
-              <input
-                [type]="showPassword ? 'text' : 'password'"
-                placeholder="Mật khẩu"
-                name="password"
-                [(ngModel)]="passwordLogin"
-                #passwordLoginControl="ngModel"
-                required
-                minlength="6"
-                maxlength="20"
-                id="passwordRegister"
-              />
-              <button (click)="showPassword = !showPassword" class="eye-button">
-                <i [class]="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
-              </button>
-            </div>
+            <input
+              type="password"
+              placeholder="Mật khẩu"
+              name="password"
+              [(ngModel)]="passwordLogin"
+              #passwordLoginControl="ngModel"
+              required
+              minlength="6"
+              maxlength="20"
+              id="passwordRegister"
+            />
             <div
               *ngIf="
                 passwordLoginControl.invalid &&

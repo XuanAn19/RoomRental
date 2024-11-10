@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-register-login',
@@ -30,8 +31,6 @@ export class RegisterLoginComponent {
   emailLogin: string = '';
   passwordLogin: string = '';
 
-  showPasswordLogin: boolean = false;
-
   user = {
     fullName: '',
     email: '',
@@ -44,7 +43,6 @@ export class RegisterLoginComponent {
     this.isClickNegative = true;
   }
 
-  // Chuyển đổi giữa đăng ký và đăng nhập
   isNegative() {
     this.isClickNegative = !this.isClickNegative;
     this.isLogin = !this.isLogin;

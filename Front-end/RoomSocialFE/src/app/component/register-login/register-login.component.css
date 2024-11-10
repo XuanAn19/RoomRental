@@ -8,28 +8,6 @@ body {
   margin: 0;
 }
 
-.password-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.password-container input {
-  padding-right: 30px; /* Dành không gian cho icon mắt */
-}
-
-.eye-button {
-  position: absolute;
-  right: 10px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.eye-button i {
-  font-size: 18px;
-}
-
 input[type="button"]:hover,
 input[type="submit"]:hover,
 a:hover {
