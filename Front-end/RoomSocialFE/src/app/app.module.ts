@@ -11,6 +11,13 @@ import { RegisterLoginComponent } from './component/register-login/register-logi
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
+import {
+  HttpClient,
+  HttpClientModule,
+  provideHttpClient,
+  withFetch,
+} from '@angular/common/http';
+import { VerifyAccountComponent } from './component/verify-account/verify-account.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +25,10 @@ import { Router, RouterModule } from '@angular/router';
     ForgotPasswordComponent,
     HeaderComponent,
     RegisterLoginComponent,
+    VerifyAccountComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, RouterModule, FormsModule],
-  providers: [provideClientHydration()],
+  providers: [provideHttpClient(withFetch())],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
