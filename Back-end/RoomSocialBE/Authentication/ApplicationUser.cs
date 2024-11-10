@@ -14,7 +14,6 @@ namespace RoomSocialBE.Authentication
 
         public int? email_code { get; set; }
 
-        [Required]
-        public int id_role { get; set; }
+        public bool? is_verification_code_valid { get; set; }
     }
 }

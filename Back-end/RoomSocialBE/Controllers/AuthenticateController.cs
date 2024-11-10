@@ -10,6 +10,7 @@ using System.Security.Claims;
 using System.Text;
 using MailKit.Net.Smtp;
 using SmtpClient = MailKit.Net.Smtp.SmtpClient;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RoomSocialBE.Controllers
 {
@@ -45,25 +46,29 @@ namespace RoomSocialBE.Controllers
             if (!isEmailConfirmed)
                 return BadRequest(new Response { Status = "Fail", Message = "You need to confirm email before logging in!" });
 
-            var (token, expiration) = await GenerateTokenAsync(user);
+            var userRoles = await userManager.GetRolesAsync(user);
+
+            user.is_verification_code_valid = null;
+            await userManager.UpdateAsync(user);
+
+            var (token, expiration) = await GenerateTokenAsync(user, userRoles);
 
             return Ok(new
             {
                 Status = "Success",
                 token = token,
-                expiration = expiration
+                expiration = expiration,
+                roles = userRoles
             });
-            //  return Unauthorized();
         }
 
-        private async Task<(string Token, DateTime Expiration)> GenerateTokenAsync(ApplicationUser? user)
+        private async Task<(string Token, DateTime Expiration)> GenerateTokenAsync(ApplicationUser? user, IList<string> userRoles)
         {
-            var userRoles = await userManager.GetRolesAsync(user);
-
             var authClaims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.UserName),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.Email, user.Email)
             };
 
             foreach (var userRole in userRoles)
@@ -102,31 +107,29 @@ namespace RoomSocialBE.Controllers
                 full_name = model.FullName,
                 PhoneNumber = model.PhoneNumber,
                 email_code = confirmationCode,
-                id_role = 0
             };
             var result = await userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Fail", Message = "User creation failed! Please check user details and try again." });
+                return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Fail", 
+                    Message = "User creation failed! Please check user details and try again." });
+
+            await userManager.AddToRoleAsync(user, "User");
 
             var _user = await GetUser(model.Email);
+            SendEmail(_user!.Email!, confirmationCode.ToString());
 
-
-            // var emailCode = await userManager.GenerateEmailConfirmationTokenAsync(_user!);
-
-            string sendEmail = SendEmail(_user!.Email!, confirmationCode.ToString());
-
-            return Ok(new Response { Status = "Success", Message = sendEmail });
+            return Ok(new Response { Status = "Success", Message = "Thank you for your registration, kindly check your email for confirmation code" });
         }
 
-        private string SendEmail(string email, string emailCode)
+        private void SendEmail(string email, string emailCode)
         {
             StringBuilder emailMessage = new StringBuilder();
             emailMessage.AppendLine("<html>");
             emailMessage.AppendLine("<body>");
             emailMessage.AppendLine($"<p>Dear {email}, </p>");
-            emailMessage.AppendLine("<p>Thank you for registering with us. To verify your email address, please use the following verification code:</p>");
+            emailMessage.AppendLine("<p>Thank you for using our system. Below is the verification code you need to get:</p>");
             emailMessage.AppendLine($"<h2>Verification Code: {emailCode}</h2>");
-            emailMessage.AppendLine("<p>Please enter this code on our website to complete your registration.</p>");
+            emailMessage.AppendLine("<p>Please enter this code on our website.</p>");
             emailMessage.AppendLine("<p>If you did not request this, please ignore this email.</p>");
             emailMessage.AppendLine("<br>");
             emailMessage.AppendLine("<p>Best regards,</p>");
@@ -146,8 +149,6 @@ namespace RoomSocialBE.Controllers
             smtp.Authenticate("chienxm8315@gmail.com", "iapx tuub fwbf kcla");
             smtp.Send(_email);
             smtp.Disconnect(true);
-
-            return "Thank you for your registration, kindly check your email for confirmation code";
         }
 
         [HttpPost("verify_code/{email}/{code:int}")]
@@ -162,10 +163,11 @@ namespace RoomSocialBE.Controllers
             if (user.email_code == code)
             {
                 user.EmailConfirmed = true;
+                user.is_verification_code_valid = true;
                 user.email_code = null;
                 var updateResult = await userManager.UpdateAsync(user);
                 if (updateResult.Succeeded)
-                    return Ok(new Response { Status = "Success", Message = "Email confirmed successfully, you can proceed to login" });
+                    return Ok(new Response { Status = "Success", Message = "Email confirmed successfully!" });
                 else
                     return BadRequest(new Response { Status = "Fail", Message = "Error confirming email." });
             }
@@ -183,14 +185,54 @@ namespace RoomSocialBE.Controllers
             });
 
             int emailCode = GetCodeRandom();
-
-            string sendEmail = SendEmail(email, emailCode.ToString());
+            SendEmail(email, emailCode.ToString());
 
             user.email_code = emailCode;
+            user.is_verification_code_valid = false;
             await userManager.UpdateAsync(user);
             
             return Ok(new Response { Status = "Success", Message = "Please check your email for the confirmation code!" });
         }
+
+        [HttpPost("reset_password/{email}")]
+        public async Task<IActionResult> ResetPassword(string email, [FromBody] string newPassword)
+        {
+            var user = await GetUser(email);
+
+            if (user == null)
+            {
+                return BadRequest(new Response
+                {
+                    Status = "Fail",
+                    Message = "This email isn't exist in system!"
+                });
+            }
+
+            if (user.is_verification_code_valid == false || user.is_verification_code_valid == null)  
+            {
+                return BadRequest(new Response
+                {
+                    Status = "Fail",
+                    Message = "Please confirm your email first before resetting the password!"
+                });
+            }
+
+            var resetToken = await userManager.GeneratePasswordResetTokenAsync(user);
+            var resetPasswordResult = await userManager.ResetPasswordAsync(user, resetToken, newPassword);
+
+            if (!resetPasswordResult.Succeeded)
+            {
+                var errors = string.Join(", ", resetPasswordResult.Errors.Select(e => e.Description));
+                return BadRequest(new Response
+                {
+                    Status = "Fail",
+                    Message = $"Failed to reset password: {errors}"
+                });
+            }
+
+            return Ok(new Response { Status = "Success", Message = "Password has been reset successfully!" });
+        }
+
 
         private int GetCodeRandom() => new Random().Next(100000, 999999);
 
