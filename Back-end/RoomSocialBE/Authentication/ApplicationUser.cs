@@ -6,15 +6,15 @@ namespace RoomSocialBE.Authentication
     public class ApplicationUser: IdentityUser
     {
         [Required]
-        public string FullName { get; set; }
+        public string full_name { get; set; }
+
+        public string? image { get; set; }
+
+        public string? images_CCCD { get; set; }
+
+        public int? email_code { get; set; }
 
         [Required]
-        public string PhoneNumber { get; set;}
-
-        public string? AvatarUrl { get; set; }
-
-        public string? ImagesCCCD { get; set; }
-
-        public int? EmailCode { get; set; }
+        public int id_role { get; set; }
     }
 }

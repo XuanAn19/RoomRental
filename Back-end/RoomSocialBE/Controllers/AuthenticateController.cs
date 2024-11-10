@@ -92,16 +92,17 @@ namespace RoomSocialBE.Controllers
             if (userExists != null)
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Fail", Message = "User already exists!" });
 
-            int confirmationCode = new Random().Next(100000, 999999);
+            int confirmationCode = GetCodeRandom();
             ApplicationUser user = new ApplicationUser()
             {
                 UserName = model.Email,
                 PasswordHash = model.Password,
                 Email = model.Email,
                 SecurityStamp = Guid.NewGuid().ToString(),
-                FullName = model.FullName,
+                full_name = model.FullName,
                 PhoneNumber = model.PhoneNumber,
-                EmailCode = confirmationCode
+                email_code = confirmationCode,
+                id_role = 0
             };
             var result = await userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
@@ -149,8 +150,8 @@ namespace RoomSocialBE.Controllers
             return "Thank you for your registration, kindly check your email for confirmation code";
         }
 
-        [HttpPost("confirmation/{email}/{code:int}")]
-        public async Task<IActionResult> Confirmation(string email, int code)
+        [HttpPost("verify_code/{email}/{code:int}")]
+        public async Task<IActionResult> VerifyCode(string email, int code)
         {
             if (string.IsNullOrEmpty(email) || code <= 0)
                 return BadRequest(new Response { Status = "Fail", Message = "Invalid code provided" });
@@ -158,10 +159,10 @@ namespace RoomSocialBE.Controllers
             var user = await GetUser(email);
             if (user == null) return BadRequest(new Response { Status = "Fail", Message = "This email isn't exist!" });
 
-            if (user.EmailCode == code)
+            if (user.email_code == code)
             {
                 user.EmailConfirmed = true;
-                user.EmailCode = null;
+                user.email_code = null;
                 var updateResult = await userManager.UpdateAsync(user);
                 if (updateResult.Succeeded)
                     return Ok(new Response { Status = "Success", Message = "Email confirmed successfully, you can proceed to login" });
@@ -170,6 +171,28 @@ namespace RoomSocialBE.Controllers
             }
             return BadRequest(new Response { Status = "Fail", Message = "This code is incorrect!" });
         }
+
+        [HttpPost("forgot_password/{email}")]
+        public async Task<IActionResult> ForgotPassword(string email)
+        {
+            var user = await GetUser(email);
+            if (user == null) return BadRequest(new Response
+            {
+                Status = "Fail",
+                Message = "This email isn't exist in system!"
+            });
+
+            int emailCode = GetCodeRandom();
+
+            string sendEmail = SendEmail(email, emailCode.ToString());
+
+            user.email_code = emailCode;
+            await userManager.UpdateAsync(user);
+            
+            return Ok(new Response { Status = "Success", Message = "Please check your email for the confirmation code!" });
+        }
+
+        private int GetCodeRandom() => new Random().Next(100000, 999999);
 
         private async Task<ApplicationUser?> GetUser(string email) => await userManager.FindByEmailAsync(email);
 
