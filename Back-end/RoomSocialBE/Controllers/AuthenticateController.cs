@@ -233,8 +233,103 @@ namespace RoomSocialBE.Controllers
             return Ok(new Response { Status = "Success", Message = "Password has been reset successfully!" });
         }
 
+		[HttpPost("change_password")]
+		[Authorize]
+		public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordModel model)
+		{
+			if (!ModelState.IsValid)
+				return BadRequest(new Response { Status = "Fail", Message = "Invalid input data." });
 
-        private int GetCodeRandom() => new Random().Next(100000, 999999);
+
+			var identityToken = HttpContext.User.Identity as ClaimsIdentity;
+			var emailClaim = identityToken?.FindFirst(ClaimTypes.Email)?.Value;
+
+			if (string.IsNullOrEmpty(emailClaim))
+				return Unauthorized(new Response { Status = "Fail", Message = "User email not found in token." });
+
+			var user = await userManager.FindByEmailAsync(emailClaim);
+			if (user == null)
+				return Unauthorized(new Response { Status = "Fail", Message = "User not found." });
+
+			var isCurrentPasswordValid = await userManager.CheckPasswordAsync(user, model.CurrentPassword);
+			if (!isCurrentPasswordValid)
+				return BadRequest(new Response { Status = "Fail", Message = "Current password is incorrect." });
+
+
+			var result = await userManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
+			if (!result.Succeeded)
+			{
+				var errors = string.Join(", ", result.Errors.Select(e => e.Description));
+				return BadRequest(new Response { Status = "Fail", Message = $"Password change failed: {errors}" });
+			}   
+
+			return Ok(new Response { Status = "Success", Message = "Password has been changed successfully!" });
+		}
+
+
+
+
+		[HttpPost("update_profile")]
+		[Authorize]
+		public async Task<IActionResult> UpdateProfile([FromForm] ProfileUpdateModel model)
+		{
+			// Kiểm tra tính hợp lệ của model
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(new Response { Status = "Fail", Message = "Dữ liệu không hợp lệ." });
+			}
+
+			// Lấy thông tin người dùng từ token
+			var identityToken = HttpContext.User.Identity as ClaimsIdentity;
+			var emailClaim = identityToken?.FindFirst(ClaimTypes.Email)?.Value;
+
+			if (string.IsNullOrEmpty(emailClaim))
+			{
+				return Unauthorized(new Response { Status = "Fail", Message = "User email not found in token" });
+			}
+
+			var user = await userManager.FindByEmailAsync(emailClaim);
+			if (user == null)
+			{
+				return Unauthorized(new Response { Status = "Fail", Message = "User not found." });
+			}
+
+			// Cập nhật các thông tin cơ bản
+			user.full_name = model.FullName;
+			user.PhoneNumber = model.PhoneNumber;
+			
+
+			// Nếu có tệp ảnh đại diện, lưu vào thư mục
+			if (model.ProfileImage != null)
+			{
+				var fileName = Guid.NewGuid().ToString() + Path.GetExtension(model.ProfileImage.FileName);
+				var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", fileName);
+
+				using (var stream = new FileStream(filePath, FileMode.Create))
+				{
+					await model.ProfileImage.CopyToAsync(stream);
+				}
+
+				user.image = fileName;  // Lưu tên tệp ảnh vào cơ sở dữ liệu
+			}
+
+			// Cập nhật thông tin người dùng vào cơ sở dữ liệu
+			var updateResult = await userManager.UpdateAsync(user);
+
+			if (updateResult.Succeeded)
+			{
+				return Ok(new Response { Status = "Success", Message = "Cập nhật hồ sơ thành công!" });
+			}
+			else
+			{
+				var errors = string.Join(", ", updateResult.Errors.Select(e => e.Description));
+				return BadRequest(new Response { Status = "Fail", Message = $"Cập nhật thất bại: {errors}" });
+			}
+		}
+
+
+
+		private int GetCodeRandom() => new Random().Next(100000, 999999);
 
         private async Task<ApplicationUser?> GetUser(string email) => await userManager.FindByEmailAsync(email);
 
