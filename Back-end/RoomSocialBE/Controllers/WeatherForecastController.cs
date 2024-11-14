@@ -4,7 +4,7 @@ using RoomSocialBE.Authentication;
 
 namespace RoomSocialBE.Controllers
 {
-    [Authorize(Roles = UserRoles.Admin)]
+    [Authorize(Roles = UserRoles.User)]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
