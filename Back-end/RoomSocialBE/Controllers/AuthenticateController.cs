@@ -273,13 +273,13 @@ namespace RoomSocialBE.Controllers
 		[Authorize]
 		public async Task<IActionResult> UpdateProfile([FromForm] ProfileUpdateModel model)
 		{
-			// Kiểm tra tính hợp lệ của model
+
 			if (!ModelState.IsValid)
 			{
 				return BadRequest(new Response { Status = "Fail", Message = "Dữ liệu không hợp lệ." });
 			}
 
-			// Lấy thông tin người dùng từ token
+
 			var identityToken = HttpContext.User.Identity as ClaimsIdentity;
 			var emailClaim = identityToken?.FindFirst(ClaimTypes.Email)?.Value;
 
@@ -294,12 +294,12 @@ namespace RoomSocialBE.Controllers
 				return Unauthorized(new Response { Status = "Fail", Message = "User not found." });
 			}
 
-			// Cập nhật các thông tin cơ bản
+
 			user.full_name = model.FullName;
 			user.PhoneNumber = model.PhoneNumber;
 			
 
-			// Nếu có tệp ảnh đại diện, lưu vào thư mục
+
 			if (model.ProfileImage != null)
 			{
 				var fileName = Guid.NewGuid().ToString() + Path.GetExtension(model.ProfileImage.FileName);
@@ -310,20 +310,20 @@ namespace RoomSocialBE.Controllers
 					await model.ProfileImage.CopyToAsync(stream);
 				}
 
-				user.image = fileName;  // Lưu tên tệp ảnh vào cơ sở dữ liệu
+				user.image = fileName; 
 			}
 
-			// Cập nhật thông tin người dùng vào cơ sở dữ liệu
+	
 			var updateResult = await userManager.UpdateAsync(user);
 
 			if (updateResult.Succeeded)
 			{
-				return Ok(new Response { Status = "Success", Message = "Cập nhật hồ sơ thành công!" });
+				return Ok(new Response { Status = "Success", Message = "Update profile successfully!" });
 			}
 			else
 			{
 				var errors = string.Join(", ", updateResult.Errors.Select(e => e.Description));
-				return BadRequest(new Response { Status = "Fail", Message = $"Cập nhật thất bại: {errors}" });
+				return BadRequest(new Response { Status = "Fail", Message = $"Update profile fail: {errors}" });
 			}
 		}
 
@@ -421,6 +421,39 @@ namespace RoomSocialBE.Controllers
 			}
 		}
 
+		[HttpGet("get_my_information")]
+		[Authorize]
+		public async Task<IActionResult> GetMyInformation()
+		{
+			// Lấy email từ token
+			var identityToken = HttpContext.User.Identity as ClaimsIdentity;
+			var emailClaim = identityToken?.FindFirst(ClaimTypes.Email)?.Value;
+
+			if (string.IsNullOrEmpty(emailClaim))
+			{
+				return Unauthorized(new Response { Status = "Fail", Message = "User email not found in token." });
+			}
+
+	
+			var user = await userManager.FindByEmailAsync(emailClaim);
+			if (user == null)
+			{
+				return NotFound(new Response { Status = "Fail", Message = "User not found." });
+			}
+
+
+			var userInfo = new
+			{
+				FullName = user.full_name,
+				Email = user.Email,
+				PhoneNumber = user.PhoneNumber,
+				Image = user.image != null ? $"{Request.Scheme}://{Request.Host}/images/{user.image}" : null,
+				CccdImages = user.images_CCCD?.Split(',').Select(img =>$"{Request.Scheme}://{Request.Host}/{img.Replace("\\", "/")}").ToList(),
+				IsVerified = user.is_true
+			};
+
+			return Ok(new Response { Status = "Success" , Message = "User information retrieved successfully.", Data = userInfo });
+		}
 
 
 		private int GetCodeRandom() => new Random().Next(100000, 999999);
