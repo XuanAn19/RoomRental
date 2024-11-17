@@ -1,3 +1,11 @@
+
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using MimeKit;
+using RoomSocialBE.Authentication;
+using System.IdentityModel.Tokens.Jwt;
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -279,7 +287,6 @@ namespace RoomSocialBE.Controllers
 				return BadRequest(new Response { Status = "Fail", Message = "Dữ liệu không hợp lệ." });
 			}
 
-
 			var identityToken = HttpContext.User.Identity as ClaimsIdentity;
 			var emailClaim = identityToken?.FindFirst(ClaimTypes.Email)?.Value;
 
@@ -294,11 +301,9 @@ namespace RoomSocialBE.Controllers
 				return Unauthorized(new Response { Status = "Fail", Message = "User not found." });
 			}
 
-
 			user.full_name = model.FullName;
 			user.PhoneNumber = model.PhoneNumber;
 			
-
 
 			if (model.ProfileImage != null)
 			{
@@ -310,10 +315,9 @@ namespace RoomSocialBE.Controllers
 					await model.ProfileImage.CopyToAsync(stream);
 				}
 
-				user.image = fileName; 
+				user.image = fileName;  
 			}
 
-	
 			var updateResult = await userManager.UpdateAsync(user);
 
 			if (updateResult.Succeeded)
@@ -454,6 +458,18 @@ namespace RoomSocialBE.Controllers
 
 			return Ok(new Response { Status = "Success" , Message = "User information retrieved successfully.", Data = userInfo });
 		}
+
+
+		private int GetCodeRandom() => new Random().Next(100000, 999999);
+
+        private async Task<ApplicationUser?> GetUser(string email) => await userManager.FindByEmailAsync(email);
+
+    }
+}
+				return BadRequest(new Response { Status = "Fail", Message = $"Update fail: {errors}" });
+			}
+		}
+
 
 
 		private int GetCodeRandom() => new Random().Next(100000, 999999);

@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("1ead5ba5-acf9-49e0-89cf-4273c40a9700")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("RoomSocialBE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89c407cec262ad1d81483a326c124a83a3c8ab2c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6218d0d81e4ed83be6078b2ebe2178709334dee4")]
 [assembly: System.Reflection.AssemblyProductAttribute("RoomSocialBE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RoomSocialBE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
