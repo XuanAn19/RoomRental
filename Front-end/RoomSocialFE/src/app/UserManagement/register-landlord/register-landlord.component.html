@@ -1,0 +1,134 @@
+<div class="content">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="profile-section">
+      <div class="profile-avatar">
+        <div class="avatar-circle"></div>
+      </div>
+      <span>Thanh Trâm</span>
+    </div>
+    <ul class="sidebar-links">
+      <ul>
+        <i class="fa fa-user" aria-hidden="true"></i
+        >Quản lý tài khoản
+      </ul>
+      <li class="sub-link">
+        <a routerLink="/edit-profile">Chỉnh sửa hồ sơ</a>
+      </li>
+      <li class="sub-link">
+        <a routerLink="/change-password">Thay đổi mật khẩu</a>
+      </li>
+      <li class="sub-link active">
+        <a routerLink="/register-landlord">ĐK làm người cho thuê</a>
+      </li>
+    </ul>
+  </aside>
+  <div class="profile-container">
+    <h2>Quản lý tài khoản</h2>
+    <div class="tabs">
+      <a class="tab" routerLink="/edit-profile">Chỉnh sửa hồ sơ</a>
+      <a class="tab" routerLink="/change-password">Thay đổi mật khẩu</a>
+      <a class="tab active" routerLink="/register-landlord"
+        >ĐK làm người cho thuê</a
+      >
+    </div>
+
+    <div class="info-box">
+      <p>Để đăng ký làm người cho thuê, bạn cần thực hiện theo các bước sau:</p>
+      <ul>
+        <li>
+          Cung cấp các thông tin cá nhân, đảm bảo chính xác và rõ ràng về bạn
+        </li>
+        <li>Sau khi hoàn tất, ấn nút "Đăng ký"</li>
+      </ul>
+      <p>
+        <strong><br />Lưu ý sau khi trở thành người cho thuê</strong>
+      </p>
+      <ul>
+        <li>
+          Tên và ảnh đại diện đúng đắn để đăng ký sẽ được áp dụng lên tất cả các
+          tin đăng của bạn và hiển thị trên trang website CoDat.com.vn
+        </li>
+        <li>
+          Các thay đổi liên quan tới thông tin liên hệ sẽ cần được CoDat.com.vn
+          xét duyệt lại
+        </li>
+      </ul>
+    </div>
+    <form class="register-form">
+      <div class="form-group">
+        <label for="profile-picture">Ảnh đại diện</label>
+        <p class="note">
+          Ảnh nên chụp nửa người phía trên, nhìn rõ mặt và thể hiện sự chuyên
+          nghiệp của bạn
+        </p>
+
+        <div class="avatar-section">
+          <div class="avatar-container">
+            <img
+              class="load-avatar"
+              src="/images/load-avatar.png"
+              alt="avatar"
+            />
+            <img src="" />
+          </div>
+          <label for="file-upload" class="upload-label">Tải ảnh lên</label>
+          <input id="file-upload" type="file" hidden />
+        </div>
+      </div>
+      <div class="form-group contact-infor">
+        <div class="half-group">
+          <label for="full-name" class="required">Họ và tên</label>
+          <input type="text" id="full-name" />
+        </div>
+        <div class="half-group">
+          <label for="phone-number" class="required">Số điện thoại</label>
+          <input type="text" id="phone-number" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Ảnh chụp CCCD và chân dung cầm thẻ CCCD</label><br />
+        <div class="cccd">
+          <p>
+            1. Ảnh mặt trước CCCD không bị mất góc, đủ chi tiết và độ ánh sáng
+          </p>
+          <p>
+            2. Ảnh mặt sau CCCD không bị mất góc, đủ chi tiết và độ ánh sáng
+          </p>
+        </div>
+        <div class="upload-box-large">
+          <div class="avatar-container">
+            <img
+              class="load-avatar"
+              src="/images/load-image.png"
+              alt="avatar"
+            />
+            <img src="" />
+          </div>
+          <label for="file-upload" class="upload-label"
+            >Thêm ảnh hoặc tệp</label
+          >
+        </div>
+      </div>
+      <div class="form-group checkbox">
+        <input type="checkbox" id="agree-terms" />
+        <div>
+          <label for="agree-terms"
+            >Tôi đồng ý với các <a href="#">Điều khoản sử dụng</a>,
+            <a href="#">Chính sách bảo mật, </a>
+            <a href="#">Quy chế</a> và
+            <a href="#">Chính sách</a>
+            của CoDat.com.vn.
+          </label>
+          <label for="agree-terms"
+            >Tôi cam kết những nội dung nêu trên là đúng sự thật, nếu có xảy ra
+            tranh chấp, khiếu nại tôi xin chịu hoàn toàn trách nhiệm
+          </label>
+        </div>
+      </div>
+      <div class="save-button-container">
+        <button class="save-button">Đăng ký</button>
+      </div>
+    </form>
+  </div>
+</div>

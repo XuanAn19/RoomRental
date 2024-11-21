@@ -1,3 +1,10 @@
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using MimeKit;
+using RoomSocialBE.Authentication;
+using System.IdentityModel.Tokens.Jwt;
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -248,6 +255,224 @@ namespace RoomSocialBE.Controllers
             return Ok(new Response { Status = "Success", Message = "Password has been reset successfully!" });
         }
 
+		[HttpPost("change_password")]
+		[Authorize]
+		public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordModel model)
+		{
+			if (!ModelState.IsValid)
+				return BadRequest(new Response { Status = "Fail", Message = "Invalid input data." });
+
+
+			var identityToken = HttpContext.User.Identity as ClaimsIdentity;
+			var emailClaim = identityToken?.FindFirst(ClaimTypes.Email)?.Value;
+
+			if (string.IsNullOrEmpty(emailClaim))
+				return Unauthorized(new Response { Status = "Fail", Message = "User email not found in token." });
+
+			var user = await userManager.FindByEmailAsync(emailClaim);
+			if (user == null)
+				return Unauthorized(new Response { Status = "Fail", Message = "User not found." });
+
+			var isCurrentPasswordValid = await userManager.CheckPasswordAsync(user, model.CurrentPassword);
+			if (!isCurrentPasswordValid)
+				return BadRequest(new Response { Status = "Fail", Message = "Current password is incorrect." });
+
+
+			var result = await userManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
+			if (!result.Succeeded)
+			{
+				var errors = string.Join(", ", result.Errors.Select(e => e.Description));
+				return BadRequest(new Response { Status = "Fail", Message = $"Password change failed: {errors}" });
+			}   
+
+			return Ok(new Response { Status = "Success", Message = "Password has been changed successfully!" });
+		}
+
+
+
+
+		[HttpPost("update_profile")]
+		[Authorize]
+		public async Task<IActionResult> UpdateProfile([FromForm] ProfileUpdateModel model)
+		{
+
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(new Response { Status = "Fail", Message = "Dữ liệu không hợp lệ." });
+			}
+
+			var identityToken = HttpContext.User.Identity as ClaimsIdentity;
+			var emailClaim = identityToken?.FindFirst(ClaimTypes.Email)?.Value;
+
+			if (string.IsNullOrEmpty(emailClaim))
+			{
+				return Unauthorized(new Response { Status = "Fail", Message = "User email not found in token" });
+			}
+
+			var user = await userManager.FindByEmailAsync(emailClaim);
+			if (user == null)
+			{
+				return Unauthorized(new Response { Status = "Fail", Message = "User not found." });
+			}
+
+			user.full_name = model.FullName;
+			user.PhoneNumber = model.PhoneNumber;
+			
+
+			if (model.ProfileImage != null)
+			{
+				var fileName = Guid.NewGuid().ToString() + Path.GetExtension(model.ProfileImage.FileName);
+				var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", fileName);
+
+				using (var stream = new FileStream(filePath, FileMode.Create))
+				{
+					await model.ProfileImage.CopyToAsync(stream);
+				}
+
+				user.image = fileName;  
+			}
+
+			var updateResult = await userManager.UpdateAsync(user);
+
+			if (updateResult.Succeeded)
+			{
+				return Ok(new Response { Status = "Success", Message = "Update profile successfully!" });
+			}
+			else
+			{
+				var errors = string.Join(", ", updateResult.Errors.Select(e => e.Description));
+				return BadRequest(new Response { Status = "Fail", Message = $"Update profile fail: {errors}" });
+			}
+		}
+
+		[HttpPost("register_verify")]
+		[Authorize]
+		public async Task<IActionResult> RegisterLandlord([FromForm] VerifyRegistration model)
+		{
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(new Response { Status = "Fail", Message = "Invalid data provided." });
+			}
+
+			var identityToken = HttpContext.User.Identity as ClaimsIdentity;
+			var emailClaim = identityToken?.FindFirst(ClaimTypes.Email)?.Value;
+
+			if (string.IsNullOrEmpty(emailClaim))
+			{
+				return Unauthorized(new Response { Status = "Fail", Message = "User email not found in token." });
+			}
+
+			var user = await userManager.FindByEmailAsync(emailClaim);
+			if (user == null)
+			{
+				return Unauthorized(new Response { Status = "Fail", Message = "User not found." });
+			}
+            if(user.is_true != null)
+            {
+                return Unauthorized(new Response { Status = "Fail", Message = "User registered verify." });
+            }
+
+			user.PhoneNumber = model.PhoneNumber;
+			if (model.FullName != null)
+			{
+				user.full_name = model.FullName;
+			}
+			if (model.PhoneNumber != null)
+			{
+				user.PhoneNumber = model.PhoneNumber;
+			}
+
+			if (model.ProfileImage != null)
+			{
+				var profileFileName = Guid.NewGuid().ToString() + Path.GetExtension(model.ProfileImage.FileName);
+				var profileFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", profileFileName);
+
+				using (var stream = new FileStream(profileFilePath, FileMode.Create))
+				{
+					await model.ProfileImage.CopyToAsync(stream);
+				}
+				user.image = profileFileName;
+			}
+
+            if (model.CccdImages != null)
+            {
+                var folderName = !string.IsNullOrEmpty(user.Id) ? user.Id : user.Email;
+                var sanitizedFolderName = string.Concat(folderName.Split(Path.GetInvalidFileNameChars()));
+
+                var userFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "verify", sanitizedFolderName);
+
+                if (!Directory.Exists(userFolderPath))
+                {
+                    Directory.CreateDirectory(userFolderPath);
+                }
+
+                var cccdImagePaths = new List<string>();
+
+                foreach (var cccdImage in model.CccdImages)
+                {
+                    var cccdFileName = Guid.NewGuid().ToString() + Path.GetExtension(cccdImage.FileName);
+                    var cccdFilePath = Path.Combine(userFolderPath, cccdFileName);
+
+                    using (var stream = new FileStream(cccdFilePath, FileMode.Create))
+                    {
+                        await cccdImage.CopyToAsync(stream);
+                    }
+
+                    cccdImagePaths.Add(Path.Combine("verify", sanitizedFolderName, cccdFileName));
+                }
+
+
+                user.images_CCCD = string.Join(",", cccdImagePaths);
+
+            }
+			user.is_true = false;
+
+			var updateResult = await userManager.UpdateAsync(user);
+			if (updateResult.Succeeded)
+			{
+				return Ok(new Response { Status = "Success", Message = "Registration submitted successfully! Awaiting admin confirmation." });
+			}
+			else
+			{
+				var errors = string.Join(", ", updateResult.Errors.Select(e => e.Description));
+				return BadRequest(new Response { Status = "Fail", Message = $"Registration failed: {errors}" });
+			}
+		}
+
+		[HttpGet("get_my_information")]
+		[Authorize]
+		public async Task<IActionResult> GetMyInformation()
+		{
+			// Lấy email từ token
+			var identityToken = HttpContext.User.Identity as ClaimsIdentity;
+			var emailClaim = identityToken?.FindFirst(ClaimTypes.Email)?.Value;
+
+			if (string.IsNullOrEmpty(emailClaim))
+			{
+				return Unauthorized(new Response { Status = "Fail", Message = "User email not found in token." });
+			}
+
+	
+			var user = await userManager.FindByEmailAsync(emailClaim);
+			if (user == null)
+			{
+				return NotFound(new Response { Status = "Fail", Message = "User not found." });
+			}
+
+
+			var userInfo = new
+			{
+				FullName = user.full_name,
+				Email = user.Email,
+				PhoneNumber = user.PhoneNumber,
+				Image = user.image != null ? $"{Request.Scheme}://{Request.Host}/images/{user.image}" : null,
+				CccdImages = user.images_CCCD?.Split(',').Select(img =>$"{Request.Scheme}://{Request.Host}/{img.Replace("\\", "/")}").ToList(),
+				IsVerified = user.is_true
+			};
+
+			return Ok(new Response { Status = "Success" , Message = "User information retrieved successfully.", Data = userInfo });
+		}
+
         // Logout
         [HttpPost("logout")]
         [Authorize]
@@ -267,7 +492,7 @@ namespace RoomSocialBE.Controllers
             return Ok(new Response { Status = "Success", Message = "Logged out successfully" });
         }
 
-        private int GetCodeRandom() => new Random().Next(100000, 999999);
+		private int GetCodeRandom() => new Random().Next(100000, 999999);
 
         private async Task<ApplicationUser?> GetUser(string email) => await userManager.FindByEmailAsync(email);
 
