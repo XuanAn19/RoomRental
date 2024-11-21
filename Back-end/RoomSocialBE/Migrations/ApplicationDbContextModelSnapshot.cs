@@ -223,6 +223,12 @@ namespace RoomSocialBE.Migrations
                     b.Property<bool?>("is_verification_code_valid")
                         .HasColumnType("bit");
 
+                    b.Property<string>("refresh_token")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("refresh_token_expiry_time")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")

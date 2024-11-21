@@ -1,19 +1,11 @@
 {
   "Version": 1,
-  "Hash": "AuCBMdfVLvh8x/LeVmxVV5m/eivgJOo6LDzOAOufYPQ=",
+  "Hash": "W1dk7AnpDzqPbgSRHmtYYXImVVvU8I4PF/nEvkMQNOQ=",
   "Source": "RoomSocialBE",
   "BasePath": "_content/RoomSocialBE",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [
-    {
-      "Name": "RoomSocialBE\\wwwroot",
-      "Source": "RoomSocialBE",
-      "ContentRoot": "C:\\Users\\Dell\\OneDrive\\Tài liệu\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\wwwroot\\",
-      "BasePath": "_content/RoomSocialBE",
-      "Pattern": "**"
-    }
-  ],
+  "DiscoveryPatterns": [],
   "Assets": []
 }
