@@ -248,6 +248,7 @@ namespace RoomSocialBE.Controllers
             return Ok(new Response { Status = "Success", Message = "Password has been reset successfully!" });
         }
 
+        // Logout
         [HttpPost("logout")]
         [Authorize]
         public async Task<IActionResult> Logout()
