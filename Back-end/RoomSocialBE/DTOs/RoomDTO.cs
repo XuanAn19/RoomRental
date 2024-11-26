@@ -1,5 +1,5 @@
 ﻿using RoomSocialBE.Authentication;
-using RoomSocialBE.Model;
+using RoomSocialBE.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
