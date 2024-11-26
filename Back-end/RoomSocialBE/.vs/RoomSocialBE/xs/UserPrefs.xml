@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|https">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.RoomSocialBE PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/AuthenticateController.cs">
+    <Files>
+      <File FileName="appsettings.json" />
+      <File FileName="Properties/launchSettings.json" />
+      <File FileName="Program.cs" />
+      <File FileName="Authentication/ApplicationDbContext.cs" />
+      <File FileName="RoomSocialBE.http" />
+      <File FileName="WeatherForecast.cs" />
+      <File FileName="Controllers/AuthenticateController.cs" Line="201" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="RoomSocialBE">
+            <Node name="RoomSocialBE">
+              <Node name="Controllers" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

@@ -1,27 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\RoomSocialBE.csproj": {}
+    "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/RoomSocialBE.csproj": {}
   },
   "projects": {
-    "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\RoomSocialBE.csproj": {
+    "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/RoomSocialBE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\RoomSocialBE.csproj",
+        "projectUniqueName": "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/RoomSocialBE.csproj",
         "projectName": "RoomSocialBE",
-        "projectPath": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\RoomSocialBE.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\obj\\",
+        "projectPath": "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/RoomSocialBE.csproj",
+        "packagesPath": "/Users/minhchan/.nuget/packages/",
+        "outputPath": "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/minhchan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -98,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
