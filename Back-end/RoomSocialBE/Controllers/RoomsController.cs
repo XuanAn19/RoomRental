@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,7 @@ using RoomSocialBE.Models;
 
 namespace RoomSocialBE.Controllers
 {
+    [Authorize(Roles = UserRoles.User)]
     [Route("api/[controller]")]
     [ApiController]
     public class RoomsController : ControllerBase
@@ -20,38 +22,6 @@ namespace RoomSocialBE.Controllers
             this.userManager = userManager;
             this._context = context;
 
-        }
-
-
-        [HttpGet]
-        [Route("get_data_post_room")]
-        public async Task<IActionResult> GetDataPostRoom()
-        {
-            try
-            {
-                var categories = await _context.Categories
-                    .Select(c => new { c.id, c.name })
-                    .ToListAsync();
-
-                var addresses = await _context.Addresses
-                    .Select(a => new { a.id, a.province, a.district, a.ward })
-                    .ToListAsync();
-
-                var users = await _context.Users
-                    .Select(u => new { u.Id, u.full_name, u.Email, u.PhoneNumber })
-                    .ToListAsync();
-
-                return Ok(new
-                {
-                    Categories = categories,
-                    Addresses = addresses,
-                    Users = users
-                });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
         }
 
         [HttpPost]
