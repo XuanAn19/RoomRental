@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using RoomSocialBE.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace RoomSocialBE.Authentication
@@ -19,5 +20,7 @@ namespace RoomSocialBE.Authentication
         public string? refresh_token { get; set; }
 
         public DateTime? refresh_token_expiry_time { get; set; }
+
+        public ICollection<Room> Rooms { get; set; }
     }
 }
