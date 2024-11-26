@@ -3,11 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RoomSocialBE.Authentication;
 using RoomSocialBE.DTOs;
-using RoomSocialBE.Model;
+using RoomSocialBE.Models;
 using System.Linq;
 using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-
 namespace RoomSocialBE.Controllers
 {
 	[Route("api/[controller]")]
@@ -26,10 +24,10 @@ namespace RoomSocialBE.Controllers
 		[HttpGet]
 		public async Task<IActionResult> Search([FromQuery] SearchDTO search)
 		{
-			var data = await _dataContext.room
-				.Include(r => r.user)
-				.Include(r => r.address)
-				.Include(r => r.category)
+			var data = await _dataContext.Rooms
+				.Include(r => r.User)
+				.Include(r => r.Address)
+				.Include(r => r.Category)
 				.ToListAsync();
 
 			if (data == null || !data.Any())
@@ -66,10 +64,10 @@ namespace RoomSocialBE.Controllers
 			if (!string.IsNullOrEmpty(search.Address))
 			{
 				data = data.Where(a =>
-						a.address.province.Contains(search.Address) ||
-						a.address.district.Contains(search.Address) ||
-						a.address.ward.Contains(search.Address) ||
-						a.address.street_name.Contains(search.Address)
+						a.Address.province.Contains(search.Address) ||
+						a.Address.district.Contains(search.Address) ||
+						a.Address.ward.Contains(search.Address) ||
+						a.Address.street_name.Contains(search.Address)
 					).ToList();
 			}
 
@@ -80,31 +78,31 @@ namespace RoomSocialBE.Controllers
 
 				if (!string.IsNullOrEmpty(search.SearchName))
 				{
-					additionalData = _dataContext.room
+					additionalData = _dataContext.Rooms
 						.Where(c => c.title.Contains(search.SearchName) || c.description.Contains(search.SearchName))
-						.Include(r => r.user)
-						.Include(r => r.address)
-						.Include(r => r.category)
+						.Include(r => r.User)
+						.Include(r => r.Address)
+						.Include(r => r.Category)
 						.ToList();
 				}
 
 				if (search.To.HasValue)
 				{
-					additionalData.AddRange(_dataContext.room
+					additionalData.AddRange(_dataContext.Rooms
 						.Where(p => p.price <= (search.To.Value * 2))
-						.Include(r => r.user)
-						.Include(r => r.address)
-						.Include(r => r.category)
+						.Include(r => r.User)
+						.Include(r => r.Address)
+						.Include(r => r.Category)
 						.ToList());
 				}
 
 				if (search.ArceTo.HasValue)
 				{
-					additionalData.AddRange(_dataContext.room
+					additionalData.AddRange(_dataContext.Rooms
 						.Where(p => p.arge <= (search.ArceTo.Value * 1.5))
-						.Include(r => r.user)
-						.Include(r => r.address)
-						.Include(r => r.category)
+						.Include(r => r.User)
+						.Include(r => r.Address)
+						.Include(r => r.Category)
 						.ToList());
 				}
 
@@ -130,7 +128,7 @@ namespace RoomSocialBE.Controllers
 					data = search.SortDescending ? data.OrderByDescending(c => c.arge).ToList() : data.OrderBy(c => c.arge).ToList();
 					break;
 				default:
-					data = search.SortDescending ? data.OrderByDescending(c => c.create_day).ToList() : data.OrderBy(c => c.create_day).ToList();
+					data = search.SortDescending ? data.OrderByDescending(c => c.created_day).ToList() : data.OrderBy(c => c.created_day).ToList();
 					break;
 			}
 

@@ -11,9 +11,9 @@ namespace RoomSocialBE.Authentication
 
         }
 
-        public DbSet<Category> category { get; set; }
-        public DbSet<Address> address { get; set; }
-        public DbSet<Room> room { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Room> Rooms { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
