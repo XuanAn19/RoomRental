@@ -1,5 +1,4 @@
-
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -19,6 +18,7 @@ using System.Text;
 using MailKit.Net.Smtp;
 using SmtpClient = MailKit.Net.Smtp.SmtpClient;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Cryptography;
 
 namespace RoomSocialBE.Controllers
 {
@@ -55,16 +55,18 @@ namespace RoomSocialBE.Controllers
                 return BadRequest(new Response { Status = "Fail", Message = "You need to confirm email before logging in!" });
 
             var userRoles = await userManager.GetRolesAsync(user);
+            string refreshToken = GenerateRefreshToken();
 
+            user.refresh_token = refreshToken;
             user.is_verification_code_valid = null;
             await userManager.UpdateAsync(user);
 
-            var (token, expiration) = await GenerateTokenAsync(user, userRoles);
-
+            var (accessToken, expiration) = await GenerateTokenAsync(user, userRoles);
             return Ok(new
             {
                 Status = "Success",
-                token = token,
+                accessToken = accessToken,
+                refreshToken = refreshToken,
                 expiration = expiration,
                 roles = userRoles
             });
@@ -89,12 +91,24 @@ namespace RoomSocialBE.Controllers
             var token = new JwtSecurityToken(
                 issuer: _configuration["JWT:ValidIssuer"],
                 audience: _configuration["JWT:ValidAudience"],
-                expires: DateTime.Now.AddHours(3),
+                expires: DateTime.Now.AddSeconds(20),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
                 );
             var valid = token.ValidTo;
             return (new JwtSecurityTokenHandler().WriteToken(token), valid);
+        }
+
+        private string GenerateRefreshToken()
+        {
+            var randomNumber = new byte[32];
+
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(randomNumber);
+
+                return Convert.ToBase64String(randomNumber);
+            }
         }
 
         [HttpPost]
@@ -202,8 +216,8 @@ namespace RoomSocialBE.Controllers
             return Ok(new Response { Status = "Success", Message = "Please check your email for the confirmation code!" });
         }
 
-        [HttpPost("reset_password/{email}")]
-        public async Task<IActionResult> ResetPassword(string email, [FromBody] string newPassword)
+        [HttpPost("reset_password/{email}/{newPassword}")]
+        public async Task<IActionResult> ResetPassword(string email, string newPassword)
         {
             var user = await GetUser(email);
 
@@ -459,18 +473,24 @@ namespace RoomSocialBE.Controllers
 			return Ok(new Response { Status = "Success" , Message = "User information retrieved successfully.", Data = userInfo });
 		}
 
+        // Logout
+        [HttpPost("logout")]
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            var email = User.FindFirstValue(ClaimTypes.Email);
+            if (string.IsNullOrEmpty(email))
+                return Unauthorized(new Response { Status = "Fail", Message = "User is not authenticated" });
 
-		private int GetCodeRandom() => new Random().Next(100000, 999999);
+            var user = await GetUser(email);
+            if (user == null)
+                return Unauthorized(new Response { Status = "Fail", Message = "User not found" });
 
-        private async Task<ApplicationUser?> GetUser(string email) => await userManager.FindByEmailAsync(email);
+            user.refresh_token = null; 
+            await userManager.UpdateAsync(user);
 
-    }
-}
-				return BadRequest(new Response { Status = "Fail", Message = $"Update fail: {errors}" });
-			}
-		}
-
-
+            return Ok(new Response { Status = "Success", Message = "Logged out successfully" });
+        }
 
 		private int GetCodeRandom() => new Random().Next(100000, 999999);
 
