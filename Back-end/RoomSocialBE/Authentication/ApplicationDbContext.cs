@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using RoomSocialBE.Models;
 
 namespace RoomSocialBE.Authentication
 {
@@ -9,6 +10,11 @@ namespace RoomSocialBE.Authentication
         {
 
         }
+
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

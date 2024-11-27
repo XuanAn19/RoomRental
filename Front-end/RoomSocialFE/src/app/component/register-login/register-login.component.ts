@@ -1,5 +1,13 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { NgModel } from '@angular/forms';
+import { AuthService } from '../../service/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-login',
@@ -8,12 +16,13 @@ import { NgModel } from '@angular/forms';
 })
 export class RegisterLoginComponent {
   @Input() isClick: boolean = false;
+  @Output() emailRegistered: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() {}
+  constructor(private _auth: AuthService, private _router: Router) {}
 
   @ViewChild('fullNameControl') fullNameControl!: NgModel;
   @ViewChild('emailControl') emailControl!: NgModel;
-  @ViewChild('numberPhoneControl') numberPhoneControl!: NgModel;
+  @ViewChild('phoneNumberControl') phoneNumberControl!: NgModel;
   @ViewChild('passwordControl') passwordControl!: NgModel;
   @ViewChild('passwordAgainControl') passwordAgainControl!: NgModel;
   @ViewChild('passwordLoginControl') passwordLoginControl!: NgModel;
@@ -25,7 +34,7 @@ export class RegisterLoginComponent {
 
   fullName: string = '';
   email: string = '';
-  numberPhone: string = '';
+  phoneNumber: string = '';
   password: string = '';
   passwordAgain: string = '';
   emailLogin: string = '';
@@ -34,7 +43,7 @@ export class RegisterLoginComponent {
   user = {
     fullName: '',
     email: '',
-    numberPhone: '',
+    phoneNumber: '',
     password: '',
     roles: '',
   };
@@ -50,7 +59,7 @@ export class RegisterLoginComponent {
 
     this.fullName = '';
     this.email = '';
-    this.numberPhone = '';
+    this.phoneNumber = '';
     this.password = '';
     this.passwordAgain = '';
     this.emailLogin = '';
@@ -58,7 +67,7 @@ export class RegisterLoginComponent {
 
     if (this.fullNameControl) this.fullNameControl.reset();
     if (this.emailControl) this.emailControl.reset();
-    if (this.numberPhoneControl) this.numberPhoneControl.reset();
+    if (this.phoneNumberControl) this.phoneNumberControl.reset();
     if (this.passwordControl) this.passwordControl.reset();
     if (this.passwordControl) this.passwordControl.reset();
     if (this.passwordAgainControl) this.passwordAgainControl.reset();
@@ -71,7 +80,7 @@ export class RegisterLoginComponent {
     if (
       this.user.fullName != '' &&
       this.user.email != '' &&
-      this.user.numberPhone != '' &&
+      this.user.phoneNumber != '' &&
       this.user.password != '' &&
       this.passwordAgain != ''
     ) {
@@ -79,17 +88,52 @@ export class RegisterLoginComponent {
       if (!emailPattern.test(this.user.email)) {
         alert('Email không đúng định dạng');
       }
-
-      if (this.user.password !== this.passwordAgain) {
-        alert('Mật khẩu không khớp.');
+      const regex =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      if (!regex.test(this.user.password)) {
+        alert('Mật khẩu không hợp lệ!');
       } else {
-        alert('Đăng ký thành công');
+        if (this.user.password !== this.passwordAgain) {
+          alert('Mật khẩu không khớp.');
+        } else {
+          this._auth.Call_API_RegisterUser(this.user).subscribe(
+            (response: any) => {
+              alert('Đăng ký thành công');
+              this._router.navigate(['verify-account'], {
+                queryParams: { email: this.user.email },
+              });
+              //this.isVerify = true;
+              //this._router.navigate(['uiuser/regiter']);
+            },
+            (error: any) => {
+              console.error('Đăng ký lỗi', error);
+            }
+          );
+        }
       }
     } else {
       alert('Vui lòng điền đầy đủ thông tin.');
     }
   }
 
-  // Xử lý submit form đăng nhập (chưa thực hiện logic)
-  onSubmitLogin() {}
+  onSubmitLogin() {
+    if (this.emailLogin === '' || this.passwordLogin === '') {
+      alert('Vui lòng điền đầy đủ thông tin!');
+    } else {
+      this._auth
+        .Call_API_LoginUser({
+          email: this.emailLogin,
+          password: this.passwordLogin,
+        })
+        .subscribe(
+          (actor) => {
+            alert('Đăng nhập thành công');
+          },
+          (error) => {
+            console.error('Đăng nhập lỗi:', error);
+            alert('Đăng nhập lỗi. Vui lòng kiểm tra lại thông tin');
+          }
+        );
+    }
+  }
 }

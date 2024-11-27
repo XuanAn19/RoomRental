@@ -6,7 +6,7 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/AuthenticateController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomeController.cs">
     <Files>
       <File FileName="appsettings.json" />
       <File FileName="Properties/launchSettings.json" />
@@ -14,14 +14,19 @@
       <File FileName="Authentication/ApplicationDbContext.cs" />
       <File FileName="RoomSocialBE.http" />
       <File FileName="WeatherForecast.cs" />
-      <File FileName="Controllers/AuthenticateController.cs" Line="201" Column="1" />
+      <File FileName="Controllers/AuthenticateController.cs" />
+      <File FileName="Controllers/HomeController.cs" Line="6" Column="13" />
+      <File FileName="Controllers/CategoriesController.cs" />
+      <File FileName="Controllers/RoomsController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RoomSocialBE">
             <Node name="RoomSocialBE">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="HomeController.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
