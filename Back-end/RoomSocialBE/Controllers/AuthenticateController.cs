@@ -58,6 +58,7 @@ namespace RoomSocialBE.Controllers
             return Ok(new
             {
                 Status = "Success",
+                idUser = user.Id,
                 accessToken = accessToken,
                 refreshToken = refreshToken,
                 expiration = expiration,

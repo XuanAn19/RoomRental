@@ -9,7 +9,6 @@ using RoomSocialBE.Models;
 
 namespace RoomSocialBE.Controllers
 {
-    [Authorize(Roles = UserRoles.User)]
     [Route("api/[controller]")]
     [ApiController]
     public class RoomsController : ControllerBase
@@ -24,6 +23,45 @@ namespace RoomSocialBE.Controllers
 
         }
 
+        [HttpGet]
+        [Route("rooms")]
+        public async Task<IActionResult> GetAllRooms()
+        {
+            var result = await _context.Rooms
+        .Include(r => r.Address) // Include bảng Address thông qua mối quan hệ
+        .Select(r => new
+        {
+            r.id,
+            r.id_user,
+            r.id_adress,
+            Address = new
+            {
+                r.Address.number_house,
+                r.Address.street_name,
+                r.Address.ward,
+                r.Address.district,
+                r.Address.province
+            },
+            r.id_category,
+            r.title,
+            r.description,
+            r.arge,
+            r.price,
+            r.quantity_room,
+            r.images,
+            r.created_day,
+            r.status
+        })
+        .ToListAsync();
+            return Ok(new Response
+            {
+                Status = "Success",
+                Message = "Get All Rooms are succefully",
+                Data = result
+            });
+        }
+
+        [Authorize(Roles = UserRoles.User)]
         [HttpPost]
         [Route("post_room")]
         public async Task<IActionResult> PostRoom([FromBody] PostRoomModel model)
@@ -100,6 +138,122 @@ namespace RoomSocialBE.Controllers
                 {
                     Status = "Fail",
                     Message = "Creating post of room was error!"
+                });
+            }
+        }
+
+        [Authorize(Roles = UserRoles.User)]
+        [HttpPut]
+        [Route("update_information_room/{id}")]
+        public async Task<IActionResult> UpdateInformationRoom(int id, [FromBody] PostRoomModel model)
+        {
+            bool isExistRoom = await _context.Rooms.AnyAsync(u => u.id == id && u.id_user == model.id_user);
+            if (isExistRoom) {
+                var roomAddress = await _context.Addresses.FirstOrDefaultAsync(u => u.id == model.address.id);
+                roomAddress.number_house = model.address.number_house;
+                roomAddress.street_name = model.address.street_name;
+                roomAddress.ward = model.address.ward;
+                roomAddress.district = model.address.district;
+                roomAddress.province = model.address.province;
+                _context.Addresses.Update(roomAddress);
+
+                var room = await _context.Rooms.FirstOrDefaultAsync(u => u.id == id);
+                room.id_category = model.id_category;
+                room.title = model.title;
+                room.description = model.description;
+                room.arge = model.arge;
+                room.price = model.price;
+                room.quantity_room = model.quanity_room;
+                room.images = model.images;
+                _context.Rooms.Update(room);
+                int a = 5;
+                var result = await _context.SaveChangesAsync();
+                if (result > 0)
+                {
+                    return Ok(new Response
+                    {
+                        Status = "Success",
+                        Message = "Room information updated successfully!"
+                    });
+                }
+                else
+                {
+                    return BadRequest(new Response
+                    {
+                        Status = "Fail",
+                        Message = "Failed to update room information!"
+                    });
+                }
+            }
+            else
+            {
+                return BadRequest(new Response
+                {
+                    Status = "Fail",
+                    Message = "id_room and id_user is not compatible!"
+                });
+            }
+        }
+
+        [Authorize(Roles = UserRoles.User)]
+        [HttpDelete]
+        [Route("delete/{id}")]
+        public async Task<IActionResult> DeleteRoom(int id)
+        {
+            var room = await _context.Rooms.FindAsync(id);
+            if (room == null)
+            {
+                return NotFound(new Response
+                {
+                    Status = "Fail",
+                    Message = "Not found with id that you provided!"
+                });
+            }
+
+            _context.Rooms.Remove(room);
+            await _context.SaveChangesAsync();
+
+            return Ok(new Response
+            {
+                Status = "Success",
+                Message = "Delete room is successfully!"
+            });
+        }
+
+        [Authorize(Roles = UserRoles.User)]
+        [HttpPut]
+        [Route("switch_status_room/{id}")]
+        public async Task<IActionResult> SwitchStatusRoom(int id)
+        {
+            var room = await _context.Rooms.FirstOrDefaultAsync(r => r.id == id);
+
+            if (room == null)
+            {
+                return NotFound(new Response
+                {
+                    Status = "Fail",
+                    Message = "Room with the given ID does not exist!"
+                });
+            }
+
+            room.status = !room.status;
+            _context.Rooms.Update(room);
+            var result = await _context.SaveChangesAsync();
+
+            if (result > 0)
+            {
+                return Ok(new Response
+                {
+                    Status = "Success",
+                    Message = $"Room status updated successfully! New status: {(room.status ? "Visible" : "Hidden")}"
+                });
+            }
+            else
+            {
+                return BadRequest(new Response
+                {
+                    Status = "Fail",
+                    Message = "Failed to update room status!"
                 });
             }
         }
