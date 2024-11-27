@@ -6,6 +6,7 @@ using RoomSocialBE.DTOs;
 using RoomSocialBE.Models;
 using System.Linq;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 namespace RoomSocialBE.Controllers
 {
 	[Route("api/[controller]")]
@@ -24,11 +25,12 @@ namespace RoomSocialBE.Controllers
 		[HttpGet]
 		public async Task<IActionResult> Search([FromQuery] SearchDTO search)
 		{
-			var data = await _dataContext.Rooms
+			/*var data = await _dataContext.Rooms
 				.Include(r => r.User)
 				.Include(r => r.Address)
 				.Include(r => r.Category)
-				.ToListAsync();
+				.ToListAsync();*/
+			var data = _dataContext.Rooms.AsQueryable();
 
 			if (data == null || !data.Any())
 			{
@@ -38,27 +40,27 @@ namespace RoomSocialBE.Controllers
 		
 			if (!string.IsNullOrEmpty(search.SearchName))
 			{
-				data = data.Where(c => c.title.Contains(search.SearchName) || c.description.Contains(search.SearchName)).ToList();
+				data = data.Where(c => c.title.Contains(search.SearchName) || c.description.Contains(search.SearchName));
 			}
 
 			if (search.From.HasValue)
 			{
-				data = data.Where(p => p.price >= search.From.Value).ToList();
+				data = data.Where(p => p.price >= search.From.Value);
 			}
 
 			if (search.To.HasValue)
 			{
-				data = data.Where(p => p.price <= search.To.Value).ToList();
+				data = data.Where(p => p.price <= search.To.Value);
 			}
 
 			if (search.ArceFrom.HasValue)
 			{
-				data = data.Where(p => p.arge >= search.ArceFrom.Value).ToList();
+				data = data.Where(p => p.arge >= search.ArceFrom.Value);
 			}
 
 			if (search.ArceTo.HasValue)
 			{
-				data = data.Where(p => p.arge <= search.ArceTo.Value).ToList();
+				data = data.Where(p => p.arge <= search.ArceTo.Value);
 			}
 
 			if (!string.IsNullOrEmpty(search.Address))
@@ -68,9 +70,9 @@ namespace RoomSocialBE.Controllers
 						a.Address.district.Contains(search.Address) ||
 						a.Address.ward.Contains(search.Address) ||
 						a.Address.street_name.Contains(search.Address)
-					).ToList();
+					);
 			}
-
+/*
 			if (data.Count < 5)
 			{
 			
@@ -117,25 +119,62 @@ namespace RoomSocialBE.Controllers
 
 				data = resultSet.ToList();
 			}
-
+*/
 			
 			switch (search.SortBy.ToLower())
 			{
 				case "price":
-					data = search.SortDescending ? data.OrderByDescending(c => c.price).ToList() : data.OrderBy(c => c.price).ToList();
+					data = search.SortDescending ? data.OrderByDescending(c => c.price) : data.OrderBy(c => c.price);
 					break;
 				case "arge":
-					data = search.SortDescending ? data.OrderByDescending(c => c.arge).ToList() : data.OrderBy(c => c.arge).ToList();
+					data = search.SortDescending ? data.OrderByDescending(c => c.arge) : data.OrderBy(c => c.arge);
 					break;
 				default:
-					data = search.SortDescending ? data.OrderByDescending(c => c.created_day).ToList() : data.OrderBy(c => c.created_day).ToList();
+					data = search.SortDescending ? data.OrderByDescending(c => c.created_day) : data.OrderBy(c => c.created_day);
 					break;
 			}
 
-			
-			var roomDTOs = _mapper.Map<List<RoomDTO>>(data);
 
-			return Ok(roomDTOs);
+			//var roomDTOs = _mapper.Map<List<RoomDTO>>(data);
+			// Chọn các RoomDTO từ các dữ liệu trong bảng Rooms
+			var rooms = await data
+			.Include(r => r.User)  // Liên kết với User
+			.Include(r => r.Address)  // Liên kết với Address
+			.Include(r => r.Category)  // Liên kết với Category
+			.Select(r => new RoomDTO
+			{
+				id = r.id,
+				id_user = r.id_user,
+				id_address = r.id_adress,
+				id_category = r.id_category,
+				title = r.title,
+				description = r.description,
+				arge = r.arge,
+				price = r.price,
+				quantity_room = r.quantity_room,
+				images = r.images,
+				create_day = r.created_day,
+				status = r.status,
+				user = new ApplicationUser
+				{
+					Id  = r.User.Id,
+					UserName = r.User.UserName,
+					Email = r.User.Email
+				},
+				address = new Address
+				{
+					id = r.Address.id,
+					
+				},
+				category = new Category
+				{
+					id = r.Category.id,
+					name = r.Category.name
+				}
+			})
+			.ToListAsync();
+
+			return Ok(rooms);
 		}
 
 	}

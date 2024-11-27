@@ -1,9 +1,11 @@
 ﻿using RoomSocialBE.Authentication;
+using System.ComponentModel.DataAnnotations;
 
 namespace RoomSocialBE.Models
 {
     public class Room
     {
+        [Key]
         public int id { get; set; }
         public string id_user { get; set; }
         public int id_adress { get; set; }
