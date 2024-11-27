@@ -21,6 +21,8 @@ namespace RoomSocialBE.Authentication
 
         public DateTime? refresh_token_expiry_time { get; set; }
 
+        public bool? is_true { get; set; }
+
         public ICollection<Room>? Rooms { get; set; }
     }
 }

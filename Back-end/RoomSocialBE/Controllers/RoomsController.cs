@@ -9,7 +9,6 @@ using RoomSocialBE.Models;
 
 namespace RoomSocialBE.Controllers
 {
-    [Authorize(Roles = UserRoles.User)]
     [Route("api/[controller]")]
     [ApiController]
     public class RoomsController : ControllerBase
@@ -24,6 +23,45 @@ namespace RoomSocialBE.Controllers
 
         }
 
+        [HttpGet]
+        [Route("rooms")]
+        public async Task<IActionResult> GetAllRooms()
+        {
+            var result = await _context.Rooms
+        .Include(r => r.Address) // Include bảng Address thông qua mối quan hệ
+        .Select(r => new
+        {
+            r.id,
+            r.id_user,
+            r.id_adress,
+            Address = new
+            {
+                r.Address.number_house,
+                r.Address.street_name,
+                r.Address.ward,
+                r.Address.district,
+                r.Address.province
+            },
+            r.id_category,
+            r.title,
+            r.description,
+            r.arge,
+            r.price,
+            r.quantity_room,
+            r.images,
+            r.created_day,
+            r.status
+        })
+        .ToListAsync();
+            return Ok(new Response
+            {
+                Status = "Success",
+                Message = "Get All Rooms are succefully",
+                Data = result
+            });
+        }
+
+        [Authorize(Roles = UserRoles.User)]
         [HttpPost]
         [Route("post_room")]
         public async Task<IActionResult> PostRoom([FromBody] PostRoomModel model)
@@ -104,6 +142,7 @@ namespace RoomSocialBE.Controllers
             }
         }
 
+        [Authorize(Roles = UserRoles.User)]
         [HttpPut]
         [Route("update_information_room/{id}")]
         public async Task<IActionResult> UpdateInformationRoom(int id, [FromBody] PostRoomModel model)
@@ -156,6 +195,7 @@ namespace RoomSocialBE.Controllers
             }
         }
 
+        [Authorize(Roles = UserRoles.User)]
         [HttpDelete]
         [Route("delete/{id}")]
         public async Task<IActionResult> DeleteRoom(int id)
@@ -180,6 +220,7 @@ namespace RoomSocialBE.Controllers
             });
         }
 
+        [Authorize(Roles = UserRoles.User)]
         [HttpPut]
         [Route("switch_status_room/{id}")]
         public async Task<IActionResult> SwitchStatusRoom(int id)

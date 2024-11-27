@@ -74,7 +74,6 @@ namespace RoomSocialBE.Data
                     {
                         await userManager.AddToRoleAsync(normalUser, UserRoles.User);
                     }
-                int a = 5;
                 }
 
                 if (!context.Categories.Any())
@@ -151,7 +150,6 @@ namespace RoomSocialBE.Data
                         status = true
                     }
                 );
-                int b = 7;
                 await context.SaveChangesAsync();
                 }
             }
