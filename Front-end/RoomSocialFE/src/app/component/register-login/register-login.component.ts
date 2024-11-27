@@ -8,6 +8,8 @@ import {
 import { NgModel } from '@angular/forms';
 import { AuthService } from '../../service/auth/auth.service';
 import { Router } from '@angular/router';
+import { connect } from 'node:http2';
+import { TokenStoreService } from '../../service/token-store/token-store.service';
 
 @Component({
   selector: 'app-register-login',
@@ -18,7 +20,11 @@ export class RegisterLoginComponent {
   @Input() isClick: boolean = false;
   @Output() emailRegistered: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private _auth: AuthService, private _router: Router) {}
+  constructor(
+    private _auth: AuthService,
+    private _router: Router,
+    private _token: TokenStoreService
+  ) {}
 
   @ViewChild('fullNameControl') fullNameControl!: NgModel;
   @ViewChild('emailControl') emailControl!: NgModel;
@@ -75,7 +81,6 @@ export class RegisterLoginComponent {
     if (this.emailLoginControl) this.emailLoginControl.reset();
   }
 
-  // Xử lý submit form đăng ký
   onSubmitRegister() {
     if (
       this.user.fullName != '' &&
@@ -89,7 +94,7 @@ export class RegisterLoginComponent {
         alert('Email không đúng định dạng');
       }
       const regex =
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
       if (!regex.test(this.user.password)) {
         alert('Mật khẩu không hợp lệ!');
       } else {
@@ -102,8 +107,6 @@ export class RegisterLoginComponent {
               this._router.navigate(['verify-account'], {
                 queryParams: { email: this.user.email },
               });
-              //this.isVerify = true;
-              //this._router.navigate(['uiuser/regiter']);
             },
             (error: any) => {
               console.error('Đăng ký lỗi', error);
@@ -117,7 +120,7 @@ export class RegisterLoginComponent {
   }
 
   onSubmitLogin() {
-    if (this.emailLogin === '' || this.passwordLogin === '') {
+    if (this.emailLogin == '' || this.passwordLogin == '') {
       alert('Vui lòng điền đầy đủ thông tin!');
     } else {
       this._auth
@@ -128,10 +131,12 @@ export class RegisterLoginComponent {
         .subscribe(
           (actor) => {
             alert('Đăng nhập thành công');
+            this._router.navigate(['post-for-rent']);
+            console.log('Token negative: ' + this._token.getToken());
           },
           (error) => {
             console.error('Đăng nhập lỗi:', error);
-            alert('Đăng nhập lỗi. Vui lòng kiểm tra lại thông tin');
+            alert('Tài khoản không tồn tại');
           }
         );
     }

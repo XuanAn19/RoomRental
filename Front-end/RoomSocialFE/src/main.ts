@@ -6,9 +6,7 @@ import { AppComponent } from './app/app.component';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 
 platformBrowserDynamic()
-  .bootstrapModule(AppModule, {
-    ngZoneEventCoalescing: true,
-  })
+  .bootstrapModule(AppModule)
   .catch((err) => console.error(err));
 
 bootstrapApplication(AppComponent, {

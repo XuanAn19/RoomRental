@@ -1,7 +1,8 @@
 import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../../../service/auth/auth.service';
 
 interface Location {
   Id: string;
@@ -39,10 +40,50 @@ export class EditPostComponent {
   ward_name: string = '';
   region: string = '';
 
-  constructor(private _http: HttpClient, private _router: Router) {}
+  postId: number | null = null;
+  room = {
+    id_user: '',
+    id_category: 0,
+    address: {
+      number_house: '',
+      street_name: '',
+      ward: '',
+      district: '',
+      province: '',
+    },
+    title: '',
+    description: '',
+    arge: 0,
+    price: 0,
+    quanity_room: 0,
+    images: [''],
+  };
+
+  constructor(
+    private _http: HttpClient,
+    private _router: Router,
+    private route: ActivatedRoute,
+    private _auth: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.fetchCities();
+    this.route.paramMap.subscribe((params) => {
+      const idParam = params.get('id');
+      if (idParam) {
+        this.postId = +idParam; // Dùng toán tử '+' để ép kiểu về number
+
+        this._auth.Call_API_RoomByID(this.postId).subscribe({
+          next: (response) => {
+            this.room = response.data;
+            console.log('ROOM: ', this.room);
+          },
+          error: (err) => {
+            console.error('Lỗi khi lấy thông tin phòng:', err);
+          },
+        });
+      }
+    });
   }
 
   activeButton: string = 'rent';
@@ -58,7 +99,7 @@ export class EditPostComponent {
   }
 
   fetchCities(): void {
-    this._http.get<Location[]>('public/data.json').subscribe((data) => {
+    this._http.get<Location[]>('data.json').subscribe((data) => {
       this.cities = data;
     });
   }
@@ -171,7 +212,7 @@ export class EditPostComponent {
   }
 
   imageSrc: string | ArrayBuffer | null = null;
-  imageSrcs: string[] = []; // Mảng lưu trữ các hình ảnh đã tải lên
+  imageSrcs: string[] = [];
 
   // Hàm xử lý khi người dùng chọn tệp
   onFilesSelected(event: any): void {

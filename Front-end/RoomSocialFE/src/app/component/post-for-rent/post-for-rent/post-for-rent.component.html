@@ -7,9 +7,25 @@
   </head>
   <body>
     <div class="container">
+      <div class="sidebar">
+        <div class="name">
+          <img src="{{ img_avt }}" class="img-avatar" />
+          <p>{{ fullName }}</p>
+        </div>
+        <div class="negative">
+          <div class="title">
+            <img src="/post-manage.png" />
+            <p>Quản lý tin đăng</p>
+          </div>
+          <div class="negative-detail">
+            <a href="">Đăng tin mới</a>
+            <a [routerLink]="'/list-post'">Danh sách tin đăng</a>
+          </div>
+        </div>
+      </div>
       <div class="form">
         <form class="row g-3 form1">
-          <p>Chỉnh sửa thông tin</p>
+          <p>Thông tin cơ bản</p>
           <div class="btn-group" role="group" aria-label="Basic example">
             <button
               class="btn"
@@ -34,18 +50,29 @@
           </div>
           <div class="col-md-12" *ngIf="isType">
             <label for="inputType" class="form-label">Loại bất động sản</label>
-            <select id="inputType" class="form-select">
-              <option selected value="Phòng trọ">Phòng trọ</option>
-              <option value="Nhà nguyên căn">Nhà nguyên căn</option>
+            <select
+              id="inputType"
+              class="form-select"
+              required
+              [(ngModel)]="selectedCategory"
+              (change)="onCategoryChange($event)"
+            >
+              <option
+                *ngFor="let category of listCategory"
+                [value]="category.id"
+                name="category.name"
+              >
+                {{ category.name }}
+              </option>
             </select>
           </div>
           <div class="col-md-6">
             <label for="inputProvince" class="form-label">Tỉnh/Thành</label>
             <select
               name="city"
+              required
               class="form-select"
               [(ngModel)]="selected_city"
-              value="room.address.province"
               (change)="onCityChange($event)"
             >
               <option value="" selected>Chọn tỉnh thành</option>
@@ -58,6 +85,7 @@
             <label for="inputDistrict" class="form-label">Quận/Huyện</label>
             <select
               name="district"
+              required
               class="form-select"
               [(ngModel)]="selected_district"
               (change)="onDistrictChange($event)"
@@ -72,6 +100,7 @@
             <label for="inputDirection" class="form-label">Phường/Xã</label>
             <select
               name="ward"
+              required
               class="form-select"
               [(ngModel)]="selected_ward"
               (change)="onWardChange($event)"
@@ -88,6 +117,7 @@
               class="input-ward"
               type="text"
               name="street"
+              required
               [(ngModel)]="street"
               placeholder="Nhập tên đường phố"
               [disabled]="!selected_ward"
@@ -98,6 +128,7 @@
             <label for="inputApartment_number" class="form-label">Số nhà</label>
             <input
               name="number_house"
+              required
               [(ngModel)]="number_house"
               type="number"
               class="form-control"
@@ -123,25 +154,26 @@
         <form class="row g-3 form2">
           <p>Thông tin bài viết</p>
           <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label"
-              >Tiêu đề</label
-            >
+            <label class="form-label">Tiêu đề</label>
             <textarea
               class="form-control"
-              id="exampleFormControlTextarea1"
               rows="1"
+              required
+              name="title"
+              value="title"
+              [(ngModel)]="title"
             ></textarea>
             <p>Tối thiểu 30 ký tự, tối đa 99 ký tự</p>
           </div>
 
           <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label"
-              >Mô tả</label
-            >
+            <label class="form-label">Mô tả</label>
             <textarea
               class="form-control"
-              id="exampleFormControlTextarea1"
               rows="3"
+              name="des"
+              required
+              [(ngModel)]="description"
             ></textarea>
             <p>Tối thiểu 30 ký tự, tối đa 3000 ký tự</p>
           </div>
@@ -156,6 +188,8 @@
                 type="number"
                 class="form-control"
                 name="acreage"
+                required
+                [(ngModel)]="arge"
                 id="basic-url"
                 placeholder="Nhập diện tích"
                 aria-describedby="basic-addon3 basic-addon4"
@@ -171,12 +205,22 @@
               <input
                 type="number"
                 name="price"
+                required
                 class="form-control"
                 id="basic-url"
+                [(ngModel)]="price"
                 placeholder="Nhập giá tiền"
                 aria-describedby="basic-addon3 basic-addon4"
               />
               <span class="input-group-text" id="basic-addon3">VND</span>
+            </div>
+          </div>
+          <div class="mb-3 number-room">
+            <label>Số phòng ngủ</label>
+            <div class="quantity-input">
+              <button (click)="decreaseQuantity()">-</button>
+              <p [(ngModel)]="quantity" name="quantity">{{ quantity }}</p>
+              <button (click)="increaseQuantity()">+</button>
             </div>
           </div>
         </form>
@@ -195,6 +239,7 @@
             <input
               type="file"
               name="img"
+              required
               id="fileInput"
               (change)="onFilesSelected($event)"
               multiple
@@ -208,7 +253,7 @@
               >
                 <img [src]="image" alt="Image" class="uploaded-image" />
                 <button class="delete-btn" (click)="removeImage(i)">
-                  <img src="/public/icon_x.png" />
+                  <img src="/icon_x.png" />
                 </button>
               </div>
             </div>
@@ -223,6 +268,7 @@
               class="form-control"
               name="name-contact"
               id="inputContact"
+              value="{{ name_contact }}"
               readonly
             />
             <span>
@@ -236,15 +282,15 @@
               class="form-control"
               name="phonenumber_contact"
               id="inputPhone"
+              value="{{ phone_contact }}"
               readonly
             />
           </div>
         </form>
         <div class="btn_submit">
-          <button class="cancel">
-            <a routerLink="/list-post">Thoát</a>
+          <button (click)="submitPost()">
+            Đăng tin<i class="bi bi-arrow-right-short icon2"></i>
           </button>
-          <button>Cập nhật</button>
         </div>
       </div>
     </div>
