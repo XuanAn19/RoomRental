@@ -18,21 +18,6 @@ namespace RoomSocialBE.Authentication
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-
-            builder.Entity<Room>()
-               .HasOne(r => r.User)
-               .WithMany(u => u.Rooms)
-               .HasForeignKey(r => r.id_user);
-
-            builder.Entity<Room>()
-                .HasOne(r => r.Address)
-                .WithMany(a => a.Rooms)
-                .HasForeignKey(r => r.id_adress);
-
-            builder.Entity<Room>()
-                .HasOne(r => r.Category)
-                .WithMany(c => c.Rooms)
-                .HasForeignKey(r => r.id_category);
         }
     }
 }
