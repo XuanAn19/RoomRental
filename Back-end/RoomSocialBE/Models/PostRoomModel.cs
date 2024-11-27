@@ -4,7 +4,6 @@ namespace RoomSocialBE.Models
 {
     public class PostRoomModel
     {
-
         [Required(ErrorMessage = "id_user is required")]
         public string id_user { get; set; }
 
