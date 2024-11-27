@@ -1,7 +1,10 @@
-﻿namespace RoomSocialBE.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace RoomSocialBE.Models
 {
     public class Address
     {
+        [Key]
         public int id { get; set; }
         public int number_house { get; set; }
         public string street_name { get; set; }
