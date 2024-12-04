@@ -1,5 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -28,26 +29,14 @@ export class TokenStoreService {
   public getUser(): any {
     if (isPlatformBrowser(this.platformId)) {
       const user = sessionStorage.getItem(this.USER_KEY);
-      if (user) {
-        try {
-          return JSON.parse(user); // Thử parse nếu có giá trị
-        } catch (error) {
-          console.error('Error parsing user from sessionStorage:', error);
-          return null; // Nếu có lỗi khi parse, trả về null
-        }
-      }
-      return null; // Nếu không có giá trị, trả về null
+      return user ? JSON.parse(user) : null;
     }
     return null;
   }
 
   public setUser(user: any): void {
     if (isPlatformBrowser(this.platformId)) {
-      if (user) {
-        sessionStorage.setItem(this.USER_KEY, JSON.stringify(user));
-      } else {
-        console.warn('Attempted to store undefined or null user data');
-      }
+      sessionStorage.setItem(this.USER_KEY, JSON.stringify(user));
     }
   }
 

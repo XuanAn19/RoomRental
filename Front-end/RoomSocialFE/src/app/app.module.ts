@@ -12,7 +12,7 @@ import { RegisterLandlordComponent } from './UserManagement/register-landlord/re
 import { HeaderComponent } from './component/header/header.component';
 import { RegisterLoginComponent } from './component/register-login/register-login.component';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {
   HTTP_INTERCEPTORS,
@@ -26,6 +26,7 @@ import { ListPostComponent } from './component/list-post/list-post/list-post.com
 import { EditPostComponent } from './component/edit-post/edit-post/edit-post.component';
 import { TokenStoreService } from './service/token-store/token-store.service';
 import { MyInterceptorService } from './service/my-interceptor/my-interceptor.service';
+import { SidebarComponent } from './UserManagement/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MyInterceptorService } from './service/my-interceptor/my-interceptor.se
     ListPostComponent,
     EditPostComponent,
     RegisterLoginComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,7 @@ import { MyInterceptorService } from './service/my-interceptor/my-interceptor.se
     RouterModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [
     // provideHttpClient(withFetch()),
