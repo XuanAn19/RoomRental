@@ -12,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));  // Đăng ký profile ánh xạ
 
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -69,7 +70,6 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"]))
     };
 });
-
 
 var app = builder.Build();
 
