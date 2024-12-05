@@ -23,5 +23,6 @@ namespace RoomSocialBE.Models
         public ApplicationUser User { get; set; }
         public Address Address { get; set; }
         public Category Category { get; set; }
+        public ICollection<BookMark>? bookMarks { get; set; }
     }
 }

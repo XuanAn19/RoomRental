@@ -1,12 +1,14 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using RoomSocialBE.Authentication;
 using RoomSocialBE.DTOs;
 using RoomSocialBE.Models;
 using System.Linq;
 using System.Threading.Tasks;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace RoomSocialBE.Controllers
 {
 	[Route("api/[controller]")]
@@ -19,7 +21,7 @@ namespace RoomSocialBE.Controllers
 		public HomeController(ApplicationDbContext dataContext, IMapper mapper)
 		{
 			_dataContext = dataContext;
-			_mapper = mapper; 
+			_mapper = mapper;
 		}
 
 		[HttpGet]
@@ -37,7 +39,7 @@ namespace RoomSocialBE.Controllers
 				return NotFound("No data found");
 			}
 
-		
+
 			if (!string.IsNullOrEmpty(search.SearchName))
 			{
 				data = data.Where(c => c.title.Contains(search.SearchName) || c.description.Contains(search.SearchName));
@@ -157,14 +159,14 @@ namespace RoomSocialBE.Controllers
 				status = r.status,
 				user = new ApplicationUser
 				{
-					Id  = r.User.Id,
+					Id = r.User.Id,
+
 					UserName = r.User.UserName,
 					Email = r.User.Email
 				},
 				address = new Address
 				{
 					id = r.Address.id,
-					
 				},
 				category = new Category
 				{
@@ -177,5 +179,57 @@ namespace RoomSocialBE.Controllers
 			return Ok(rooms);
 		}
 
-	}
+		[HttpGet("find-roommates")]
+		public async Task<ActionResult<List<RoomDTO>>> GetRoommatePosts()
+		{
+            var categoryName = "Tìm bạn ở ghép";
+			var category = await _dataContext.Categories.FirstOrDefaultAsync(c => c.name == categoryName);
+            if (category == null)
+            {
+                return NotFound("Category " + categoryName +" not found.");
+            }
+            var rooms = await _dataContext.Rooms
+				.Include(r => r.User)  
+				.Include(r => r.Address) 
+				.Include(r => r.Category)  
+				.Where(r => r.id_category == category.id && r.status == true) 
+				.OrderByDescending(r => r.created_day)
+                .Select(r => new RoomDTO
+                {
+                    id = r.id,
+                    id_user = r.id_user,
+                    id_address = r.id_adress,
+                    id_category = r.id_category,
+                    title = r.title,
+                    description = r.description,
+                    arge = r.arge,
+                    price = r.price,
+                    quantity_room = r.quantity_room,
+                    images = r.images,
+                    create_day = r.created_day,
+                    status = r.status,
+                    user = new ApplicationUser
+                    {
+                        Id = r.User.Id,
+                        UserName = r.User.UserName,
+                        Email = r.User.Email
+                    },
+                    address = new Address
+                    {
+                        id = r.Address.id,
+
+                    },
+                    category = new Category
+                    {
+                        id = r.Category.id,
+                        name = r.Category.name
+                    }
+                })
+                .ToListAsync();
+
+            if (rooms == null || rooms.Count == 0 || !rooms.Any()) return BadRequest("Rooms not found");
+            
+            return Ok(rooms);
+        }
+    }
 }
