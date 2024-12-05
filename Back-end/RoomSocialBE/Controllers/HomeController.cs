@@ -74,55 +74,55 @@ namespace RoomSocialBE.Controllers
 						a.Address.street_name.Contains(search.Address)
 					);
 			}
-			/*
-						if (data.Count < 5)
-						{
+/*
+			if (data.Count < 5)
+			{
+			
+				var additionalData = new List<Room>();
 
-							var additionalData = new List<Room>();
+				if (!string.IsNullOrEmpty(search.SearchName))
+				{
+					additionalData = _dataContext.Rooms
+						.Where(c => c.title.Contains(search.SearchName) || c.description.Contains(search.SearchName))
+						.Include(r => r.User)
+						.Include(r => r.Address)
+						.Include(r => r.Category)
+						.ToList();
+				}
 
-							if (!string.IsNullOrEmpty(search.SearchName))
-							{
-								additionalData = _dataContext.Rooms
-									.Where(c => c.title.Contains(search.SearchName) || c.description.Contains(search.SearchName))
-									.Include(r => r.User)
-									.Include(r => r.Address)
-									.Include(r => r.Category)
-									.ToList();
-							}
+				if (search.To.HasValue)
+				{
+					additionalData.AddRange(_dataContext.Rooms
+						.Where(p => p.price <= (search.To.Value * 2))
+						.Include(r => r.User)
+						.Include(r => r.Address)
+						.Include(r => r.Category)
+						.ToList());
+				}
 
-							if (search.To.HasValue)
-							{
-								additionalData.AddRange(_dataContext.Rooms
-									.Where(p => p.price <= (search.To.Value * 2))
-									.Include(r => r.User)
-									.Include(r => r.Address)
-									.Include(r => r.Category)
-									.ToList());
-							}
+				if (search.ArceTo.HasValue)
+				{
+					additionalData.AddRange(_dataContext.Rooms
+						.Where(p => p.arge <= (search.ArceTo.Value * 1.5))
+						.Include(r => r.User)
+						.Include(r => r.Address)
+						.Include(r => r.Category)
+						.ToList());
+				}
 
-							if (search.ArceTo.HasValue)
-							{
-								additionalData.AddRange(_dataContext.Rooms
-									.Where(p => p.arge <= (search.ArceTo.Value * 1.5))
-									.Include(r => r.User)
-									.Include(r => r.Address)
-									.Include(r => r.Category)
-									.ToList());
-							}
+				
+				var resultSet = data.Concat(additionalData).Distinct().ToList();
 
+				// Đảm bảo số lượng kết quả đủ 5
+				if (resultSet.Count < 5)
+				{
+					resultSet.AddRange(additionalData.Take(5 - resultSet.Count));
+				}
 
-							var resultSet = data.Concat(additionalData).Distinct().ToList();
-
-							// Đảm bảo số lượng kết quả đủ 5
-							if (resultSet.Count < 5)
-							{
-								resultSet.AddRange(additionalData.Take(5 - resultSet.Count));
-							}
-
-							data = resultSet.ToList();
-						}
-			*/
-
+				data = resultSet.ToList();
+			}
+*/
+			
 			switch (search.SortBy.ToLower())
 			{
 				case "price":
@@ -160,13 +160,13 @@ namespace RoomSocialBE.Controllers
 				user = new ApplicationUser
 				{
 					Id = r.User.Id,
+
 					UserName = r.User.UserName,
 					Email = r.User.Email
 				},
 				address = new Address
 				{
 					id = r.Address.id,
-
 				},
 				category = new Category
 				{

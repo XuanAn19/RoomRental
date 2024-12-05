@@ -1,0 +1,88 @@
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.background-left,
+.background-right {
+  position: absolute;
+  top: 0;
+  z-index: -1; /* Đảm bảo hình ảnh nền không đè lên các phần tử khác */
+}
+
+.background-left {
+  left: 0;
+  width: 40%;
+  height: 100%;
+  object-fit: cover; /* Giữ tỷ lệ hình ảnh phù hợp với khung */
+}
+
+.background-right {
+  right: 0;
+  width: 55%;
+  height: 100%;
+  object-fit: cover; /* Giữ tỷ lệ hình ảnh phù hợp với khung */
+}
+
+h2 {
+  text-align: left;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  z-index: 1;
+}
+
+.form-verify {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px; /* Giới hạn chiều rộng tối đa của form */
+  padding: 20px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8); /* Màu nền trong suốt nhẹ */
+  text-align: center;
+}
+
+input[type="text"],
+input[type="submit"] {
+  /* width: 100%; */
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.submit {
+  text-align: right;
+}
+
+input[type="submit"] {
+  width: 30%;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+input[type="text"]:focus,
+input[type="submit"]:focus {
+  outline: none;
+  border-color: #4caf50;
+}

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="name">
+          <img src="{{ img_avt }}" class="img-avatar" />
+          <p>{{ fullName }}</p>
+        </div>
+        <div class="negative">
+          <div class="title">
+            <img src="/post-manage.png" />
+            <p>Quản lý tin đăng</p>
+          </div>
+          <div class="negative-detail">
+            <a href="">Đăng tin mới</a>
+            <a [routerLink]="'/list-post'">Danh sách tin đăng</a>
+          </div>
+        </div>
+      </div>
+      <div class="form">
+        <form class="row g-3 form1">
+          <p>Thông tin cơ bản</p>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button
+              class="btn"
+              [ngClass]="{
+                btn1: activeButton === 'find-roommate',
+                btn2: activeButton !== 'find-roommate'
+              }"
+              (click)="click_Status_Post('find-roommate')"
+            >
+              Tìm người ở ghép
+            </button>
+            <button
+              class="btn"
+              [ngClass]="{
+                btn1: activeButton === 'rent',
+                btn2: activeButton !== 'rent'
+              }"
+              (click)="click_Status_Post('rent')"
+            >
+              Cho thuê
+            </button>
+          </div>
+          <div class="col-md-12" *ngIf="isType">
+            <label for="inputType" class="form-label">Loại bất động sản</label>
+            <select
+              id="inputType"
+              class="form-select"
+              required
+              [(ngModel)]="selectedCategory"
+              (change)="onCategoryChange($event)"
+            >
+              <option
+                *ngFor="let category of listCategory"
+                [value]="category.id"
+                name="category.name"
+              >
+                {{ category.name }}
+              </option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="inputProvince" class="form-label">Tỉnh/Thành</label>
+            <select
+              name="city"
+              required
+              class="form-select"
+              [(ngModel)]="selected_city"
+              (change)="onCityChange($event)"
+            >
+              <option value="" selected>Chọn tỉnh thành</option>
+              <option *ngFor="let city of cities" [value]="city.Id">
+                {{ city.Name }}
+              </option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="inputDistrict" class="form-label">Quận/Huyện</label>
+            <select
+              name="district"
+              required
+              class="form-select"
+              [(ngModel)]="selected_district"
+              (change)="onDistrictChange($event)"
+            >
+              <option value="" selected>Chọn quận huyện</option>
+              <option *ngFor="let district of districts" [value]="district.Id">
+                {{ district.Name }}
+              </option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="inputDirection" class="form-label">Phường/Xã</label>
+            <select
+              name="ward"
+              required
+              class="form-select"
+              [(ngModel)]="selected_ward"
+              (change)="onWardChange($event)"
+            >
+              <option value="" selected>Chọn quận huyện</option>
+              <option *ngFor="let ward of wards" [value]="ward.Id">
+                {{ ward.Name }}
+              </option>
+            </select>
+          </div>
+          <div class="col-md-6 ward">
+            <label for="inputStresst" class="form-label">ĐườngPhố</label>
+            <input
+              class="input-ward"
+              type="text"
+              name="street"
+              required
+              [(ngModel)]="street"
+              placeholder="Nhập tên đường phố"
+              [disabled]="!selected_ward"
+              (ngModelChange)="updateFullAddress()"
+            />
+          </div>
+          <div class="col-md-2">
+            <label for="inputApartment_number" class="form-label">Số nhà</label>
+            <input
+              name="number_house"
+              required
+              [(ngModel)]="number_house"
+              type="number"
+              class="form-control"
+              id="inputApartment_number"
+              min="0"
+              [disabled]="!street"
+              (ngModelChange)="updateFullAddress()"
+            />
+          </div>
+          <div class="col-md-10">
+            <label for="inputAddress" class="form-label"
+              >Địa chỉ chính xác</label
+            >
+            <input
+              name="region"
+              type="text"
+              class="form-control"
+              id="inputAddress"
+              value="{{ region }}"
+            />
+          </div>
+        </form>
+        <form class="row g-3 form2">
+          <p>Thông tin bài viết</p>
+          <div class="mb-3">
+            <label class="form-label">Tiêu đề</label>
+            <textarea
+              class="form-control"
+              rows="1"
+              required
+              name="title"
+              value="title"
+              [(ngModel)]="title"
+            ></textarea>
+            <p>Tối thiểu 30 ký tự, tối đa 99 ký tự</p>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Mô tả</label>
+            <textarea
+              class="form-control"
+              rows="3"
+              name="des"
+              required
+              [(ngModel)]="description"
+            ></textarea>
+            <p>Tối thiểu 30 ký tự, tối đa 3000 ký tự</p>
+          </div>
+        </form>
+        <form class="row g-3 form3">
+          <p>Thông tin bất động sản</p>
+
+          <div class="mb-3">
+            <label for="basic-url" class="form-label">Diện tích</label>
+            <div class="input-group">
+              <input
+                type="number"
+                class="form-control"
+                name="acreage"
+                required
+                [(ngModel)]="arge"
+                id="basic-url"
+                placeholder="Nhập diện tích"
+                aria-describedby="basic-addon3 basic-addon4"
+              />
+              <span class="input-group-text" id="basic-addon3"
+                >m <sup>2</sup></span
+              >
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="basic-url" class="form-label">Giá tiền</label>
+            <div class="input-group">
+              <input
+                type="number"
+                name="price"
+                required
+                class="form-control"
+                id="basic-url"
+                [(ngModel)]="price"
+                placeholder="Nhập giá tiền"
+                aria-describedby="basic-addon3 basic-addon4"
+              />
+              <span class="input-group-text" id="basic-addon3">VND</span>
+            </div>
+          </div>
+          <div class="mb-3 number-room">
+            <label>Số phòng ngủ</label>
+            <div class="quantity-input">
+              <button (click)="decreaseQuantity()">-</button>
+              <p [(ngModel)]="quantity" name="quantity">{{ quantity }}</p>
+              <button (click)="increaseQuantity()">+</button>
+            </div>
+          </div>
+        </form>
+        <form class="row g-3 form4">
+          <p>Hình ảnh & video</p>
+          <li>Đăng tối thiểu 4 ảnh</li>
+          <li>Hãy dùng ảnh thật, không trùng, không chèn SĐT</li>
+          <li>Mỗi ảnh kích thước tối thiểu 600x600 px, tối đa 15 MB</li>
+          <div class="post_img">
+            <img
+              *ngIf="imageSrcs.length === 0"
+              src="/upload_file.png"
+              alt="Uploaded Image"
+              class="uploaded-img"
+            />
+            <input
+              type="file"
+              name="img"
+              required
+              id="fileInput"
+              (change)="onFilesSelected($event)"
+              multiple
+              accept="image/*"
+              style="display: none"
+            />
+            <div class="image-gallery">
+              <div
+                class="image-container"
+                *ngFor="let image of imageSrcs; let i = index"
+              >
+                <img [src]="image" alt="Image" class="uploaded-image" />
+                <button class="delete-btn" (click)="removeImage(i)">
+                  <img src="/icon_x.png" />
+                </button>
+              </div>
+            </div>
+            <label for="fileInput" class="file-label">Bấm vào để tải tệp</label>
+          </div>
+        </form>
+        <form class="row g-3 form5">
+          <p>Thông tin liên hệ</p>
+          <div class="col-md-6">
+            <label for="inputContact" class="form-label">Tên liên hệ</label>
+            <input
+              class="form-control"
+              name="name-contact"
+              id="inputContact"
+              value="{{ name_contact }}"
+              readonly
+            />
+            <span>
+              <i class="bi bi-exclamation-triangle icon1"></i> Chỉ có thể chỉnh
+              sửa trong hồ sơ cá nhân</span
+            >
+          </div>
+          <div class="col-md-6">
+            <label for="inputPhone" class="form-label">Số điện thoại</label>
+            <input
+              class="form-control"
+              name="phonenumber_contact"
+              id="inputPhone"
+              value="{{ phone_contact }}"
+              readonly
+            />
+          </div>
+        </form>
+        <div class="btn_submit">
+          <button (click)="submitPost()">
+            Đăng tin<i class="bi bi-arrow-right-short icon2"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
