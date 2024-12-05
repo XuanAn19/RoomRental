@@ -190,6 +190,11 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  /* max-width: 400px; */
+  white-space: nowrap;
 }
 
 .image-container {
@@ -266,3 +271,39 @@ p {
   background-color: #e9ecef; /* Đặt màu nền để thể hiện trường không thể chỉnh sửa */
   cursor: default; /* Đổi con trỏ chuột thành dạng mặc định */
 }
+
+
+.number-room {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid rgb(231, 230, 230);
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.quantity-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.quantity-input p {
+  border: 1px solid grey;
+  border-radius: 7px;
+  width: 50px;
+  color: #000;
+  text-align: center;
+}
+
+.quantity-input button {
+  border: none;
+  background-color: #c5c6c6;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+}
+

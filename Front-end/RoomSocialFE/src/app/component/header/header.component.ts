@@ -38,6 +38,7 @@ export class HeaderComponent {
       const payloadObject = JSON.parse(decodedPayload);
 
       // Bước 4: Lấy thông tin họ tên, email từ token
+
       const email =
         payloadObject[
           'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'

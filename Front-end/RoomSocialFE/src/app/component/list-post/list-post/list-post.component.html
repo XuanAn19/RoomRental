@@ -15,6 +15,7 @@
         <div class="negative">
           <div class="title">
             <img src="/public/post-manage.png" />
+
             <p>Quản lý tin đăng</p>
           </div>
           <div class="negative-detail">
@@ -29,6 +30,7 @@
           <div class="filter-group">
             <div class="filter-title">
               <input
+                [(ngModel)]="code"
                 type="text"
                 name="filter-title"
                 placeholder="Tìm theo mã tin, tiêu đề"
@@ -39,6 +41,7 @@
             </div>
             <div class="filter-time">
               <img src="/public/icon-calendar.png" />
+
               <select name="time">
                 <option>Mặc định</option>
                 <option>1 tuần qua</option>
@@ -51,6 +54,7 @@
                 <option>Tất cả</option>
                 <option>Cho thuê</option>
                 <option>Tìm người ở ghép</option>
+
               </select>
             </div>
           </div>
@@ -60,12 +64,14 @@
               (click)="setFilter('all')"
             >
               Tất cả
+
             </button>
             <button
               [ngClass]="selectedFilter === 'showing' ? 'active' : ''"
               (click)="setFilter('showing')"
             >
               Đang hiển thị
+
             </button>
             <button
               [ngClass]="selectedFilter === 'hidden' ? 'active' : ''"
@@ -93,11 +99,13 @@
               </div>
               <div class="address">
                 <img src="/public/icon-address.png" />
+
                 <p>{{ post.address }}</p>
               </div>
               <div class="price-acreage">
                 <p class="price">{{ post.price }}/ tháng</p>
                 <p class="acreage">{{ post.acreage }}m <sup>2</sup></p>
+
               </div>
               <div class="inf-more">
                 <div class="content">
@@ -108,6 +116,7 @@
                   <div class="date">
                     <p>Ngày đăng</p>
                     <p>{{ post.date }}</p>
+
                   </div>
                   <div class="status">
                     <p>Trạng thái</p>
@@ -117,6 +126,7 @@
                       "
                     >
                       {{ post.status }}
+
                     </p>
                   </div>
                 </div>
@@ -128,6 +138,7 @@
                   <div class="edit-post">
                     <button>Sửa tin</button>
                     <img src="/public/icon-edit.png" />
+
                   </div>
                 </div>
               </div>

@@ -6,6 +6,7 @@
 
 body {
   background-color: #f4f3f3;
+  min-height: 500px;
 }
 
 .container {
@@ -83,6 +84,8 @@ body {
 .list {
   border-radius: 5px;
   margin-left: 5px;
+  /* margin: auto; */
+  margin-right: -30px;
 }
 
 .filter {
@@ -98,6 +101,7 @@ body {
 
 .filter h2 {
   font-size: 36px;
+  margin-top: 10px;
 }
 
 .filter-group {
@@ -177,7 +181,7 @@ body {
 .post-detail {
   display: flex;
   justify-content: center;
-  /* height: 100vh; */
+  width: 105%;
 }
 
 .form {
@@ -299,6 +303,10 @@ body {
   border: none;
   border-radius: 5px;
   padding-right: 30px;
+}
+
+.post-detail .inf-more .edit-post button a {
+  text-decoration: none;
 }
 
 .post-detail .inf-more .hide-post img,

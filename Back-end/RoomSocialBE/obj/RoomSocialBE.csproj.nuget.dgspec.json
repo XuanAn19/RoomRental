@@ -1,27 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\RoomSocialBE.csproj": {}
+    "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/RoomSocialBE.csproj": {}
   },
   "projects": {
-    "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\RoomSocialBE.csproj": {
+    "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/RoomSocialBE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\RoomSocialBE.csproj",
+        "projectUniqueName": "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/RoomSocialBE.csproj",
         "projectName": "RoomSocialBE",
-        "projectPath": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\RoomSocialBE.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\obj\\",
+        "projectPath": "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/RoomSocialBE.csproj",
+        "packagesPath": "/Users/minhchan/.nuget/packages/",
+        "outputPath": "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/minhchan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,12 +33,33 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "AutoMapper.Collection": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "AutoMapper.Extensions.ExpressionMapping": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "MailKit": {
               "target": "Package",
               "version": "[4.8.0, )"
@@ -55,6 +75,16 @@
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -98,7 +128,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
