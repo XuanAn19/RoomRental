@@ -12,13 +12,16 @@ export class TokenStoreService {
 
   public getToken(): string | null {
     if (isPlatformBrowser(this.platformId)) {
-      return sessionStorage.getItem(this.TOKEN_KEY);
+      const token = sessionStorage.getItem(this.TOKEN_KEY); // Lấy token trước
+      console.log('Token from sessionStorage:', token); // In ra console trước khi trả về
+      return token; // Trả về token
     }
     return null;
   }
 
   public setToken(token: string): void {
     if (isPlatformBrowser(this.platformId)) {
+      sessionStorage.removeItem(this.TOKEN_KEY);
       sessionStorage.setItem(this.TOKEN_KEY, token);
     }
   }

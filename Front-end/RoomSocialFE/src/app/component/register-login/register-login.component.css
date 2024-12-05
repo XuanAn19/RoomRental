@@ -141,10 +141,14 @@ a:hover {
   display: block;
   width: 230px;
   height: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   border: none;
   border-radius: 5px;
   padding-left: 10px;
+}
+
+.form-register div p {
+  margin-bottom: -10px;
 }
 
 .form-login input {
