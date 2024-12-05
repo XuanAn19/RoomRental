@@ -25,6 +25,7 @@ interface Ward {
   Name: string;
 }
 
+
 export interface Category {
   id: number;
   name: string;
@@ -37,6 +38,7 @@ interface Address {
   district: string;
   province: string;
 }
+
 
 @Component({
   selector: 'app-post-for-rent',
@@ -168,7 +170,8 @@ export class PostForRentComponent {
   }
 
   fetchCities(): void {
-    this._http.get<Location[]>('data.json').subscribe((data) => {
+    this._http.get<Location[]>('public/data.json').subscribe((data) => {
+
       this.cities = data;
     });
   }
@@ -190,8 +193,10 @@ export class PostForRentComponent {
       } else if (this.city_name.startsWith('Thành phố ')) {
         this.city_name = this.city_name.replace('Thành phố ', '');
       }
+
       this.street = '';
       this.number_house = '';
+
       this.region = this.city_name;
       this.city_name = this.removeVietnameseTones(this.city_name);
       if (selected_city) {
@@ -221,8 +226,10 @@ export class PostForRentComponent {
         } else if (this.district_name.startsWith('Thị xã ')) {
           this.district_name = this.district_name.replace('Thị xã ', '');
         }
+
         this.street = '';
         this.number_house = '';
+
         this.region = this.district_name + ' - ' + this.city_name;
         this.district_name = this.removeVietnameseTones(this.district_name);
         if (selected_district) {
@@ -249,6 +256,7 @@ export class PostForRentComponent {
         } else if (this.ward_name.startsWith('Xã ')) {
           this.ward_name = this.ward_name.replace('Xã ', '');
         }
+
         this.street = '';
         this.number_house = '';
         this.region =

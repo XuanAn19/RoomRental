@@ -16,6 +16,7 @@ export class HeaderComponent {
   constructor(private _token: TokenStoreService) {}
 
   ngOnInit(): void {
+    // Lấy token từ TokenStoreService khi component khởi tạo
     this.token = this._token.getToken();
     this.userInfo = this.getUserInfoFromToken(this.token);
     console.log('Thông tin người dùng:', this.userInfo);
@@ -29,9 +30,14 @@ export class HeaderComponent {
 
   getUserInfoFromToken(token: string | null): any {
     if (token) {
+      // Bước 1: Lấy phần payload (phần giữa dấu chấm)
       const payload = token.split('.')[1];
+      // Bước 2: Giải mã Base64 thành chuỗi JSON
       const decodedPayload = atob(payload);
+      // Bước 3: Chuyển thành object JSON
       const payloadObject = JSON.parse(decodedPayload);
+
+      // Bước 4: Lấy thông tin họ tên, email từ token
 
       const email =
         payloadObject[

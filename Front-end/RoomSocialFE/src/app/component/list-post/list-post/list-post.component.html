@@ -9,12 +9,13 @@
     <div class="container">
       <div class="sidebar">
         <div class="name">
-          <img src="{{ img_avt }}" class="img-avatar" />
-          <p>{{ fullName }}</p>
+          <img src="" class="img-avatar" />
+          <p>Name</p>
         </div>
         <div class="negative">
           <div class="title">
-            <img src="/post-manage.png" />
+            <img src="/public/post-manage.png" />
+
             <p>Quản lý tin đăng</p>
           </div>
           <div class="negative-detail">
@@ -34,12 +35,13 @@
                 name="filter-title"
                 placeholder="Tìm theo mã tin, tiêu đề"
               />
-              <button (click)="filterCode()">
-                <img src="/icon-search.png" />
+              <button>
+                <img src="/public/icon-search.png" />
               </button>
             </div>
             <div class="filter-time">
-              <img src="/icon-calendar.png" />
+              <img src="/public/icon-calendar.png" />
+
               <select name="time">
                 <option>Mặc định</option>
                 <option>1 tuần qua</option>
@@ -47,11 +49,12 @@
               </select>
             </div>
             <div class="filter-post">
-              <img src="/post-manage.png" />
-              <select name="post" (change)="setFilterCategory($event)">
-                <option value="all">Tất cả</option>
-                <option value="rent">Cho thuê</option>
-                <option value="find">Tìm người ở ghép</option>
+              <img src="/public/post-manage.png" />
+              <select name="post">
+                <option>Tất cả</option>
+                <option>Cho thuê</option>
+                <option>Tìm người ở ghép</option>
+
               </select>
             </div>
           </div>
@@ -60,28 +63,28 @@
               [ngClass]="selectedFilter === 'all' ? 'active' : ''"
               (click)="setFilter('all')"
             >
-              Tất cả ({{ totalPost }})
+              Tất cả
+
             </button>
             <button
               [ngClass]="selectedFilter === 'showing' ? 'active' : ''"
               (click)="setFilter('showing')"
             >
-              Đang hiển thị ({{ countVisible }})
+              Đang hiển thị
+
             </button>
             <button
               [ngClass]="selectedFilter === 'hidden' ? 'active' : ''"
               (click)="setFilter('hidden')"
             >
-              Đã ẩn ({{ countHidden }})
+              Đã ẩn
             </button>
           </div>
         </div>
-        <div class="post-detail" *ngFor="let post of filteredPosts">
+        <div class="post-detail" *ngFor="let post of posts">
           <div class="form">
             <div class="img">
-              <div *ngFor="let image of post.images">
-                <img [src]="'/' + image" alt="Image" />
-              </div>
+              <img src="/public/{{ post.img }}" />
             </div>
             <div class="inf">
               <div class="title">
@@ -95,44 +98,47 @@
                 </p>
               </div>
               <div class="address">
-                <img src="/icon-address.png" />
+                <img src="/public/icon-address.png" />
+
                 <p>{{ post.address }}</p>
               </div>
               <div class="price-acreage">
                 <p class="price">{{ post.price }}/ tháng</p>
-                <p class="acreage">{{ post.arge }}m <sup>2</sup></p>
+                <p class="acreage">{{ post.acreage }}m <sup>2</sup></p>
+
               </div>
               <div class="inf-more">
                 <div class="content">
                   <div class="code">
                     <p>Mã tin</p>
-                    <p>{{ post.id }}</p>
+                    <p>{{ post.code }}</p>
                   </div>
                   <div class="date">
                     <p>Ngày đăng</p>
-                    <p>{{ post.created_day | date : "dd/MM/yyyy" }}</p>
+                    <p>{{ post.date }}</p>
+
                   </div>
                   <div class="status">
                     <p>Trạng thái</p>
                     <p
                       [ngClass]="
-                        post.status.toString() === 'true' ? 'show' : 'false'
+                        post.status === 'Đang hiển thị' ? 'show' : 'hide'
                       "
                     >
-                      {{ post.status ? "Đang hiển thị" : "Đã ẩn" }}
+                      {{ post.status }}
+
                     </p>
                   </div>
                 </div>
                 <div class="button">
                   <div class="hide-post">
-                    <button (click)="hidePost(post.id)">Ẩn tin</button>
-                    <img src="/icon-hide.png" />
+                    <button>Ẩn tin</button>
+                    <img src="/public/icon-hide.png" />
                   </div>
                   <div class="edit-post">
-                    <button>
-                      <a [routerLink]="['/edit-post', post.id]">Sửa tin</a>
-                    </button>
-                    <img src="/icon-edit.png" />
+                    <button>Sửa tin</button>
+                    <img src="/public/icon-edit.png" />
+
                   </div>
                 </div>
               </div>

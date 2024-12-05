@@ -180,6 +180,7 @@ body {
 }
 .post-detail {
   display: flex;
+  justify-content: center;
   width: 105%;
 }
 
@@ -274,7 +275,7 @@ body {
   gap: 40px;
 }
 
-.post-detail .inf-more .status .false {
+.post-detail .inf-more .status .hide {
   color: red;
 }
 

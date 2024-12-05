@@ -190,6 +190,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+
   overflow-x: auto;
   scroll-behavior: smooth;
   /* max-width: 400px; */
@@ -271,6 +272,7 @@ p {
   cursor: default; /* Đổi con trỏ chuột thành dạng mặc định */
 }
 
+
 .number-room {
   display: flex;
   justify-content: space-between;
@@ -304,3 +306,4 @@ p {
   height: 30px;
   border-radius: 7px;
 }
+
