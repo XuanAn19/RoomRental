@@ -24,5 +24,6 @@ namespace RoomSocialBE.Authentication
         public bool? is_true { get; set; }
 
         public ICollection<Room>? Rooms { get; set; }
+        public ICollection<BookMark>? bookMarks { get; set; }
     }
 }

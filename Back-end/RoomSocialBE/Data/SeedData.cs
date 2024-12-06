@@ -81,32 +81,40 @@ namespace RoomSocialBE.Data
                     context.Categories.AddRange(
                         new Category { name = "Nhà cấp 4" },
                         new Category { name = "Nhà 3 lầu" },
-                        new Category { name = "Biệt thự" }
+                        new Category { name = "Biệt thự" },
+                        new Category { name = "Tìm ở ghép" }
+
                     );
                     await context.SaveChangesAsync();
                 }
 
-                if (!context.Addresses.Any())
-                {
-                    context.Addresses.AddRange(
-                        new Address { number_house = 15, street_name = "Hàn Mặc Tử", ward = "Phường Ghềnh Ráng", district = "TP Quy Nhơn", province = "Bình Định" },
-                        new Address { number_house = 17, street_name = "Ngô Mây", ward = "Phường Ngô Mây", district = "TP Quy Nhơn", province = "Bình Định" },
-                        new Address { number_house = 20, street_name = "Phạm Hùng", ward = "Phường Trần Phú", district = "TP Quy Nhơn", province = "Bình Định" }
-                    );
-                    await context.SaveChangesAsync();
-                }
+			if (!context.Addresses.Any())
+			{
+				var addresses = new List<Address>
+	            {
+		            new Address { number_house = 15, street_name = "Hàn Mặc Tử", ward = "Phường Ghềnh Ráng", district = "TP Quy Nhơn", province = "Bình Định" },
+		            new Address { number_house = 17, street_name = "Ngô Mây", ward = "Phường Ngô Mây", district = "TP Quy Nhơn", province = "Bình Định" },
+		            new Address { number_house = 20, street_name = "Phạm Hùng", ward = "Phường Trần Phú", district = "TP Quy Nhơn", province = "Bình Định" },
+                     new Address { number_house = 10, street_name = "Nguyễn Đình Thụ", ward = "Phường Nguyễn Văn Cừ", district = "TP Quy Nhơn", province = "Bình Định" }
+                };
 
-                if (!context.Rooms.Any())
+				context.Addresses.AddRange(addresses);
+				await context.SaveChangesAsync();
+			}
+
+			if (!context.Rooms.Any())
                 {
                     var category1 = context.Categories.FirstOrDefault(c => c.name == "Nhà cấp 4");
                     var category2 = context.Categories.FirstOrDefault(c => c.name == "Nhà 3 lầu");
                     var category3 = context.Categories.FirstOrDefault(c => c.name == "Biệt thự");
+                    var category4 = context.Categories.FirstOrDefault(c => c.name == "Tìm ở ghép");
 
                     var address1 = context.Addresses.FirstOrDefault(a => a.number_house == 15);
                     var address2 = context.Addresses.FirstOrDefault(a => a.number_house == 17);
                     var address3 = context.Addresses.FirstOrDefault(a => a.number_house == 20);
+                    var address4 = context.Addresses.FirstOrDefault(a => a.number_house == 10);
 
-                    var user = await userManager.FindByEmailAsync("user@gmail.com");
+                var user = await userManager.FindByEmailAsync("user@gmail.com");
 
                 context.Rooms.AddRange(
                     new Room
@@ -144,6 +152,20 @@ namespace RoomSocialBE.Data
                         description = "Biệt thự tráng P2",
                         arge = 49.53,
                         price = 10000,
+                        quantity_room = 2,
+                        images = [],
+                        created_day = DateTime.Now,
+                        status = true
+                    },
+                    new Room
+                    {
+                        id_adress = address4.id,
+                        id_category = category4.id,
+                        id_user = user.Id,
+                        title = "Tìm bạn owg ghép",
+                        description = "Trọ đang trống 1 slot",
+                        arge = 4.2,
+                        price = 20000,
                         quantity_room = 2,
                         images = [],
                         created_day = DateTime.Now,

@@ -1,9 +1,11 @@
 ﻿using RoomSocialBE.Authentication;
+using System.ComponentModel.DataAnnotations;
 
 namespace RoomSocialBE.Models
 {
     public class Room
     {
+        [Key]
         public int id { get; set; }
         public string id_user { get; set; }
         public int id_adress { get; set; }
@@ -21,5 +23,6 @@ namespace RoomSocialBE.Models
         public ApplicationUser User { get; set; }
         public Address Address { get; set; }
         public Category Category { get; set; }
+        public ICollection<BookMark>? bookMarks { get; set; }
     }
 }

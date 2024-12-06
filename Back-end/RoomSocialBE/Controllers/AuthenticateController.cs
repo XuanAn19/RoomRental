@@ -72,7 +72,8 @@ namespace RoomSocialBE.Controllers
             {
                 new Claim(ClaimTypes.Name, user.UserName),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(ClaimTypes.Email, user.Email)
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim("id",user.Id.ToString()),
             };
 
             foreach (var userRole in userRoles)
@@ -475,6 +476,7 @@ namespace RoomSocialBE.Controllers
 
             var userInfo = new
             {
+                id = user.Id,
                 FullName = user.full_name,
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,

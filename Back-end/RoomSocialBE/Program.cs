@@ -12,7 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));  // Đăng ký profile ánh xạ
 
-// Add services to the container.
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -46,7 +47,20 @@ builder.Services.AddSwaggerGen(opt =>
     });
 });
 
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConnStr")));
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp",
+        policy => policy.WithOrigins("http://localhost:4200")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+
+});
+
+//builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConnStr")));
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseInMemoryDatabase("InMemoryDb"));
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
@@ -70,7 +84,6 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -90,9 +103,28 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("AllowAngularApp");
 app.UseAuthorization();
 
 app.MapControllers();
 
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    await CreateRolesAsync(roleManager);
+}
+
 app.Run();
+
+async Task CreateRolesAsync(RoleManager<IdentityRole> roleManager)
+{
+    string[] roleNames = { "USER", "ADMIN" };
+
+    foreach (var roleName in roleNames)
+    {
+        if (!await roleManager.RoleExistsAsync(roleName))
+        {
+            await roleManager.CreateAsync(new IdentityRole(roleName));
+        }
+    }
+}
