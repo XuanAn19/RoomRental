@@ -1,3 +1,4 @@
+/* Reset & Container */
 * {
   margin: 0;
   padding: 0;
@@ -12,11 +13,6 @@
 /********** Sidebar *****/
 .content {
   display: flex;
-  justify-content: center;
-  height: fit-content;
-  /* align-items: flex-start; Đảm bảo các phần tử ngang hàng */
-  /* margin-top: 25px;
-  padding: 20px; */
 }
 
 .sidebar {
@@ -24,13 +20,114 @@
   height: fit-content;
   padding: 20px;
   background: #fff;
+  color: #131414;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.sidebar,
+.sidebar span,
+.sidebar-links ul,
+.sidebar-links li,
+.sidebar-links a {
+  color: #000;
+}
+
+.sidebar-links ul {
+  font-weight: bold;
+}
+
+.sidebar-links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.profile-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-avatar .avatar-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #4caf50;
+  border-radius: 50%;
+  margin: 0 auto 8px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.avatar-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.avatar-container i {
+  font-size: 40px;
+  color: #73c6d9;
+  position: absolute;
+  z-index: 2;
+}
+.profile-avatar img {
+  /* border-radius: 50%; */
+  z-index: 1;
+}
+
+/* Liệt kê các mục trong sidebar */
+.sidebar-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Mục li */
+.sidebar-links ul {
+  font-size: 16px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-links li {
+  font-size: 16px;
+  padding: 10px 20px;
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-links ul i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.sidebar-links li.sub-link {
+  padding-left: 30px;
+}
+
+/* Mục li hover */
+.sidebar-links li:hover {
+  background-color: #aeb1b4;
+  cursor: pointer;
+}
+
+/* Mục li khi active (được chọn) */
+.sidebar-links li.active {
+  background-color: #aeb1b4;
+}
+
+.sub-link {
+  font-weight: normal;
+  margin-left: 20px;
+}
+
 /* content */
 .profile-container {
-  width: 55%;
+  width: 50%;
   margin: 0 auto;
   padding: 20px;
   background: #fff;
@@ -87,21 +184,20 @@ a[routerLink] {
 
 .avatar-container {
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  border: 2px solid #ccc;
-  border-radius: 5px;
+  /* border-radius: 50%; */
 }
 
 .avatar-container .load-avatar {
   width: 100px;
   height: 100px;
   border-radius: 0;
-  object-fit: cover;
+  object-fit: contain;
   box-shadow: none;
   border: none;
 }
@@ -130,14 +226,6 @@ a[routerLink] {
   cursor: pointer;
   font-size: 14px;
   text-align: center;
-}
-.avatar-container .load-avatar {
-  width: 100%;
-  height: 100%;
-  /* object-fit: contain; Ensure the image is fully visible without being cut off */
-  border-radius: 0;
-  box-shadow: none;
-  border: none;
 }
 
 /*******FORM GROUP*******/
@@ -210,41 +298,8 @@ a[routerLink] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-right: 23px;
 }
 
 .save-button:hover {
   background: #73c6d9;
-}
-.error-message {
-  color: red;
-  font-size: 0.875em;
-}
-
-.avatar-container {
-  position: relative; /* Ensure button is placed relative to this container */
-  display: inline-block;
-}
-
-.remove-avatar-btn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 9px;
-  height: 8px;
-  font-size: 8px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  z-index: 1; /* Ensure the button appears above the image */
-}
-
-.remove-avatar-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
 }

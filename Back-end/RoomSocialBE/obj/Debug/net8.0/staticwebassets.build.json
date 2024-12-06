@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vYMATxGc7g7Zpg/Y5wr4zSpTigskxbxMKt6KZ511RsA=",
+  "Hash": "ZGIFn4A7/AN0dTZXLy59WFiovLV4OS3cVh/gBrgCDGc=",
   "Source": "RoomSocialBE",
   "BasePath": "_content/RoomSocialBE",
   "Mode": "Default",
@@ -8,19 +8,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "RoomSocialBE/wwwroot",
+      "Name": "RoomSocialBE\\wwwroot",
       "Source": "RoomSocialBE",
-      "ContentRoot": "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/wwwroot/",
+      "ContentRoot": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\wwwroot\\",
       "BasePath": "_content/RoomSocialBE",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/wwwroot/images/227f5f93-5167-4287-b0df-599f9becfe5a.jpg",
+      "Identity": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\wwwroot\\images\\227f5f93-5167-4287-b0df-599f9becfe5a.jpg",
       "SourceId": "RoomSocialBE",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/wwwroot/",
+      "ContentRoot": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\wwwroot\\",
       "BasePath": "_content/RoomSocialBE",
       "RelativePath": "images/227f5f93-5167-4287-b0df-599f9becfe5a.jpg",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/227f5f93-5167-4287-b0df-599f9becfe5a.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\227f5f93-5167-4287-b0df-599f9becfe5a.jpg"
     },
     {
-      "Identity": "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/wwwroot/images/51ce614c-4873-454e-9698-74c8fea3c349.jpg",
+      "Identity": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\wwwroot\\images\\51ce614c-4873-454e-9698-74c8fea3c349.jpg",
       "SourceId": "RoomSocialBE",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/wwwroot/",
+      "ContentRoot": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\wwwroot\\",
       "BasePath": "_content/RoomSocialBE",
       "RelativePath": "images/51ce614c-4873-454e-9698-74c8fea3c349.jpg",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/51ce614c-4873-454e-9698-74c8fea3c349.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\51ce614c-4873-454e-9698-74c8fea3c349.jpg"
     },
     {
-      "Identity": "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/wwwroot/images/99702086-cca3-487e-91fd-c3fdfad4e6e0.jpg",
+      "Identity": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\wwwroot\\images\\99702086-cca3-487e-91fd-c3fdfad4e6e0.jpg",
       "SourceId": "RoomSocialBE",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/wwwroot/",
+      "ContentRoot": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\wwwroot\\",
       "BasePath": "_content/RoomSocialBE",
       "RelativePath": "images/99702086-cca3-487e-91fd-c3fdfad4e6e0.jpg",
       "AssetKind": "All",
@@ -71,13 +71,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/99702086-cca3-487e-91fd-c3fdfad4e6e0.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\99702086-cca3-487e-91fd-c3fdfad4e6e0.jpg"
     },
     {
-      "Identity": "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/wwwroot/images/b6f0ebcd-8c5f-4dcb-b127-377009910ffc.jpg",
+      "Identity": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\wwwroot\\images\\b6f0ebcd-8c5f-4dcb-b127-377009910ffc.jpg",
       "SourceId": "RoomSocialBE",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/minhchan/RoomRental/Back-end/RoomSocialBE/wwwroot/",
+      "ContentRoot": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\wwwroot\\",
       "BasePath": "_content/RoomSocialBE",
       "RelativePath": "images/b6f0ebcd-8c5f-4dcb-b127-377009910ffc.jpg",
       "AssetKind": "All",
@@ -90,7 +90,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/b6f0ebcd-8c5f-4dcb-b127-377009910ffc.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\b6f0ebcd-8c5f-4dcb-b127-377009910ffc.jpg"
     }
   ]
 }

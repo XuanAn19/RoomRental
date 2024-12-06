@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../service/auth/auth.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-verify-account',
@@ -10,11 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class VerifyAccountComponent {
   codeVerify: string = '';
   email: string = '';
-  constructor(
-    private route: ActivatedRoute,
-    private _auth: AuthService,
-    private _router: Router
-  ) {}
+  constructor(private route: ActivatedRoute, private _auth: AuthService) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params: { [x: string]: string }) => {
@@ -28,7 +24,6 @@ export class VerifyAccountComponent {
       this._auth.Call_API_VerifyCode(this.email, this.codeVerify).subscribe(
         (actor) => {
           alert('Xác thực thành công');
-          this._router.navigate(['register-login']);
         },
         (error) => {
           console.error('Lỗi:', error);
