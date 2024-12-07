@@ -23,5 +23,27 @@ namespace RoomSocialBE.Controllers
         {
             return await _context.Categories.ToListAsync();
         }
+
+        [HttpGet]
+        public async Task<ActionResult> GetCategoryById(int id)
+        {
+            var category = await _context.Categories.FindAsync(id);
+
+            if (category == null)
+            {
+                return NotFound(new Response
+                {
+                    Status = "Fail",
+                    Message = "Category not found"
+                });
+            }
+
+            return Ok(new Response
+            {
+                Status = "Success",
+                Message = "Category found",
+                Data = category
+            });
+        }
     }
 }

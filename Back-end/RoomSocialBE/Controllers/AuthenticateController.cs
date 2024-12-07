@@ -476,6 +476,7 @@ namespace RoomSocialBE.Controllers
 
             var userInfo = new
             {
+                id = user.Id,
                 FullName = user.full_name,
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,

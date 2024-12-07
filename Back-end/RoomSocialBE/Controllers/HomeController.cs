@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
@@ -123,6 +123,7 @@ namespace RoomSocialBE.Controllers
 			}
 
 
+			
 			switch (search.SortBy.ToLower())
 			{
 				case "price":
@@ -160,13 +161,13 @@ namespace RoomSocialBE.Controllers
 				user = new ApplicationUser
 				{
 					Id = r.User.Id,
+
 					UserName = r.User.UserName,
 					Email = r.User.Email
 				},
 				address = new Address
 				{
 					id = r.Address.id,
-
 				},
 				category = new Category
 				{
