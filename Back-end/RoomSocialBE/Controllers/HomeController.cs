@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
@@ -74,10 +74,10 @@ namespace RoomSocialBE.Controllers
 						a.Address.street_name.Contains(search.Address)
 					);
 			}
-/*
-			if (data.Count < 5)
+
+			if (data.Count() < 5)
 			{
-			
+
 				var additionalData = new List<Room>();
 
 				if (!string.IsNullOrEmpty(search.SearchName))
@@ -110,7 +110,7 @@ namespace RoomSocialBE.Controllers
 						.ToList());
 				}
 
-				
+
 				var resultSet = data.Concat(additionalData).Distinct().ToList();
 
 				// Đảm bảo số lượng kết quả đủ 5
@@ -119,9 +119,10 @@ namespace RoomSocialBE.Controllers
 					resultSet.AddRange(additionalData.Take(5 - resultSet.Count));
 				}
 
-				data = resultSet.ToList();
+				data = resultSet.AsQueryable();
 			}
-*/
+
+
 			
 			switch (search.SortBy.ToLower())
 			{
@@ -179,7 +180,66 @@ namespace RoomSocialBE.Controllers
 			return Ok(rooms);
 		}
 
-		[HttpGet("find-roommates")]
+        [HttpGet("find-retail")]
+        public async Task<ActionResult<List<RoomDTO>>> Getfindretail()
+        {
+            var categoryName = "Tìm bạn ở ghép";
+            var category = await _dataContext.Categories.FirstOrDefaultAsync(c => c.name != categoryName);
+            if (category == null)
+            {
+                return NotFound("Category " + categoryName + " not found.");
+            }
+            var rooms = await _dataContext.Rooms
+                .Include(r => r.User)
+                .Include(r => r.Address)
+                .Include(r => r.Category)
+                .Where(r => r.id_category == category.id && r.status == true)
+                .OrderByDescending(r => r.created_day)
+                .Select(r => new RoomDTO
+                {
+                    id = r.id,
+                    id_user = r.id_user,
+                    id_address = r.id_adress,
+                    id_category = r.id_category,
+                    title = r.title,
+                    description = r.description,
+                    arge = r.arge,
+                    price = r.price,
+                    quantity_room = r.quantity_room,
+                    images = r.images,
+                    create_day = r.created_day,
+                    status = r.status,
+                    user = new ApplicationUser
+                    {
+                        Id = r.User.Id,
+                        UserName = r.User.UserName,
+                        Email = r.User.Email
+                    },
+                    address = new Address
+                    {
+                        id = r.Address.id,
+                        number_house = r.Address.number_house,
+                        street_name = r.Address.street_name,
+                        ward = r.Address.ward,
+                        district = r.Address.district,
+                        province = r.Address.province
+
+                    },
+                    category = new Category
+                    {
+                        id = r.Category.id,
+                        name = r.Category.name
+                    }
+                })
+                .ToListAsync();
+
+            if (rooms == null || rooms.Count == 0 || !rooms.Any()) return BadRequest("Rooms not found");
+
+            return Ok(rooms);
+        }
+
+
+        [HttpGet("find-roommates")]
 		public async Task<ActionResult<List<RoomDTO>>> GetRoommatePosts()
 		{
             var categoryName = "Tìm bạn ở ghép";
@@ -217,6 +277,11 @@ namespace RoomSocialBE.Controllers
                     address = new Address
                     {
                         id = r.Address.id,
+						number_house = r.Address.number_house,
+						street_name = r.Address.street_name,
+						ward = r.Address.ward,
+						district = r.Address.district,
+						province = r.Address.province
 
                     },
                     category = new Category
