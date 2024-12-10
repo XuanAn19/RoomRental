@@ -24,7 +24,7 @@ namespace RoomSocialBE.Controllers
             return await _context.Categories.ToListAsync();
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<ActionResult> GetCategoryById(int id)
         {
             var category = await _context.Categories.FindAsync(id);
