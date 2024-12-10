@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
@@ -17,10 +18,12 @@ namespace RoomSocialBE.Controllers
 	{
 		private readonly ApplicationDbContext _dataContext;
 		private readonly IMapper _mapper;
+        private readonly UserManager<ApplicationUser> userManager;
 
-		public HomeController(ApplicationDbContext dataContext, IMapper mapper)
+        public HomeController(ApplicationDbContext dataContext, IMapper mapper, UserManager<ApplicationUser> userManager)
 		{
-			_dataContext = dataContext;
+            this.userManager = userManager;
+            _dataContext = dataContext;
 			_mapper = mapper;
 		}
 
@@ -295,6 +298,46 @@ namespace RoomSocialBE.Controllers
             if (rooms == null || rooms.Count == 0 || !rooms.Any()) return BadRequest("Rooms not found");
             
             return Ok(rooms);
+        }
+
+		[HttpGet("Search/{key}")]
+		public async Task<IActionResult> SearchUser(string key)
+		{
+            if (string.IsNullOrEmpty(key))
+            {
+                return BadRequest(new Response
+                {
+                    Status = "Fail",
+                    Message = "Search key cannot be empty."
+                });
+            }
+
+            var users = await userManager.Users
+			.Where(u => u.full_name.Contains(key) || u.PhoneNumber.Contains(key))
+			.Select(u => new
+			{
+				u.Id,
+				u.full_name,
+				u.PhoneNumber,
+				u.image
+			})
+			.ToListAsync();
+
+            if (!users.Any())
+            {
+                return NotFound(new Response
+                {
+                    Status = "Fail",
+                    Message = $"No users found matching the key '{key}'."
+                });
+            }
+
+            return Ok(new Response
+            {
+                Status = "Success",
+                Message = $"Found {users.Count} users matching the key '{key}'.",
+                Data = users
+            });
         }
     }
 }
