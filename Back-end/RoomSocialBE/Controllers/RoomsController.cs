@@ -24,11 +24,10 @@ namespace RoomSocialBE.Controllers
         }
 
         [HttpGet]
-        [Route("rooms")]
         public async Task<IActionResult> GetAllRooms()
         {
             var result = await _context.Rooms
-        .Include(r => r.Address) // Include bảng Address thông qua mối quan hệ
+        .Include(r => r.Address) 
         .Select(r => new
         {
             r.id,
@@ -53,10 +52,330 @@ namespace RoomSocialBE.Controllers
             r.status
         })
         .ToListAsync();
+        return Ok(new Response
+        {
+            Status = "Success",
+            Message = "Get All Rooms are succefully",
+            Data = result
+        });
+        }
+
+        [HttpGet]
+        [Route("{idRoom}")]
+        public async Task<IActionResult> GetRoomByIdRoom(int idRoom)
+        {
+            var result = await _context.Rooms
+            .Include(r => r.Address)
+            .Include(r => r.Category)
+            .Select(r => new
+            {
+                r.id,
+                r.id_user,
+                r.id_adress,
+                Address = new
+                {
+                    r.Address.number_house,
+                    r.Address.street_name,
+                    r.Address.ward,
+                    r.Address.district,
+                    r.Address.province
+                },
+                r.id_category,
+                Category = new
+                {
+                    r.Category.name
+                },
+                r.title,
+                r.description,
+                r.arge,
+                r.price,
+                r.quantity_room,
+                r.images,
+                r.created_day,
+                r.status
+            })
+            .FirstOrDefaultAsync(u => u.id == idRoom);
+
             return Ok(new Response
             {
                 Status = "Success",
-                Message = "Get All Rooms are succefully",
+                Message = "Get rooms by 'Id' succefully",
+                Data = result
+            });
+        }
+
+        // Lấy các phòng theo idUser
+        [Authorize]
+        [HttpGet]
+        [Route("User/{idUser}")]
+        public async Task<IActionResult> GetRoomsByIdUser(string idUser)
+        {
+            var result = await _context.Rooms
+            .Include(r => r.Address)
+            .Include(r => r.Category)
+            .Where(u => u.id_user == idUser)
+            .Select(r => new
+            {
+                r.id,
+                r.id_user,
+                r.id_adress,
+                Address = new
+                {
+                    r.Address.number_house,
+                    r.Address.street_name,
+                    r.Address.ward,
+                    r.Address.district,
+                    r.Address.province
+                },
+                r.id_category,
+                Category = new
+                {
+                    r.Category.name
+                },
+                r.title,
+                r.description,
+                r.arge,
+                r.price,
+                r.quantity_room,
+                r.images,
+                r.created_day,
+                r.status
+            })
+            .ToListAsync();
+
+            return Ok(new Response
+            {
+                Status = "Success",
+                Message = "Get rooms by 'IdUser' succefully",
+                Data = result
+            });
+        }
+
+        [Authorize]
+        [HttpGet]
+        [Route("User/{idUser}/Status/{status}")]
+        public async Task<IActionResult> GetRoomsWithUserByStatus(string idUser, bool status)
+        {
+            var result = await _context.Rooms
+            .Include(r => r.Address)
+            .Include(r => r.Category)
+            .Where(u => u.id_user == idUser && u.status == status)
+            .Select(r => new
+            {
+                r.id,
+                r.id_user,
+                r.id_adress,
+                Address = new
+                {
+                    r.Address.number_house,
+                    r.Address.street_name,
+                    r.Address.ward,
+                    r.Address.district,
+                    r.Address.province
+                },
+                r.id_category,
+                Category = new
+                {
+                    r.Category.name
+                },
+                r.title,
+                r.description,
+                r.arge,
+                r.price,
+                r.quantity_room,
+                r.images,
+                r.created_day,
+                r.status
+            })
+            .ToListAsync();
+
+            return Ok(new Response
+            {
+                Status = "Success",
+                Message = "Get rooms by 'IdCategory' and 'IdUser' succefully",
+                Data = result
+            });
+        }
+
+        [Authorize]
+        [HttpGet]
+        [Route("User/{idUser}/Category/{idCategory}")]
+        public async Task<IActionResult> GetRoomsWithUserByIdCategory(string idUser, int idCategory)
+        {
+            var result = await _context.Rooms
+            .Include(r => r.Address)
+            .Include(r => r.Category)
+            .Where(u => u.id_user == idUser && u.id_category == idCategory)
+            .Select(r => new
+            {
+                r.id,
+                r.id_user,
+                r.id_adress,
+                Address = new
+                {
+                    r.Address.number_house,
+                    r.Address.street_name,
+                    r.Address.ward,
+                    r.Address.district,
+                    r.Address.province
+                },
+                r.id_category,
+                Category = new
+                {
+                    r.Category.name
+                },
+                r.title,
+                r.description,
+                r.arge,
+                r.price,
+                r.quantity_room,
+                r.images,
+                r.created_day,
+                r.status
+            })
+            .ToListAsync();
+
+            return Ok(new Response
+            {
+                Status = "Success",
+                Message = "Get rooms by 'IdCategory' and 'IdUser' succefully",
+                Data = result
+            });
+        }
+
+        [Authorize]
+        [HttpGet]
+        [Route("User/{idUser}/Search/{keyName}")]
+        public async Task<IActionResult> GetRoomsWithUserByKeyName(string idUser, string keyName)
+        {
+            var result = await _context.Rooms
+            .Include(r => r.Address)
+            .Include(r => r.Category)
+            .Where(u => u.id_user == idUser && (u.title.Contains(keyName) || u.description.Contains(keyName)))
+            .Select(r => new
+            {
+                r.id,
+                r.id_user,
+                r.id_adress,
+                Address = new
+                {
+                    r.Address.number_house,
+                    r.Address.street_name,
+                    r.Address.ward,
+                    r.Address.district,
+                    r.Address.province
+                },
+                r.id_category,
+                Category = new
+                {
+                    r.Category.name
+                },
+                r.title,
+                r.description,
+                r.arge,
+                r.price,
+                r.quantity_room,
+                r.images,
+                r.created_day,
+                r.status
+            })
+            .ToListAsync();
+
+            return Ok(new Response
+            {
+                Status = "Success",
+                Message = "Get rooms by 'IdUser' and 'KeyName' succefully",
+                Data = result
+            });
+        }
+
+        [Authorize]
+        [HttpGet]
+        [Route("User/{idUser}/Search/{keyName}/Category/{idCategory}")]
+        public async Task<IActionResult> GetRoomsWithUserByCategoryAndKeyName(string idUser, string keyName, int idCategory)
+        {
+            var result = await _context.Rooms
+            .Include(r => r.Address)
+            .Include(r => r.Category)
+            .Where(u => u.id_user == idUser && u.id_category == idCategory && (u.title.Contains(keyName) || u.description.Contains(keyName)))
+            .Select(r => new
+            {
+                r.id,
+                r.id_user,
+                r.id_adress,
+                Address = new
+                {
+                    r.Address.number_house,
+                    r.Address.street_name,
+                    r.Address.ward,
+                    r.Address.district,
+                    r.Address.province
+                },
+                r.id_category,
+                Category = new
+                {
+                    r.Category.name
+                },
+                r.title,
+                r.description,
+                r.arge,
+                r.price,
+                r.quantity_room,
+                r.images,
+                r.created_day,
+                r.status
+            })
+            .ToListAsync();
+
+            return Ok(new Response
+            {
+                Status = "Success",
+                Message = "Get rooms by 'KeyName' and 'IdCategory' succefully",
+                Data = result
+            });
+        }
+
+        [HttpGet]
+        [Route("Category/{idCategory}")]
+        public async Task<IActionResult> GetRoomsByIdCategory(int idCategory)
+        {
+            var result = await _context.Rooms
+            .Include(r => r.Address)
+            .Include(r => r.Category)
+            .Where(u => u.id_category == idCategory)
+            .Select(r => new
+            {
+                r.id,
+                r.id_user,
+                r.id_adress,
+                Address = new
+                {
+                    r.Address.number_house,
+                    r.Address.street_name,
+                    r.Address.ward,
+                    r.Address.district,
+                    r.Address.province
+                },
+                r.id_category,
+                Category = new
+                {
+                    r.Category.name
+                },
+                r.title,
+                r.description,
+                r.arge,
+                r.price,
+                r.quantity_room,
+                r.images,
+                r.created_day,
+                r.status
+            })
+            .ToListAsync();
+
+            return Ok(new Response
+            {
+                Status = "Success",
+                Message = "Get rooms by 'IdCategory' succefully",
                 Data = result
             });
         }
@@ -144,7 +463,7 @@ namespace RoomSocialBE.Controllers
 
         [Authorize(Roles = UserRoles.User)]
         [HttpPut]
-        [Route("update_information_room/{id}")]
+        [Route("{id}")]
         public async Task<IActionResult> UpdateInformationRoom(int id, [FromBody] PostRoomModel model)
         {
             bool isExistRoom = await _context.Rooms.AnyAsync(u => u.id == id && u.id_user == model.id_user);
@@ -197,7 +516,7 @@ namespace RoomSocialBE.Controllers
 
         [Authorize(Roles = UserRoles.User)]
         [HttpDelete]
-        [Route("delete/{id}")]
+        [Route("{id}")]
         public async Task<IActionResult> DeleteRoom(int id)
         {
             var room = await _context.Rooms.FindAsync(id);
