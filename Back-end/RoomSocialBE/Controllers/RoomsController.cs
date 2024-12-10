@@ -108,11 +108,12 @@ namespace RoomSocialBE.Controllers
         [Authorize]
         [HttpGet]
         [Route("User/{idUser}")]
-        public async Task<IActionResult> GetRoomByIdUser(string idUser)
+        public async Task<IActionResult> GetRoomsByIdUser(string idUser)
         {
             var result = await _context.Rooms
             .Include(r => r.Address)
             .Include(r => r.Category)
+            .Where(u => u.id_user == idUser)
             .Select(r => new
             {
                 r.id,
@@ -140,7 +141,7 @@ namespace RoomSocialBE.Controllers
                 r.created_day,
                 r.status
             })
-            .FirstOrDefaultAsync(u => u.id_user == idUser);
+            .ToListAsync();
 
             return Ok(new Response
             {
@@ -153,11 +154,12 @@ namespace RoomSocialBE.Controllers
         [Authorize]
         [HttpGet]
         [Route("User/{idUser}/Status/{status}")]
-        public async Task<IActionResult> GetRoomByStatusAndUser(string idUser, bool status)
+        public async Task<IActionResult> GetRoomsWithUserByStatus(string idUser, bool status)
         {
             var result = await _context.Rooms
             .Include(r => r.Address)
             .Include(r => r.Category)
+            .Where(u => u.id_user == idUser && u.status == status)
             .Select(r => new
             {
                 r.id,
@@ -185,7 +187,7 @@ namespace RoomSocialBE.Controllers
                 r.created_day,
                 r.status
             })
-            .FirstOrDefaultAsync(u => u.id_user == idUser && u.status == status);
+            .ToListAsync();
 
             return Ok(new Response
             {
@@ -198,11 +200,12 @@ namespace RoomSocialBE.Controllers
         [Authorize]
         [HttpGet]
         [Route("User/{idUser}/Category/{idCategory}")]
-        public async Task<IActionResult> GetRoomByCategoryAndUser(string idUser, int idCategory)
+        public async Task<IActionResult> GetRoomsWithUserByIdCategory(string idUser, int idCategory)
         {
             var result = await _context.Rooms
             .Include(r => r.Address)
             .Include(r => r.Category)
+            .Where(u => u.id_user == idUser && u.id_category == idCategory)
             .Select(r => new
             {
                 r.id,
@@ -230,7 +233,7 @@ namespace RoomSocialBE.Controllers
                 r.created_day,
                 r.status
             })
-            .FirstOrDefaultAsync(u => u.id_user == idUser && u.id_category == idCategory);
+            .ToListAsync();
 
             return Ok(new Response
             {
@@ -243,11 +246,12 @@ namespace RoomSocialBE.Controllers
         [Authorize]
         [HttpGet]
         [Route("User/{idUser}/Search/{keyName}")]
-        public async Task<IActionResult> GetRoomByCategoryAndUser(string idUser, string keyName)
+        public async Task<IActionResult> GetRoomsWithUserByKeyName(string idUser, string keyName)
         {
             var result = await _context.Rooms
             .Include(r => r.Address)
             .Include(r => r.Category)
+            .Where(u => u.id_user == idUser && (u.title.Contains(keyName) || u.description.Contains(keyName)))
             .Select(r => new
             {
                 r.id,
@@ -275,7 +279,7 @@ namespace RoomSocialBE.Controllers
                 r.created_day,
                 r.status
             })
-            .FirstOrDefaultAsync(u => u.id_user == idUser && ( u.title.Contains(keyName) || u.description.Contains(keyName) ));
+            .ToListAsync();
 
             return Ok(new Response
             {
@@ -288,11 +292,12 @@ namespace RoomSocialBE.Controllers
         [Authorize]
         [HttpGet]
         [Route("User/{idUser}/Search/{keyName}/Category/{idCategory}")]
-        public async Task<IActionResult> GetRoomByCategoryAndKeyNameAndUser(string idUser, string keyName, int idCategory)
+        public async Task<IActionResult> GetRoomsWithUserByCategoryAndKeyName(string idUser, string keyName, int idCategory)
         {
             var result = await _context.Rooms
             .Include(r => r.Address)
             .Include(r => r.Category)
+            .Where(u => u.id_user == idUser && u.id_category == idCategory && (u.title.Contains(keyName) || u.description.Contains(keyName)))
             .Select(r => new
             {
                 r.id,
@@ -320,7 +325,7 @@ namespace RoomSocialBE.Controllers
                 r.created_day,
                 r.status
             })
-            .FirstOrDefaultAsync(u => u.id_user == idUser && u.id_category == idCategory && (u.title.Contains(keyName) || u.description.Contains(keyName)));
+            .ToListAsync();
 
             return Ok(new Response
             {
@@ -332,11 +337,12 @@ namespace RoomSocialBE.Controllers
 
         [HttpGet]
         [Route("Category/{idCategory}")]
-        public async Task<IActionResult> GetRoomByCategory(int idCategory)
+        public async Task<IActionResult> GetRoomsByIdCategory(int idCategory)
         {
             var result = await _context.Rooms
             .Include(r => r.Address)
             .Include(r => r.Category)
+            .Where(u => u.id_category == idCategory)
             .Select(r => new
             {
                 r.id,
@@ -364,7 +370,7 @@ namespace RoomSocialBE.Controllers
                 r.created_day,
                 r.status
             })
-            .FirstOrDefaultAsync(u => u.id_category == idCategory);
+            .ToListAsync();
 
             return Ok(new Response
             {
