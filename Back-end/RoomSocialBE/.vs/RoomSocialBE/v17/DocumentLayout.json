@@ -1,0 +1,578 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\controllers\\bookmarkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:controllers\\bookmarkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\controllers\\roomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:controllers\\roomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\controllers\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:controllers\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\dtos\\roomdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:dtos\\roomdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\models\\bookmark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:models\\bookmark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\authentication\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:authentication\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\authentication\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:authentication\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\migrations\\20241204105116_create_bookmark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:migrations\\20241204105116_create_bookmark.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\dtos\\searchdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:dtos\\searchdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\map\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:map\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\properties\\servicedependencies.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:properties\\servicedependencies.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\authentication\\profileupdatemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:authentication\\profileupdatemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\authentication\\changepasswordmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:authentication\\changepasswordmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\authentication\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:authentication\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\authentication\\verifyregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:authentication\\verifyregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\authentication\\userroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:authentication\\userroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\authentication\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:authentication\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\authentication\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:authentication\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|c:\\users\\dell\\onedrive\\ta\u0300i li\u00EA\u0323u\\roomdetail\\roomrental\\back-end\\roomsocialbe\\roomsocialbe.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{46F5FD52-F49F-480A-AAF7-CBF8781DEBC6}|RoomSocialBE.csproj|solutionrelative:roomsocialbe.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Migrations\\20241127153651_Add_Migr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241127153651_Add_Migr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Migrations\\20241127153606_Add_Migr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241127153606_Add_Migr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\AppData\\Roaming\\Microsoft\\UserSecrets\\1ead5ba5-acf9-49e0-89cf-4273c40a9700\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Migrations\\20241127152016_Add_Migran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241127152016_Add_Migran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:323948898:0:{81164725-9a96-4ece-a4cb-440d8fd285e5}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 139,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAAMYAAAAAAAAAAAAwwNgAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T15:26:50.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BookMarkController.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\BookMarkController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookMarkController.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\BookMarkController.cs",
+              "RelativeToolTip": "Controllers\\BookMarkController.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAowE0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T10:53:19.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CategoriesController.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "Controllers\\CategoriesController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T15:47:11.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BookMark.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Models\\BookMark.cs",
+              "RelativeDocumentMoniker": "Models\\BookMark.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Models\\BookMark.cs",
+              "RelativeToolTip": "Models\\BookMark.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T10:43:54.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAFwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T14:12:37.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RoomsController.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\RoomsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RoomsController.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\RoomsController.cs",
+              "RelativeToolTip": "Controllers\\RoomsController.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAwGIAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T15:47:29.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T15:17:37.672Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RoomDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\DTOs\\RoomDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\RoomDTO.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\DTOs\\RoomDTO.cs",
+              "RelativeToolTip": "DTOs\\RoomDTO.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAqwA8AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T14:23:17.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthenticateController.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\AuthenticateController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthenticateController.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\AuthenticateController.cs",
+              "RelativeToolTip": "Controllers\\AuthenticateController.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAYwCEAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T14:50:50.696Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Data\\SeedData.cs",
+              "RelativeDocumentMoniker": "Data\\SeedData.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Data\\SeedData.cs",
+              "RelativeToolTip": "Data\\SeedData.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAmwFQAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T15:23:04.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Authentication\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Authentication\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T13:40:53.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-27T14:32:04.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Authentication\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\ApplicationUser.cs",
+              "RelativeToolTip": "Authentication\\ApplicationUser.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAwwBoAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T13:40:33.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Room.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Models\\Room.cs",
+              "RelativeDocumentMoniker": "Models\\Room.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Models\\Room.cs",
+              "RelativeToolTip": "Models\\Room.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAgwBoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T10:45:53.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20241204105116_Create_bookmark.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Migrations\\20241204105116_Create_bookmark.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241204105116_Create_bookmark.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Migrations\\20241204105116_Create_bookmark.cs",
+              "RelativeToolTip": "Migrations\\20241204105116_Create_bookmark.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T10:51:17.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Address.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Models\\Address.cs",
+              "RelativeDocumentMoniker": "Models\\Address.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Models\\Address.cs",
+              "RelativeToolTip": "Models\\Address.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T10:47:50.049Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "Models\\Category.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Models\\Category.cs",
+              "RelativeToolTip": "Models\\Category.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T10:47:47.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SearchDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\DTOs\\SearchDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\SearchDTO.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\DTOs\\SearchDTO.cs",
+              "RelativeToolTip": "DTOs\\SearchDTO.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAiwAsAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T15:46:14.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Map\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "Map\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Map\\MappingProfile.cs",
+              "RelativeToolTip": "Map\\MappingProfile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T14:22:50.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-27T16:57:46.73Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "serviceDependencies.json",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Properties\\serviceDependencies.json",
+              "RelativeDocumentMoniker": "Properties\\serviceDependencies.json",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Properties\\serviceDependencies.json",
+              "RelativeToolTip": "Properties\\serviceDependencies.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-27T16:57:41.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\LoginModel.cs",
+              "RelativeDocumentMoniker": "Authentication\\LoginModel.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\LoginModel.cs",
+              "RelativeToolTip": "Authentication\\LoginModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T16:44:25.082Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "UserRoles.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\UserRoles.cs",
+              "RelativeDocumentMoniker": "Authentication\\UserRoles.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\UserRoles.cs",
+              "RelativeToolTip": "Authentication\\UserRoles.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T16:44:30.607Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "VerifyRegistration.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\VerifyRegistration.cs",
+              "RelativeDocumentMoniker": "Authentication\\VerifyRegistration.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\VerifyRegistration.cs",
+              "RelativeToolTip": "Authentication\\VerifyRegistration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T16:44:32.182Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ProfileUpdateModel.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\ProfileUpdateModel.cs",
+              "RelativeDocumentMoniker": "Authentication\\ProfileUpdateModel.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\ProfileUpdateModel.cs",
+              "RelativeToolTip": "Authentication\\ProfileUpdateModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T16:44:36.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Response.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\Response.cs",
+              "RelativeDocumentMoniker": "Authentication\\Response.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\Response.cs",
+              "RelativeToolTip": "Authentication\\Response.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T16:44:29.041Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "RegisterModel.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\RegisterModel.cs",
+              "RelativeDocumentMoniker": "Authentication\\RegisterModel.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\RegisterModel.cs",
+              "RelativeToolTip": "Authentication\\RegisterModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T16:44:26.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ChangePasswordModel.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\ChangePasswordModel.cs",
+              "RelativeDocumentMoniker": "Authentication\\ChangePasswordModel.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\ChangePasswordModel.cs",
+              "RelativeToolTip": "Authentication\\ChangePasswordModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T13:40:50.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "RoomSocialBE.http",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\RoomSocialBE.http",
+              "RelativeDocumentMoniker": "RoomSocialBE.http",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\RoomSocialBE.http",
+              "RelativeToolTip": "RoomSocialBE.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-11-27T16:04:55.521Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "20241127153606_Add_Migr.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Migrations\\20241127153606_Add_Migr.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241127153606_Add_Migr.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Migrations\\20241127153606_Add_Migr.cs",
+              "RelativeToolTip": "Migrations\\20241127153606_Add_Migr.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T15:36:07.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "20241127153651_Add_Migr.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Migrations\\20241127153651_Add_Migr.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241127153651_Add_Migr.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Migrations\\20241127153651_Add_Migr.cs",
+              "RelativeToolTip": "Migrations\\20241127153651_Add_Migr.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T15:36:51.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "20241127152016_Add_Migran.cs",
+              "DocumentMoniker": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Migrations\\20241127152016_Add_Migran.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241127152016_Add_Migran.cs",
+              "ToolTip": "C:\\Users\\Dell\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\RoomDetail\\RoomRental\\Back-end\\RoomSocialBE\\Migrations\\20241127152016_Add_Migran.cs",
+              "RelativeToolTip": "Migrations\\20241127152016_Add_Migran.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T15:20:17.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "secrets.json",
+              "DocumentMoniker": "C:\\Users\\Dell\\AppData\\Roaming\\Microsoft\\UserSecrets\\1ead5ba5-acf9-49e0-89cf-4273c40a9700\\secrets.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\1ead5ba5-acf9-49e0-89cf-4273c40a9700\\secrets.json",
+              "ToolTip": "C:\\Users\\Dell\\AppData\\Roaming\\Microsoft\\UserSecrets\\1ead5ba5-acf9-49e0-89cf-4273c40a9700\\secrets.json",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\1ead5ba5-acf9-49e0-89cf-4273c40a9700\\secrets.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-27T14:32:32.25Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
