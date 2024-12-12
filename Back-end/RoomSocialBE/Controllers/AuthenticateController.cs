@@ -440,6 +440,8 @@ namespace RoomSocialBE.Controllers
 
             }
             user.is_verification_code_valid = false;
+            user.Createdateerify = DateTime.UtcNow;
+            user.UpdatedateVerify = DateTime.UtcNow;
 
             var updateResult = await userManager.UpdateAsync(user);
             if (updateResult.Succeeded)

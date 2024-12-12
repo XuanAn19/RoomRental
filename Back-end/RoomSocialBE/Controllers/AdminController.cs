@@ -35,7 +35,7 @@ namespace RoomSocialBE.Controllers
 
             if (!usersWithRoleUser.Any())
             {
-                return NotFound(new { status = "no", message = "No users found with the 'User' role and is_true == false." });
+                return NotFound(new Response{ Status = "no", Message= "No users found with the 'User' role and is_true == false." });
             }
 
             return Ok(usersWithRoleUser);
@@ -61,6 +61,7 @@ namespace RoomSocialBE.Controllers
             }
 
             user.is_true = true;
+            user.UpdatedateVerify = DateTime.UtcNow;
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
 
@@ -100,6 +101,7 @@ namespace RoomSocialBE.Controllers
             }
 
             user.is_true = null;
+            user.UpdatedateVerify =DateTime.UtcNow;
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
 
