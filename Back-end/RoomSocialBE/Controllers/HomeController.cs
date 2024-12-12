@@ -216,7 +216,9 @@ namespace RoomSocialBE.Controllers
                     {
                         Id = r.User.Id,
                         UserName = r.User.UserName,
-                        Email = r.User.Email
+                        Email = r.User.Email,
+						PhoneNumber = r.User.PhoneNumber,
+						full_name = r.User.full_name
                     },
                     address = new Address
                     {
@@ -275,7 +277,9 @@ namespace RoomSocialBE.Controllers
                     {
                         Id = r.User.Id,
                         UserName = r.User.UserName,
-                        Email = r.User.Email
+                        Email = r.User.Email,
+                        PhoneNumber = r.User.PhoneNumber,
+                        full_name = r.User.full_name
                     },
                     address = new Address
                     {
