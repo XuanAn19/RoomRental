@@ -323,8 +323,10 @@ namespace RoomSocialBE.Controllers
 				u.Id,
 				u.full_name,
 				u.PhoneNumber,
-				u.image
-			})
+                image = u.image != null
+                ? $"{Request.Scheme}://{Request.Host}/images/{u.image}"
+                : null
+            })
 			.ToListAsync();
 
             if (!users.Any())
