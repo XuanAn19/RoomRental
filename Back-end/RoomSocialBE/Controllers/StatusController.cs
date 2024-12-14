@@ -1,19 +1,13 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RoomSocialBE.Authentication;
+using RoomSocialBE.DTOs;
 using RoomSocialBE.Models;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace RoomSocialBE.Controllers
 {
-    public class StatusDto
-    {
-        public string id_user { get; set; }
-        public string content { get; set; }
-    }
-
     [Route("api/[controller]")]
     [ApiController]
     public class StatusController : ControllerBase
@@ -27,26 +21,42 @@ namespace RoomSocialBE.Controllers
             this._context = context;
         }
 
-        // Lấy tất cả trạng thái có trong hệ thống
-        [HttpGet]
-        public async Task<IActionResult> GetAllStatus() 
+        private IEnumerable<object> FormatStatusList(IEnumerable<Status> statuses)
         {
-            var result = await _context.Status.ToListAsync();
+            return statuses.Select(s => new
+            {
+                s.Id,
+                s.id_user,
+                s.content,
+                creat_at = s.creat_at.ToString("dd/MM/yyyy HH:mm:ss"),
+                updated_at = s.updated_at.ToString("dd/MM/yyyy HH:mm:ss")
+            });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllStatus()
+        {
+            var result = await _context.Status.OrderByDescending(s => s.updated_at).ToListAsync();
+
+            var formattedResult = FormatStatusList(result);
+
             return Ok(new Response
             {
                 Status = "Success",
                 Message = "Get all status in system",
-                Data = result
+                Data = formattedResult
             });
         }
 
-        // lấy danh sách trạng thái của người dùng
         [HttpGet("User/{id_user}")]
         public async Task<IActionResult> GetStatusWithUser(string id_user)
         {
             var statuses = await _context.Status
                                  .Where(s => s.id_user == id_user)
+                                 .OrderByDescending(f => f.updated_at)
                                  .ToListAsync();
+
+            var formattedResult = FormatStatusList(statuses);
 
             if (!statuses.Any())
             {
@@ -61,11 +71,10 @@ namespace RoomSocialBE.Controllers
             {
                 Status = "Success",
                 Message = "Statuses retrieved successfully.",
-                Data = statuses
+                Data = formattedResult
             });
         }
 
-        // Lấy chi tiết 1 trạng thái 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetStatusById(int id)
         {
@@ -80,17 +89,19 @@ namespace RoomSocialBE.Controllers
                 });
             }
 
+            var formattedResult = FormatStatusList(new List<Status> { status }).FirstOrDefault();
+
             return Ok(new Response
             {
                 Status = "Success",
                 Message = "Status retrieved successfully.",
-                Data = status
+                Data = formattedResult
             });
         }
 
-        // Tạo 1 trạng thái của người dùng
+        [Authorize(Roles = UserRoles.User)]
         [HttpPost]
-        public async Task<IActionResult> CreateStatusWithUser([FromBody] StatusDto model)
+        public async Task<IActionResult> CreateStatusWithUser([FromBody] StatusDTO model)
         {
             if (!ModelState.IsValid)
             {
@@ -115,30 +126,25 @@ namespace RoomSocialBE.Controllers
             {
                 id_user = model.id_user,
                 content = model.content,
-                creat_at = DateTime.UtcNow,
-                updated_at = DateTime.UtcNow,
+                creat_at = DateTime.Now,
+                updated_at = DateTime.Now,
                 User = user
             };
 
             _context.Status.Add(newStatus);
             await _context.SaveChangesAsync();
 
+            var formattedResult = FormatStatusList(new List<Status> { newStatus }).FirstOrDefault();
+
             return Ok(new Response
             {
                 Status = "Success",
                 Message = "Status created successfully.",
-                Data = new
-                {
-                    id_status = newStatus.Id,
-                    id_user = newStatus.id_user,
-                    content = newStatus.content,
-                    creat_at = newStatus.creat_at,
-                    updated_at = newStatus.updated_at
-                }
+                Data = formattedResult
             });
         }
 
-        // Xóa 1 trạng thái của người dùng
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteStatusWithUser(int id)
         {
@@ -163,7 +169,7 @@ namespace RoomSocialBE.Controllers
             });
         }
 
-        // Chỉnh sửa nội dung 1 trạng thái của người dùng
+        [Authorize(Roles = UserRoles.User)]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateStatusWithUser(int id, [FromBody] string content)
         {
@@ -179,19 +185,22 @@ namespace RoomSocialBE.Controllers
             }
 
             status.content = content;
-            status.updated_at = DateTime.UtcNow;
+            status.updated_at = DateTime.Now;
 
             _context.Status.Update(status);
             await _context.SaveChangesAsync();
+
+            var formattedResult = FormatStatusList(new List<Status> { status }).FirstOrDefault();
 
             return Ok(new Response
             {
                 Status = "Success",
                 Message = "Status updated successfully.",
-                Data = status
+                Data = formattedResult
             });
         }
 
+        [Authorize]
         [HttpGet("User/{id_user}/quanity")]
         public async Task<IActionResult> GetQuanityStatusWithUser(string id_user)
         {

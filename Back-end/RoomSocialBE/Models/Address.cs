@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace RoomSocialBE.Models
 {
@@ -13,6 +14,7 @@ namespace RoomSocialBE.Models
         public string province { get; set; }
 
         // Liên kết
+        [JsonIgnore]
         public ICollection<Room>? Rooms { get; set; }
     }
 }
