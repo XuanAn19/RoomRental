@@ -35,10 +35,20 @@
 
   <div class="post-container">
     <div class="post" *ngFor="let post of posts">
+      <!-- Ngày tháng nằm trên cùng -->
       <p class="date">{{ post.creat_at | date : "dd/MM/yyyy" }}</p>
-      <!-- Hiển thị ngày giờ bài đăng -->
-      <pre class="content">{{ post.content }}</pre>
-      <!-- Hiển thị nội dung bài đăng -->
+
+      <!-- Nội dung và icon xóa nằm cùng hàng -->
+      <div class="post-content">
+        <pre class="content">{{ post.content }}</pre>
+        <i
+          class="fa fa-trash-o"
+          aria-hidden="true"
+          (click)="onDeleteStatus(post.id)"
+          title="Xóa bài viết"
+          style="cursor: pointer; color: red"
+        ></i>
+      </div>
     </div>
   </div>
 </div>

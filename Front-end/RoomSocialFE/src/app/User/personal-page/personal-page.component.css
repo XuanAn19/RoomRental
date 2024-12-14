@@ -70,27 +70,65 @@
   align-items: center;
 }
 
+/* .post {
+  background-color: #f9f9f9;
+  padding: 15px;
+  width: 70%;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+} */
+
 .post {
   background-color: #f9f9f9;
   padding: 15px;
   width: 70%;
   border-radius: 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Chia ngày tháng và nội dung thành 2 hàng */
 }
 
 .post .date {
   font-size: 14px;
   color: #888;
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Tạo khoảng cách giữa ngày tháng và nội dung */
+  align-self: flex-start; /* Canh ngày tháng sang bên trái */
 }
 
-.post .content {
-  font-size: 16px;
+.post-content {
+  display: flex; /* Tạo hàng cho nội dung và icon xóa */
+  justify-content: space-between; /* Đẩy icon xóa sang bên phải */
+  align-items: center; /* Canh giữa theo trục dọc */
 }
+
 .status-input textarea {
   border: none;
   background: none;
   outline: none;
   flex: 1;
   font-size: 14px;
+}
+
+.post .fa-trash-o {
+  font-size: 18px;
+  color: #ff4d4f;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.post-content .content {
+  flex: 1; /* Đảm bảo nội dung chiếm toàn bộ khoảng trống còn lại */
+  font-size: 16px;
+  margin-right: 15px; /* Tạo khoảng cách giữa nội dung và icon xóa */
+}
+
+.post-content .fa-trash-o {
+  font-size: 18px;
+  color: #ff4d4f;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.post-content .fa-trash-o:hover {
+  color: #d9363e; /* Hiệu ứng khi di chuột qua icon */
 }

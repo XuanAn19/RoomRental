@@ -12,9 +12,10 @@ import { RegisterLandlordComponent } from './UserManagement/register-landlord/re
 import { HeaderComponent } from './component/header/header.component';
 import { RegisterLoginComponent } from './component/register-login/register-login.component';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {
+  HTTP_INTERCEPTORS,
   HttpClientModule,
   provideHttpClient,
   withFetch,
@@ -42,7 +43,11 @@ import { RequestAddFriendComponent } from './User/request-add-friend/request-add
     ChangePasswordComponent,
     RegisterLandlordComponent,
     ForgotPasswordComponent,
+    //  PostForRentComponent,
     HeaderComponent,
+    VerifyAccountComponent,
+    //   ListPostComponent,
+    //   EditPostComponent,
     RegisterLoginComponent,
     SidebarComponent,
     AddFriendComponent,
@@ -65,8 +70,6 @@ import { RequestAddFriendComponent } from './User/request-add-friend/request-add
     TokenStoreService,
     authInterceptorProviders,
   ],
-  imports: [BrowserModule, AppRoutingModule, RouterModule, FormsModule],
-  providers: [provideHttpClient(withFetch())],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
