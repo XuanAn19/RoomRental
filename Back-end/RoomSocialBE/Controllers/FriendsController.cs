@@ -60,7 +60,7 @@ namespace RoomSocialBE.Controllers
                 return NotFound(new Response
                 {
                     Status = "Fail",
-                    Message = $"Sender with ID {request.id_user_accept} not found in system."
+                    Message = $"Receiver with ID {request.id_user_accept} not found in system."
                 });
             }
 
