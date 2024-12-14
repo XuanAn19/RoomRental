@@ -28,7 +28,6 @@ export class UserManagementService {
   // Hàm để lấy thông tin người dùng
   getProfile(): Observable<any> {
     const url = 'Authenticate/get_my_information';
-
     return this._api.API_Basic_GetTypeRequest(url);
   }
 

@@ -1,0 +1,410 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Migrations\\ApplicationDbContextModelSnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\ApplicationDbContextModelSnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\FriendsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\FriendsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_CHPMAL9/RoomRentalDB/True/SqlTable/dbo.AspNetUsers.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\AuthenticateController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\AuthenticateController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\LoginModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Authentication\\LoginModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Models\\Friend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Friend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\wwwroot\\images\\97eca756-3da5-40a7-a265-9c51df510f02.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:wwwroot\\images\\97eca756-3da5-40a7-a265-9c51df510f02.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\wwwroot\\images\\6742b89e-b5a3-41a5-896d-79b99df54b19.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:wwwroot\\images\\6742b89e-b5a3-41a5-896d-79b99df54b19.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\wwwroot\\images\\51ce614c-4873-454e-9698-74c8fea3c349.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:wwwroot\\images\\51ce614c-4873-454e-9698-74c8fea3c349.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\wwwroot\\images\\227f5f93-5167-4287-b0df-599f9becfe5a.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:wwwroot\\images\\227f5f93-5167-4287-b0df-599f9becfe5a.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Data\\SeedData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Data\\SeedData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\ApplicationDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Authentication\\ApplicationDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\ApplicationUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Authentication\\ApplicationUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\DTOs\\SearchDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\SearchDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\AdminController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\AdminController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\BookMarkController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\BookMarkController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Models\\Room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Migrations\\20241209150949_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241209150949_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f53-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T16:49:02.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthenticateController.cs",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\AuthenticateController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthenticateController.cs",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\AuthenticateController.cs",
+              "RelativeToolTip": "Controllers\\AuthenticateController.cs",
+              "ViewState": "AQIAAGUBAAAAAAAAAAAiwOUBAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T02:52:59.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FriendsController.cs",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\FriendsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FriendsController.cs",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\FriendsController.cs",
+              "RelativeToolTip": "Controllers\\FriendsController.cs",
+              "ViewState": "AQIAAMcAAAAAAAAAAADwv9YAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T13:56:09.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\LoginModel.cs",
+              "RelativeDocumentMoniker": "Authentication\\LoginModel.cs",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\LoginModel.cs",
+              "RelativeToolTip": "Authentication\\LoginModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T17:18:25.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Friend.cs",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Models\\Friend.cs",
+              "RelativeDocumentMoniker": "Models\\Friend.cs",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Models\\Friend.cs",
+              "RelativeToolTip": "Models\\Friend.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T13:53:05.345Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "97eca756-3da5-40a7-a265-9c51df510f02.png - PNG [2882x2048, 32 bit, PNG]",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\wwwroot\\images\\97eca756-3da5-40a7-a265-9c51df510f02.png",
+              "RelativeDocumentMoniker": "wwwroot\\images\\97eca756-3da5-40a7-a265-9c51df510f02.png",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\wwwroot\\images\\97eca756-3da5-40a7-a265-9c51df510f02.png - PNG [2882x2048, 32 bit, PNG]",
+              "RelativeToolTip": "wwwroot\\images\\97eca756-3da5-40a7-a265-9c51df510f02.png - PNG [2882x2048, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-12-09T17:18:16.351Z",
+              "EditorCaption": " - PNG [2882x2048, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "6742b89e-b5a3-41a5-896d-79b99df54b19.png - PNG [2882x2048, 32 bit, PNG]",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\wwwroot\\images\\6742b89e-b5a3-41a5-896d-79b99df54b19.png",
+              "RelativeDocumentMoniker": "wwwroot\\images\\6742b89e-b5a3-41a5-896d-79b99df54b19.png",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\wwwroot\\images\\6742b89e-b5a3-41a5-896d-79b99df54b19.png - PNG [2882x2048, 32 bit, PNG]",
+              "RelativeToolTip": "wwwroot\\images\\6742b89e-b5a3-41a5-896d-79b99df54b19.png - PNG [2882x2048, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-12-09T17:18:06.94Z",
+              "EditorCaption": " - PNG [2882x2048, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "51ce614c-4873-454e-9698-74c8fea3c349.jpg - Bitmap [1079x872, 24 bit, JPG]",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\wwwroot\\images\\51ce614c-4873-454e-9698-74c8fea3c349.jpg",
+              "RelativeDocumentMoniker": "wwwroot\\images\\51ce614c-4873-454e-9698-74c8fea3c349.jpg",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\wwwroot\\images\\51ce614c-4873-454e-9698-74c8fea3c349.jpg - Bitmap [1079x872, 24 bit, JPG]",
+              "RelativeToolTip": "wwwroot\\images\\51ce614c-4873-454e-9698-74c8fea3c349.jpg - Bitmap [1079x872, 24 bit, JPG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-12-09T17:17:50.855Z",
+              "EditorCaption": " - Bitmap [1079x872, 24 bit, JPG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "227f5f93-5167-4287-b0df-599f9becfe5a.jpg - Bitmap [1079x872, 24 bit, JPG]",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\wwwroot\\images\\227f5f93-5167-4287-b0df-599f9becfe5a.jpg",
+              "RelativeDocumentMoniker": "wwwroot\\images\\227f5f93-5167-4287-b0df-599f9becfe5a.jpg",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\wwwroot\\images\\227f5f93-5167-4287-b0df-599f9becfe5a.jpg - Bitmap [1079x872, 24 bit, JPG]",
+              "RelativeToolTip": "wwwroot\\images\\227f5f93-5167-4287-b0df-599f9becfe5a.jpg - Bitmap [1079x872, 24 bit, JPG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-12-09T17:17:31.281Z",
+              "EditorCaption": " - Bitmap [1079x872, 24 bit, JPG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAD0AAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T08:54:27.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-01T08:54:38.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T14:39:04.222Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Data\\SeedData.cs",
+              "RelativeDocumentMoniker": "Data\\SeedData.cs",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Data\\SeedData.cs",
+              "RelativeToolTip": "Data\\SeedData.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwC8AAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T15:11:27.803Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Authentication\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Authentication\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T02:52:55.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Authentication\\ApplicationUser.cs",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Authentication\\ApplicationUser.cs",
+              "RelativeToolTip": "Authentication\\ApplicationUser.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T14:48:39.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SearchDTO.cs",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\DTOs\\SearchDTO.cs",
+              "RelativeDocumentMoniker": "DTOs\\SearchDTO.cs",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\DTOs\\SearchDTO.cs",
+              "RelativeToolTip": "DTOs\\SearchDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T13:53:42.155Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T13:53:47.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "BookMarkController.cs",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\BookMarkController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookMarkController.cs",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Controllers\\BookMarkController.cs",
+              "RelativeToolTip": "Controllers\\BookMarkController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T13:55:05.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Room.cs",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Models\\Room.cs",
+              "RelativeDocumentMoniker": "Models\\Room.cs",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Models\\Room.cs",
+              "RelativeToolTip": "Models\\Room.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T13:52:01.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "20241209150949_init.cs",
+              "DocumentMoniker": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Migrations\\20241209150949_init.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241209150949_init.cs",
+              "ToolTip": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\Migrations\\20241209150949_init.cs",
+              "RelativeToolTip": "Migrations\\20241209150949_init.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T15:09:49.306Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "dbo.AspNetUsers [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_CHPMAL9/RoomRentalDB/True/SqlTable/dbo.AspNetUsers.sql",
+              "ToolTip": "dbo.AspNetUsers [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-12-01T09:03:57.824Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

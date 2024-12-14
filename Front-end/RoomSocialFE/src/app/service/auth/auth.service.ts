@@ -41,6 +41,7 @@ export class AuthService {
             console.log('Token:', response.accessToken);
             const actor = response.user;
             this._token.setToken(response.accessToken);
+            this._token.setIdUser(response.idUser);
             console.log('Token stored:', this._token.getToken());
             this._token.setUser(actor);
             this.userSubject.next(actor);

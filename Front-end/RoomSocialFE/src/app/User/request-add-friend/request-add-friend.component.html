@@ -1,0 +1,37 @@
+<app-user-profile></app-user-profile>
+
+<hr
+  style="
+    width: 60%;
+    border-top: 1px solid #d3d3d3;
+    display: block;
+    margin: 0 auto;
+  "
+/>
+
+<div class="friends-container">
+  <div class="tabs">
+    <span class="tab" routerLink="/add-friend">Lời mời kết bạn</span>
+    <span class="tab" routerLink="/unfriend">Danh sách bạn bè</span>
+    <span class="tab active" routerLink="/request-add-friend"
+      >Tìm kiếm bạn bè</span
+    >
+  </div>
+  <div class="friend-list">
+    <div *ngIf="searchResults.length === 0">Không tìm thấy người dùng nào.</div>
+    <div *ngFor="let user of searchResults" class="friend">
+      <img
+        [src]="user.image || 'https://via.placeholder.com/150'"
+        alt="Avatar"
+      />
+      <div class="friend-info">
+        <h4>{{ user.full_name }}</h4>
+      </div>
+      <div class="friend-actions">
+        <button (click)="sendFriendRequest(user.id)" class="add-friend">
+          Kết bạn
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

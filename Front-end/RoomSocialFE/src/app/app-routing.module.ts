@@ -9,6 +9,10 @@ import { RegisterLoginComponent } from './component/register-login/register-logi
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 import { ListPostComponent } from './component/list-post/list-post/list-post.component';
 import { EditPostComponent } from './component/edit-post/edit-post/edit-post.component';
+import { AddFriendComponent } from './User/add-friend/add-friend.component';
+import { UnfriendComponent } from './User/unfriend/unfriend.component';
+import { PersonalPageComponent } from './User/personal-page/personal-page.component';
+import { RequestAddFriendComponent } from './User/request-add-friend/request-add-friend.component';
 const routes: Routes = [
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'change-password', component: ChangePasswordComponent },
@@ -24,6 +28,10 @@ const routes: Routes = [
     path: 'edit-post/:id',
     component: EditPostComponent,
   },
+  { path: 'add-friend', component: AddFriendComponent },
+  { path: 'unfriend', component: UnfriendComponent },
+  { path: 'personal-page', component: PersonalPageComponent },
+  { path: 'request-add-friend', component: RequestAddFriendComponent },
 
   // { path: '**', redirectTo: '/post-for-rent' },
 ];

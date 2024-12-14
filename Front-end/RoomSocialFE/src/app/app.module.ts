@@ -25,8 +25,16 @@ import { PostForRentComponent } from './component/post-for-rent/post-for-rent/po
 import { ListPostComponent } from './component/list-post/list-post/list-post.component';
 import { EditPostComponent } from './component/edit-post/edit-post/edit-post.component';
 import { TokenStoreService } from './service/token-store/token-store.service';
-import { MyInterceptorService } from './service/my-interceptor/my-interceptor.service';
+import {
+  authInterceptorProviders,
+  MyInterceptorService,
+} from './service/my-interceptor/my-interceptor.service';
 import { SidebarComponent } from './UserManagement/sidebar/sidebar.component';
+import { AddFriendComponent } from './User/add-friend/add-friend.component';
+import { PersonalPageComponent } from './User/personal-page/personal-page.component';
+import { UnfriendComponent } from './User/unfriend/unfriend.component';
+import { UserProfileComponent } from './User/user-profile/user-profile.component';
+import { RequestAddFriendComponent } from './User/request-add-friend/request-add-friend.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +50,11 @@ import { SidebarComponent } from './UserManagement/sidebar/sidebar.component';
     EditPostComponent,
     RegisterLoginComponent,
     SidebarComponent,
+    AddFriendComponent,
+    PersonalPageComponent,
+    UnfriendComponent,
+    UserProfileComponent,
+    RequestAddFriendComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,9 +65,10 @@ import { SidebarComponent } from './UserManagement/sidebar/sidebar.component';
     ReactiveFormsModule,
   ],
   providers: [
-    // provideHttpClient(withFetch()),
+    provideHttpClient(withFetch()),
     { provide: HTTP_INTERCEPTORS, useClass: MyInterceptorService, multi: true },
     TokenStoreService,
+    authInterceptorProviders,
   ],
   bootstrap: [AppComponent],
 })

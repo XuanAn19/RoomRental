@@ -1,0 +1,50 @@
+<app-user-profile></app-user-profile>
+
+<hr
+  style="
+    width: 60%;
+    border-top: 1px solid #d3d3d3;
+    display: block;
+    margin: 0 auto;
+  "
+/>
+<div class="friends-container">
+  <div class="tabs">
+    <span class="tab active" routerLink="/add-friend">Lời mời kết bạn</span>
+    <span class="tab" routerLink="/unfriend">Danh sách bạn bè</span>
+    <span class="tab" routerLink="/request-add-friend">Tìm kiếm bạn bè</span>
+  </div>
+  <div class="friend-list">
+    <div *ngIf="friendRequests.length === 0" class="no-requests">
+      <p>Hiện tại không có lời mời kết bạn nào.</p>
+    </div>
+    <div *ngFor="let friend of friendRequests" class="friend">
+      <img
+        [src]="
+          friend.sender_information.image ||
+          'https://via.placeholder.com/50/808080/808080'
+        "
+        [ngClass]="{ 'no-avatar': !friend.sender_information.image }"
+        alt="Avatar"
+      />
+      <div class="friend-info">
+        <h4>{{ friend.sender_information.full_name }}</h4>
+        <button
+          (click)="acceptRequest(friend.id_friend_request)"
+          class="accept"
+        >
+          Chấp nhận
+        </button>
+      </div>
+      <div class="friend-actions">
+        <span>{{ friend.created_at }}</span>
+        <button
+          (click)="deleteRequest(friend.id_friend_request)"
+          class="delete"
+        >
+          Xóa
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

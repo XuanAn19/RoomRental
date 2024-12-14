@@ -220,6 +220,9 @@ namespace RoomSocialBE.Migrations
                     b.Property<string>("images_CCCD")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool?>("is_true")
+                        .HasColumnType("bit");
+
                     b.Property<bool?>("is_verification_code_valid")
                         .HasColumnType("bit");
 
@@ -240,6 +243,172 @@ namespace RoomSocialBE.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("RoomSocialBE.Models.Address", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("district")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("number_house")
+                        .HasColumnType("int");
+
+                    b.Property<string>("province")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("street_name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ward")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Addresses");
+                });
+
+            modelBuilder.Entity("RoomSocialBE.Models.BookMark", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<int>("id_room")
+                        .HasColumnType("int");
+
+                    b.Property<string>("id_user")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("id_room");
+
+                    b.HasIndex("id_user");
+
+                    b.ToTable("bookMarks");
+                });
+
+            modelBuilder.Entity("RoomSocialBE.Models.Category", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("RoomSocialBE.Models.Friend", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("creat_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("id_user_accept")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("id_user_send")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("is_friend")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("updated_at")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("id_user_accept");
+
+                    b.HasIndex("id_user_send");
+
+                    b.ToTable("Friends");
+                });
+
+            modelBuilder.Entity("RoomSocialBE.Models.Room", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("arge")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("created_day")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("id_adress")
+                        .HasColumnType("int");
+
+                    b.Property<int>("id_category")
+                        .HasColumnType("int");
+
+                    b.Property<string>("id_user")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("images")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float>("price")
+                        .HasColumnType("real");
+
+                    b.Property<int>("quantity_room")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("id_adress");
+
+                    b.HasIndex("id_category");
+
+                    b.ToTable("Rooms");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -291,6 +460,95 @@ namespace RoomSocialBE.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("RoomSocialBE.Models.BookMark", b =>
+                {
+                    b.HasOne("RoomSocialBE.Models.Room", "Rooms")
+                        .WithMany("bookMarks")
+                        .HasForeignKey("id_room")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RoomSocialBE.Authentication.ApplicationUser", "Users")
+                        .WithMany("bookMarks")
+                        .HasForeignKey("id_user")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Rooms");
+
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("RoomSocialBE.Models.Friend", b =>
+                {
+                    b.HasOne("RoomSocialBE.Authentication.ApplicationUser", "UserAccept")
+                        .WithMany("ReceivedFriends")
+                        .HasForeignKey("id_user_accept")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("RoomSocialBE.Authentication.ApplicationUser", "UserSend")
+                        .WithMany("SentFriends")
+                        .HasForeignKey("id_user_send")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("UserAccept");
+
+                    b.Navigation("UserSend");
+                });
+
+            modelBuilder.Entity("RoomSocialBE.Models.Room", b =>
+                {
+                    b.HasOne("RoomSocialBE.Authentication.ApplicationUser", "User")
+                        .WithMany("Rooms")
+                        .HasForeignKey("UserId");
+
+                    b.HasOne("RoomSocialBE.Models.Address", "Address")
+                        .WithMany("Rooms")
+                        .HasForeignKey("id_adress")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RoomSocialBE.Models.Category", "Category")
+                        .WithMany("Rooms")
+                        .HasForeignKey("id_category")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Address");
+
+                    b.Navigation("Category");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("RoomSocialBE.Authentication.ApplicationUser", b =>
+                {
+                    b.Navigation("ReceivedFriends");
+
+                    b.Navigation("Rooms");
+
+                    b.Navigation("SentFriends");
+
+                    b.Navigation("bookMarks");
+                });
+
+            modelBuilder.Entity("RoomSocialBE.Models.Address", b =>
+                {
+                    b.Navigation("Rooms");
+                });
+
+            modelBuilder.Entity("RoomSocialBE.Models.Category", b =>
+                {
+                    b.Navigation("Rooms");
+                });
+
+            modelBuilder.Entity("RoomSocialBE.Models.Room", b =>
+                {
+                    b.Navigation("bookMarks");
                 });
 #pragma warning restore 612, 618
         }
