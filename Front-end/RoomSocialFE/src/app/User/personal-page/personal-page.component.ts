@@ -41,4 +41,25 @@ export class PersonalPageComponent implements OnInit {
       this.postStatus(); // Gọi hàm đăng bài
     }
   }
+
+  // Hàm xử lý xóa trạng thái
+  onDeleteStatus(statusId: number): void {
+    if (confirm('Bạn có chắc chắn muốn xóa bài viết này không?')) {
+      this.userService.deleteStatus(statusId).subscribe(
+        (response) => {
+          if (response.status === 'Success') {
+            alert('Xóa bài viết thành công.');
+            this.posts = this.posts.filter((post) => post.id !== statusId); // Cập nhật danh sách bài viết
+            this.userService.notifyPostCountUpdated();
+          } else {
+            alert(response.message || 'Xóa bài viết thất bại.');
+          }
+        },
+        (error) => {
+          console.error('Lỗi khi xóa bài viết:', error);
+          alert('Lỗi xóa bài viết.');
+        }
+      );
+    }
+  }
 }

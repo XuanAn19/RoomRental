@@ -330,6 +330,24 @@ export class UserService {
     );
   }
 
+  deleteStatus(statusId: number): Observable<any> {
+    const url = `Status/${statusId}`;
+    return this.apiService.API_Basic_DeleteTypeRequest(url).pipe(
+      map((response: any) => {
+        if (response.status === 'Success') {
+          console.log('Status deleted successfully.');
+          return response;
+        } else {
+          throw new Error(response.message || 'Failed to delete status.');
+        }
+      }),
+      catchError((error: any) => {
+        console.error('Error deleting status:', error);
+        return of({ status: 'Error', message: 'Failed to delete status.' });
+      })
+    );
+  }
+
   // Hàm để chuyển đổi chuỗi ngày sang đối tượng Date
   private parseDate(dateString: string): Date | null {
     const [day, month, yearAndTime] = dateString.split('/');

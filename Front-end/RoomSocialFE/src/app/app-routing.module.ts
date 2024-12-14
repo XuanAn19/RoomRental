@@ -17,25 +17,23 @@ const routes: Routes = [
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'change-password', component: ChangePasswordComponent },
   { path: 'register-landlord', component: RegisterLandlordComponent },
-  { path: 'post-for-rent', component: PostForRentComponent },
+  // { path: 'post-for-rent', component: PostForRentComponent },
   { path: 'verify-account', component: VerifyAccountComponent },
   { path: 'register-login', component: RegisterLoginComponent },
   { path: '', component: RegisterLoginComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'list-post', component: ListPostComponent },
-  { path: 'edit-post', component: EditPostComponent },
-  {
-    path: 'edit-post/:id',
-    component: EditPostComponent,
-  },
+  // { path: 'list-post', component: ListPostComponent },
+  // { path: 'edit-post', component: EditPostComponent },
+  // {
+  //   path: 'edit-post/:id',
+  //   component: EditPostComponent,
+  // },
   { path: 'add-friend', component: AddFriendComponent },
   { path: 'unfriend', component: UnfriendComponent },
   { path: 'personal-page', component: PersonalPageComponent },
   { path: 'request-add-friend', component: RequestAddFriendComponent },
 
-  { path: '', redirectTo: '/edit-profile', pathMatch: 'full' },
-
-  { path: '**', redirectTo: '/edit-profile' },
+  // { path: '**', redirectTo: '/post-for-rent' },
 ];
 
 @NgModule({
