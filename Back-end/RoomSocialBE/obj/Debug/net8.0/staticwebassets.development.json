@@ -1,1 +1,47 @@
-{"ContentRoots":["D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\wwwroot\\"],"Root":{"Children":{"images":{"Children":{"227f5f93-5167-4287-b0df-599f9becfe5a.jpg":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"images/227f5f93-5167-4287-b0df-599f9becfe5a.jpg"},"Patterns":null},"51ce614c-4873-454e-9698-74c8fea3c349.jpg":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"images/51ce614c-4873-454e-9698-74c8fea3c349.jpg"},"Patterns":null},"6742b89e-b5a3-41a5-896d-79b99df54b19.png":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"images/6742b89e-b5a3-41a5-896d-79b99df54b19.png"},"Patterns":null},"97eca756-3da5-40a7-a265-9c51df510f02.png":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"images/97eca756-3da5-40a7-a265-9c51df510f02.png"},"Patterns":null},"99702086-cca3-487e-91fd-c3fdfad4e6e0.jpg":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"images/99702086-cca3-487e-91fd-c3fdfad4e6e0.jpg"},"Patterns":null},"b6f0ebcd-8c5f-4dcb-b127-377009910ffc.jpg":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"images/b6f0ebcd-8c5f-4dcb-b127-377009910ffc.jpg"},"Patterns":null},"f30b580d-9696-4534-b59c-67b77f6c8a56.png":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"images/f30b580d-9696-4534-b59c-67b77f6c8a56.png"},"Patterns":null}},"Asset":null,"Patterns":null}},"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}
+{
+  "ContentRoots": ["E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\wwwroot\\"],
+  "Root": {
+    "Children": {
+      "images": {
+        "Children": {
+          "227f5f93-5167-4287-b0df-599f9becfe5a.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "images/227f5f93-5167-4287-b0df-599f9becfe5a.jpg"
+            },
+            "Patterns": null
+          },
+          "51ce614c-4873-454e-9698-74c8fea3c349.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "images/51ce614c-4873-454e-9698-74c8fea3c349.jpg"
+            },
+            "Patterns": null
+          },
+          "99702086-cca3-487e-91fd-c3fdfad4e6e0.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "images/99702086-cca3-487e-91fd-c3fdfad4e6e0.jpg"
+            },
+            "Patterns": null
+          },
+          "b6f0ebcd-8c5f-4dcb-b127-377009910ffc.jpg": {
+            "Children": null,
+            "Asset": {
+              "ContentRootIndex": 0,
+              "SubPath": "images/b6f0ebcd-8c5f-4dcb-b127-377009910ffc.jpg"
+            },
+            "Patterns": null
+          }
+        },
+        "Asset": null,
+        "Patterns": null
+      }
+    },
+    "Asset": null,
+    "Patterns": [{ "ContentRootIndex": 0, "Pattern": "**", "Depth": 0 }]
+  }
+}

@@ -1,18 +1,14 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RoomSocialBE.Authentication;
+using RoomSocialBE.DTOs;
 using RoomSocialBE.Models;
 
 namespace RoomSocialBE.Controllers
 {
-    public class FriendRequestDto
-    {
-        public string id_user_send { get; set; }
-        public string id_user_accept { get; set; }
-    }
-
     [Route("api/[controller]")]
     [ApiController]
     public class FriendsController : ControllerBase
@@ -26,8 +22,9 @@ namespace RoomSocialBE.Controllers
             this._context = context;
         }
 
+        [Authorize(Roles = UserRoles.User)]
         [HttpPost]
-        public async Task<IActionResult> CreateFriendRequest([FromBody] FriendRequestDto request)
+        public async Task<IActionResult> CreateFriendRequest([FromBody] FriendRequestDTO request)
         {
             if (string.IsNullOrEmpty(request.id_user_send) || string.IsNullOrEmpty(request.id_user_accept))
             {
@@ -83,8 +80,8 @@ namespace RoomSocialBE.Controllers
                 id_user_send = request.id_user_send,
                 id_user_accept = request.id_user_accept,
                 is_friend = false,
-                creat_at = DateTime.UtcNow,
-                updated_at = DateTime.UtcNow,
+                creat_at = DateTime.Now,
+                updated_at = DateTime.Now,
                 UserSend = sender,
                 UserAccept = receiver
             };
@@ -99,6 +96,7 @@ namespace RoomSocialBE.Controllers
             });
         }
 
+        [Authorize(Roles = UserRoles.User)]
         [HttpPut("{id}")]
         public async Task<IActionResult> AcceptFriendRequest(int id)
         {
@@ -131,7 +129,7 @@ namespace RoomSocialBE.Controllers
             }
 
             friendRequest.is_friend = true;
-            friendRequest.updated_at = DateTime.UtcNow;
+            friendRequest.updated_at = DateTime.Now;
 
             _context.Friends.Update(friendRequest);
             await _context.SaveChangesAsync();
@@ -143,6 +141,7 @@ namespace RoomSocialBE.Controllers
             });
         }
 
+        [Authorize(Roles = UserRoles.User)]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteFriendRequest(int id)
         {
@@ -175,6 +174,7 @@ namespace RoomSocialBE.Controllers
             });
         }
 
+        [Authorize(Roles = UserRoles.User)]
         [HttpGet("list/{id_user}")]
         public async Task<IActionResult> ShowFriendsList(string id_user)
         {
@@ -190,17 +190,24 @@ namespace RoomSocialBE.Controllers
 
             var friends = await _context.Friends
             .Where(f => (f.id_user_send == id_user || f.id_user_accept == id_user) && f.is_friend)
+            .OrderByDescending(f => f.updated_at)
             .Select(f => new
             {
                 id_user = id_user,
                 id_friend = f.id_user_send == id_user ? f.id_user_accept : f.id_user_send,
                 is_friend = f.is_friend,
-                created_at = f.creat_at,
-                update_at = f.updated_at,
+                created_at = f.creat_at.ToString("dd/MM/yyyy HH:mm:ss"),
+                update_at = f.updated_at.ToString("dd/MM/yyyy HH:mm:ss"),
                 friend_information = new
                 {
                     full_name = f.id_user_send == id_user ? f.UserAccept.full_name : f.UserSend.full_name,
-                    image = f.id_user_send == id_user ? f.UserAccept.image : f.UserSend.image
+                    image = f.id_user_send == id_user
+                    ? (f.UserAccept.image != null
+                        ? $"{Request.Scheme}://{Request.Host}/images/{f.UserAccept.image}"
+                        : null)
+                    : (f.UserSend.image != null
+                        ? $"{Request.Scheme}://{Request.Host}/images/{f.UserSend.image}"
+                        : null)
                 },
             })
             .ToListAsync();
@@ -213,6 +220,7 @@ namespace RoomSocialBE.Controllers
             });
         }
 
+        [Authorize(Roles = UserRoles.User)]
         [HttpGet("request_list/{id_user}")]
         public async Task<IActionResult> ShowFriendRequestList(string id_user)
         {
@@ -228,23 +236,58 @@ namespace RoomSocialBE.Controllers
 
             var friendRequests = await _context.Friends
             .Where(f => f.id_user_accept == id_user && !f.is_friend)
+            .OrderByDescending(f => f.updated_at)
             .Select(f => new
             {
                 id_friend_request = f.Id,
                 id_user = id_user,
                 id_user_send = f.id_user_send,
                 is_friend = f.is_friend,
-                created_at = f.creat_at,
-                update_at = f.updated_at,
+                created_at = f.creat_at.ToString("dd/MM/yyyy HH:mm:ss"),
+                update_at = f.updated_at.ToString("dd/MM/yyyy HH:mm:ss"),
                 sender_information = new
                 {
                     full_name = f.UserSend.full_name,
-                    image = f.UserSend.image
+                    image = f.UserSend.image != null ? $"{Request.Scheme}://{Request.Host}/images/{f.UserSend.image}" : null,
                 },
             })
             .ToListAsync();
 
             return Ok(friendRequests);
+        }
+
+        [Authorize(Roles = UserRoles.User)]
+        [HttpGet("User/{id_user}/quanity")]
+        public async Task<IActionResult> GetQuanityFriendWithUser(string id_user)
+        {
+            if (string.IsNullOrEmpty(id_user))
+            {
+                return BadRequest(new Response
+                {
+                    Status = "Error",
+                    Message = "Field 'id_user' is required."
+                });
+            }
+
+            var user = await userManager.FindByIdAsync(id_user);
+            if (user == null)
+            {
+                return NotFound(new Response
+                {
+                    Status = "Error",
+                    Message = "User not found."
+                });
+            }
+
+            var friendCount = await _context.Friends
+            .CountAsync(f => (f.id_user_send == id_user || f.id_user_accept == id_user) && f.is_friend);
+
+            return Ok(new Response
+            {
+                Status = "Success",
+                Message = $"User {id_user} has {friendCount} friends.",
+                Data = friendCount
+            });
         }
     }
 }

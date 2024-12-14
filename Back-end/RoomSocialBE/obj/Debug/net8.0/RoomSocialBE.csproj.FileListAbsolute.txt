@@ -1,321 +1,156 @@
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/appsettings.Development.json
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/appsettings.json
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/RoomSocialBE.staticwebassets.runtime.json
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/RoomSocialBE
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/RoomSocialBE.deps.json
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/RoomSocialBE.runtimeconfig.json
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/RoomSocialBE.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/RoomSocialBE.pdb
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/AutoMapper.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/AutoMapper.Collection.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/AutoMapper.Extensions.ExpressionMapping.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Azure.Core.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Azure.Identity.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/BouncyCastle.Cryptography.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Humanizer.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/MailKit.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.Bcl.AsyncInterfaces.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.CodeAnalysis.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.CodeAnalysis.CSharp.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.CodeAnalysis.Workspaces.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.Data.SqlClient.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Design.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Relational.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.SqlServer.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.Extensions.Caching.Abstractions.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.Extensions.Caching.Memory.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.Extensions.DependencyModel.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.Extensions.Identity.Core.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.Extensions.Identity.Stores.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.Identity.Client.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.Identity.Client.Extensions.Msal.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.OpenApi.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.SqlServer.Server.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Microsoft.Win32.SystemEvents.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/MimeKit.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Mono.TextTemplating.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/NETCore.MailKit.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/System.CodeDom.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/System.Composition.AttributedModel.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/System.Composition.Convention.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/System.Composition.Hosting.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/System.Composition.Runtime.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/System.Composition.TypedParts.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/System.Configuration.ConfigurationManager.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/System.Drawing.Common.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/System.Memory.Data.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/System.Runtime.Caching.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/System.Security.Cryptography.ProtectedData.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/System.Security.Permissions.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/System.Windows.Extensions.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/runtimes/unix/lib/net6.0/Microsoft.Data.SqlClient.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/runtimes/win/lib/net6.0/Microsoft.Data.SqlClient.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/runtimes/unix/lib/net6.0/System.Drawing.Common.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Drawing.Common.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Runtime.Caching.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/RoomSocialBE.csproj.AssemblyReference.cache
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/RoomSocialBE.GeneratedMSBuildEditorConfig.editorconfig
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/RoomSocialBE.AssemblyInfoInputs.cache
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/RoomSocialBE.AssemblyInfo.cs
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/RoomSocialBE.csproj.CoreCompileInputs.cache
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/RoomSocialBE.MvcApplicationPartsAssemblyInfo.cs
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/RoomSocialBE.MvcApplicationPartsAssemblyInfo.cache
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/RoomSocialBE.sourcelink.json
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/staticwebassets.build.json
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/staticwebassets.development.json
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/staticwebassets/msbuild.RoomSocialBE.Microsoft.AspNetCore.StaticWebAssets.props
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/staticwebassets/msbuild.build.RoomSocialBE.props
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.RoomSocialBE.props
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.RoomSocialBE.props
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/staticwebassets.pack.json
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/scopedcss/bundle/RoomSocialBE.styles.css
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/RoomSoci.F0452E54.Up2Date
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/RoomSocialBE.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/refint/RoomSocialBE.dll
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/RoomSocialBE.pdb
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/RoomSocialBE.genruntimeconfig.cache
-/Users/minhchan/RoomRental/Back-end/RoomSocialBE/obj/Debug/net8.0/ref/RoomSocialBE.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\appsettings.Development.json
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\appsettings.json
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\RoomSocialBE.staticwebassets.runtime.json
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\RoomSocialBE.exe
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\RoomSocialBE.deps.json
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\RoomSocialBE.runtimeconfig.json
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\RoomSocialBE.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\RoomSocialBE.pdb
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\AutoMapper.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Azure.Core.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Azure.Identity.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Humanizer.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\MailKit.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.Identity.Client.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.OpenApi.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\MimeKit.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Mono.TextTemplating.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\NETCore.MailKit.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\System.CodeDom.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\System.Composition.AttributedModel.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\System.Composition.Convention.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\System.Composition.Hosting.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\System.Composition.Runtime.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\System.Composition.TypedParts.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\System.Drawing.Common.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\System.Formats.Asn1.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\System.Memory.Data.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\System.Runtime.Caching.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\System.Security.Permissions.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\System.Text.Json.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\System.Windows.Extensions.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\RoomSocialBE.csproj.AssemblyReference.cache
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\RoomSocialBE.GeneratedMSBuildEditorConfig.editorconfig
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\RoomSocialBE.AssemblyInfoInputs.cache
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\RoomSocialBE.AssemblyInfo.cs
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\RoomSocialBE.csproj.CoreCompileInputs.cache
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\RoomSocialBE.MvcApplicationPartsAssemblyInfo.cs
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\RoomSocialBE.MvcApplicationPartsAssemblyInfo.cache
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\RoomSocialBE.sourcelink.json
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\staticwebassets.build.json
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\staticwebassets.development.json
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\staticwebassets\msbuild.RoomSocialBE.Microsoft.AspNetCore.StaticWebAssets.props
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\staticwebassets\msbuild.build.RoomSocialBE.props
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.RoomSocialBE.props
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.RoomSocialBE.props
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\staticwebassets.pack.json
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\scopedcss\bundle\RoomSocialBE.styles.css
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\RoomSoci.F0452E54.Up2Date
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\RoomSocialBE.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\refint\RoomSocialBE.dll
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\RoomSocialBE.pdb
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\RoomSocialBE.genruntimeconfig.cache
-D:\TAI_LIEU_HOC_TAP\NAM_4\HK1\PTPMChuyenNghiep\RoomRental\Back-end\RoomSocialBE\obj\Debug\net8.0\ref\RoomSocialBE.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\appsettings.Development.json
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\appsettings.json
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\RoomSocialBE.staticwebassets.runtime.json
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\RoomSocialBE.exe
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\RoomSocialBE.deps.json
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\RoomSocialBE.runtimeconfig.json
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\RoomSocialBE.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\RoomSocialBE.pdb
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\AutoMapper.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Azure.Core.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Azure.Identity.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Humanizer.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\MailKit.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.OpenApi.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\MimeKit.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Mono.TextTemplating.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\NETCore.MailKit.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\System.CodeDom.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\System.Composition.Convention.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\System.Composition.Hosting.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\System.Composition.Runtime.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\System.Composition.TypedParts.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\System.Drawing.Common.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\System.Formats.Asn1.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\System.Memory.Data.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\System.Runtime.Caching.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\System.Security.Permissions.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\System.Windows.Extensions.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\RoomSocialBE.csproj.AssemblyReference.cache
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\RoomSocialBE.GeneratedMSBuildEditorConfig.editorconfig
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\RoomSocialBE.AssemblyInfoInputs.cache
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\RoomSocialBE.AssemblyInfo.cs
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\RoomSocialBE.csproj.CoreCompileInputs.cache
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\RoomSocialBE.MvcApplicationPartsAssemblyInfo.cs
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\RoomSocialBE.MvcApplicationPartsAssemblyInfo.cache
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\RoomSocialBE.sourcelink.json
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\staticwebassets.build.json
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\staticwebassets.development.json
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\staticwebassets\msbuild.RoomSocialBE.Microsoft.AspNetCore.StaticWebAssets.props
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\staticwebassets\msbuild.build.RoomSocialBE.props
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.RoomSocialBE.props
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.RoomSocialBE.props
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\staticwebassets.pack.json
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\scopedcss\bundle\RoomSocialBE.styles.css
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\RoomSocialBE.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\refint\RoomSocialBE.dll
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\RoomSocialBE.pdb
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\RoomSocialBE.genruntimeconfig.cache
+E:\dotnet App\PTPMCN\Back-end\RoomsocialBE\obj\Debug\net8.0\ref\RoomSocialBE.dll
+E:\dotnet App\PTPMCN\Back-end\RoomSocialBE\obj\Debug\net8.0\RoomSocialBE.csproj.CopyComplete

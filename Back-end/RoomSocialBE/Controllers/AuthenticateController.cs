@@ -72,7 +72,8 @@ namespace RoomSocialBE.Controllers
             {
                 new Claim(ClaimTypes.Name, user.UserName),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(ClaimTypes.Email, user.Email)
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim("id",user.Id.ToString()),
             };
 
             foreach (var userRole in userRoles)
@@ -439,6 +440,8 @@ namespace RoomSocialBE.Controllers
 
             }
             user.is_verification_code_valid = false;
+            user.Createdateerify = DateTime.UtcNow;
+            user.UpdatedateVerify = DateTime.UtcNow;
 
             var updateResult = await userManager.UpdateAsync(user);
             if (updateResult.Succeeded)

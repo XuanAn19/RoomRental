@@ -1,28 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\RoomSocialBE.csproj": {}
+    "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\RoomSocialBE.csproj": {}
   },
   "projects": {
-    "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\RoomSocialBE.csproj": {
+    "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\RoomSocialBE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\RoomSocialBE.csproj",
+        "projectUniqueName": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\RoomSocialBE.csproj",
         "projectName": "RoomSocialBE",
-        "projectPath": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\RoomSocialBE.csproj",
+        "projectPath": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\RoomSocialBE.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "D:\\TAI_LIEU_HOC_TAP\\NAM_4\\HK1\\PTPMChuyenNghiep\\RoomRental\\Back-end\\RoomSocialBE\\obj\\",
+        "outputPath": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
+        "originalTargetFrameworks": ["net8.0"],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,23 +29,16 @@
           }
         },
         "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
+          "warnAsError": ["NU1605"]
         }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "AutoMapper": {
               "target": "Package",
-              "version": "[12.0.1, )"
+              "version": "[13.0.1, )"
             },
             "MailKit": {
               "target": "Package",
@@ -63,16 +53,6 @@
               "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[8.0.10, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.8, )"
-            },
-            "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[8.0.10, )"
             },

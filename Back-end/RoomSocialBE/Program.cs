@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using RoomSocialBE.Authentication;
@@ -10,9 +11,8 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Services.AddAutoMapper(typeof(MappingProfile));  // Đăng ký profile ánh xạ
+builder.Services.AddAutoMapper(typeof(MappingProfile));  // Đăng ký profile ánh xạ
 
-// Add services to the container.
 
 
 
@@ -62,6 +62,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 
 //builder.Services.AddDbContext<ApplicationDbContext>(options =>
  //   options.UseInMemoryDatabase("InMemoryDb"));
+//builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase("InMemoryDb"));
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
@@ -85,7 +86,6 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -103,6 +103,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images")),
+    RequestPath = "/images"
+});
 
 app.UseHttpsRedirection();
 app.UseCors("AllowAngularApp");

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using RoomSocialBE.Models;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace RoomSocialBE.Authentication
 {
@@ -22,11 +23,18 @@ namespace RoomSocialBE.Authentication
         public DateTime? refresh_token_expiry_time { get; set; }
 
         public bool? is_true { get; set; }
+        public DateTime? Createdateerify { get; set; }
 
+        public DateTime? UpdatedateVerify { get; set; }
         public ICollection<Room>? Rooms { get; set; }
         public ICollection<BookMark>? bookMarks { get; set; }
 
         public virtual ICollection<Friend> SentFriends { get; set; } = new HashSet<Friend>();
+
         public virtual ICollection<Friend> ReceivedFriends { get; set; } = new HashSet<Friend>();
+
+        [JsonIgnore]
+        public virtual ICollection<Status> UserStatuss { get; set; } = new HashSet<Status>();
+
     }
 }

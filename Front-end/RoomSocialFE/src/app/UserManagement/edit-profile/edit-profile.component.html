@@ -1,9 +1,30 @@
 <div class="content">
-  <app-sidebar></app-sidebar>
-
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="profile-section">
+      <div class="profile-avatar">
+        <div class="avatar-circle"></div>
+      </div>
+      <span>Thanh Trâm</span>
+    </div>
+    <ul class="sidebar-links">
+      <ul>
+        <i class="fa fa-user" aria-hidden="true"></i
+        >Quản lý tài khoản
+      </ul>
+      <li class="sub-link active">
+        <a routerLink="/edit-profile">Chỉnh sửa hồ sơ</a>
+      </li>
+      <li class="sub-link">
+        <a routerLink="/change-password">Thay đổi mật khẩu</a>
+      </li>
+      <li class="sub-link">
+        <a routerLink="/register-landlord">ĐK làm người cho thuê</a>
+      </li>
+    </ul>
+  </aside>
   <div class="profile-container">
     <h2>Quản lý tài khoản</h2>
-
     <div class="tabs">
       <a class="tab active" routerLink="/edit-profile">Chỉnh sửa hồ sơ</a>
       <a class="tab" routerLink="/change-password">Thay đổi mật khẩu</a>
@@ -14,85 +35,40 @@
       <h3>Thông tin cá nhân</h3>
       <div class="avatar-section">
         <div class="avatar-container">
-          <img
-            *ngIf="avatarPreview"
-            class="load-avatar"
-            [src]="avatarPreview"
-            alt="avatar"
-          />
-          <button
-            *ngIf="avatarPreview"
-            class="remove-avatar-btn"
-            (click)="removeAvatar()"
-          >
-            x
-          </button>
-          <img
-            *ngIf="!avatarPreview"
-            class="load-avatar"
-            src="/images/load-avatar.png"
-            alt="Default Avatar"
-          />
+          <img class="load-avatar" src="/images/load-avatar.png" alt="avatar" />
         </div>
         <label for="file-upload" class="upload-button">Tải ảnh lên</label>
-        <input
-          id="file-upload"
-          type="file"
-          hidden
-          (change)="onFileSelected($event)"
-          accept=".jpg, .jpeg, .png, .gif"
-        />
+        <input id="file-upload" type="file" hidden />
       </div>
 
-      <form
-        [formGroup]="userInfoForm"
-        (ngSubmit)="updateProfile()"
-        enctype="multipart/form-data"
-      >
-        <!-- Họ và tên -->
-        <div class="form-group name-input">
-          <label for="fullName">Họ và tên</label>
-          <input type="text" id="fullName" formControlName="fullName" />
-          <div *ngIf="isFullNameInvalid" class="error-message">
-            {{ fullNameErrorMessage }}
-          </div>
-        </div>
+      <div class="form-group name-input">
+        <label for="fullName">Họ và tên</label>
+        <input type="text" id="fullName" />
+      </div>
+      <hr
+        style="
+          width: 95%;
+          border-top: 1px solid #d3d3d3;
+          display: block;
+          margin: 0 auto;
+        "
+      />
 
-        <hr
-          style="
-            width: 95%;
-            border-top: 1px solid #d3d3d3;
-            display: block;
-            margin: 0 auto;
-          "
-        />
-
-        <h3 style="padding-top: 20px">Thông tin liên hệ</h3>
-        <div class="form-group contact-infor">
-          <div class="half-group">
-            <label for="phone">Số điện thoại</label>
-            <input type="text" id="phone" formControlName="phoneNumber" />
-            <div *ngIf="isPhoneNumberInvalid" class="error-message">
-              {{ phoneNumberErrorMessage }}
-            </div>
-            <a href="#" class="change-phone-link">Đổi số điện thoại</a>
-          </div>
-          <div class="half-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" formControlName="email" />
-          </div>
+      <h3 style="padding-top: 20px">Thông tin liên hệ</h3>
+      <div class="form-group contact-infor">
+        <div class="half-group">
+          <label for="phone">Số điện thoại</label>
+          <input type="text" id="phone" />
+          <a href="#" class="change-phone-link">Đổi số điện thoại</a>
         </div>
-
-        <div class="save-button-container">
-          <button
-            type="submit"
-            class="save-button"
-            [disabled]="userInfoForm.invalid"
-          >
-            Lưu thay đổi
-          </button>
+        <div class="half-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" />
         </div>
-      </form>
+      </div>
+      <div class="save-button-container">
+        <button class="save-button">Lưu thay đổi</button>
+      </div>
     </div>
   </div>
 </div>

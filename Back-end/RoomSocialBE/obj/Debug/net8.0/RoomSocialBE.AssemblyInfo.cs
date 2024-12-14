@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RoomSocialBE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc6deba72858b5f5d4ebac46d1e26dc738fd7a81")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+16fef3e35cee6aa3f0f40e3e62a0e35756a0690b")]
 [assembly: System.Reflection.AssemblyProductAttribute("RoomSocialBE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RoomSocialBE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

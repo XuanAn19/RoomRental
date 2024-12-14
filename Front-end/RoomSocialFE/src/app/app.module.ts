@@ -12,18 +12,17 @@ import { RegisterLandlordComponent } from './UserManagement/register-landlord/re
 import { HeaderComponent } from './component/header/header.component';
 import { RegisterLoginComponent } from './component/register-login/register-login.component';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {
-  HTTP_INTERCEPTORS,
   HttpClientModule,
   provideHttpClient,
   withFetch,
 } from '@angular/common/http';
 import { VerifyAccountComponent } from './component/verify-account/verify-account.component';
-import { PostForRentComponent } from './component/post-for-rent/post-for-rent/post-for-rent.component';
-import { ListPostComponent } from './component/list-post/list-post/list-post.component';
-import { EditPostComponent } from './component/edit-post/edit-post/edit-post.component';
+// import { PostForRentComponent } from './component/post-for-rent/post-for-rent/post-for-rent.component';
+// import { ListPostComponent } from './component/list-post/list-post/list-post.component';
+// import { EditPostComponent } from './component/edit-post/edit-post/edit-post.component';
 import { TokenStoreService } from './service/token-store/token-store.service';
 import {
   authInterceptorProviders,
@@ -43,11 +42,7 @@ import { RequestAddFriendComponent } from './User/request-add-friend/request-add
     ChangePasswordComponent,
     RegisterLandlordComponent,
     ForgotPasswordComponent,
-    PostForRentComponent,
     HeaderComponent,
-    VerifyAccountComponent,
-    ListPostComponent,
-    EditPostComponent,
     RegisterLoginComponent,
     SidebarComponent,
     AddFriendComponent,
@@ -70,6 +65,8 @@ import { RequestAddFriendComponent } from './User/request-add-friend/request-add
     TokenStoreService,
     authInterceptorProviders,
   ],
+  imports: [BrowserModule, AppRoutingModule, RouterModule, FormsModule],
+  providers: [provideHttpClient(withFetch())],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -10,7 +10,7 @@ import { ApiService } from '../../service/api/api.service';
 })
 export class ForgotPasswordComponent {
   constructor(
-    private _router: Router,
+    private router: Router,
     private _api: ApiService,
     private _auth: AuthService
   ) {}
@@ -25,25 +25,32 @@ export class ForgotPasswordComponent {
   isFormEmail = false;
 
   cancelEmail() {
-    this._router.navigate(['/']);
+    this.router.navigate(['/']);
   }
 
   sendEmail() {
+    // this.isEmail = false;
     if (!this.email) {
       alert('Vui lòng nhập email!');
       return;
-    } else {
-      this._auth.Call_API_ForgotPassword(this.email).subscribe(
-        (response) => {
-          this.isEmail = false;
-          this.isFormEmail = !this.isFormEmail;
-        },
-        (error: any) => {
-          console.error('Lỗi khi gửi email', error);
-          alert('Đã xảy ra lỗi. Vui lòng thử lại sau.');
-        }
-      );
     }
+
+    // Gửi email cho server để xác minh email
+    this._auth.Call_API_SendPasswordResetEmail(this.email).subscribe(
+      (response: { success: any }) => {
+        if (response.success) {
+          this.isEmail = false;
+          // this.isFormEmail = true;
+          this.isFormEmail = !this.isFormEmail;
+        } else {
+          alert('Email không tồn tại!');
+        }
+      },
+      (error: any) => {
+        console.error('Lỗi khi gửi email', error);
+        alert('Đã xảy ra lỗi. Vui lòng thử lại sau.');
+      }
+    );
   }
 
   cancelCode() {
@@ -59,10 +66,14 @@ export class ForgotPasswordComponent {
 
     // Xác minh mã gửi qua email
     this._auth.Call_API_VerifyCode(this.email, this.code).subscribe(
-      (actor) => {
-        this.isFormEmail = false;
-        this.isFormCode = !this.isFormCode;
-        this.isEmail = false;
+      (response: { success: any }) => {
+        if (response.success) {
+          this.isFormEmail = false;
+          this.isFormCode = !this.isFormCode;
+          this.isEmail = false;
+        } else {
+          alert('Mã xác nhận không đúng!');
+        }
       },
       (error: any) => {
         console.error('Lỗi khi xác minh mã', error);
@@ -80,27 +91,28 @@ export class ForgotPasswordComponent {
     if (!this.password || !this.passwordAgain) {
       alert('Vui lòng nhập mật khẩu!');
       return;
-    } else {
-      const regex =
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-      if (!regex.test(this.password)) {
-        alert('Mật khẩu không hợp lệ!');
-      } else if (this.password !== this.passwordAgain) {
-        alert('Mật khẩu không khớp!');
-        return;
-      } else {
-        // Gửi mật khẩu mới lên server
-        this._auth.Call_API_ResetPassword(this.email, this.password).subscribe(
-          (response) => {
-            alert('Mật khẩu đã được thay đổi thành công!');
-            this._router.navigate(['/register-login']);
-          },
-          (error: any) => {
-            console.error('Lỗi khi thay đổi mật khẩu', error);
-            alert('Đã xảy ra lỗi. Vui lòng thử lại sau.');
-          }
-        );
-      }
     }
+
+    if (this.password !== this.passwordAgain) {
+      alert('Mật khẩu không khớp!');
+      return;
+    }
+
+    // Gửi mật khẩu mới lên server
+    this._auth.Call_API_ResetPassword(this.email, this.password).subscribe(
+      (response: { success: any }) => {
+        if (response.success) {
+          alert('Mật khẩu đã được thay đổi thành công!');
+          // Reset form hoặc chuyển hướng tới trang đăng nhập
+          //this.router.navigate['/register-login'];
+        } else {
+          alert('Đã xảy ra lỗi khi thay đổi mật khẩu.');
+        }
+      },
+      (error: any) => {
+        console.error('Lỗi khi thay đổi mật khẩu', error);
+        alert('Đã xảy ra lỗi. Vui lòng thử lại sau.');
+      }
+    );
   }
 }
