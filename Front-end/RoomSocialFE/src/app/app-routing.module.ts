@@ -4,15 +4,39 @@ import { EditProfileComponent } from './UserManagement/edit-profile/edit-profile
 import { ChangePasswordComponent } from './UserManagement/change-password/change-password.component';
 import { RegisterLandlordComponent } from './UserManagement/register-landlord/register-landlord.component';
 import { VerifyAccountComponent } from './component/verify-account/verify-account.component';
+// import { PostForRentComponent } from './component/post-for-rent/post-for-rent/post-for-rent.component';
+import { RegisterLoginComponent } from './component/register-login/register-login.component';
+import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
+// import { ListPostComponent } from './component/list-post/list-post/list-post.component';
+// import { EditPostComponent } from './component/edit-post/edit-post/edit-post.component';
+import { AddFriendComponent } from './User/add-friend/add-friend.component';
+import { UnfriendComponent } from './User/unfriend/unfriend.component';
+import { PersonalPageComponent } from './User/personal-page/personal-page.component';
+import { RequestAddFriendComponent } from './User/request-add-friend/request-add-friend.component';
 const routes: Routes = [
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'change-password', component: ChangePasswordComponent },
   { path: 'register-landlord', component: RegisterLandlordComponent },
+  { path: 'post-for-rent', component: PostForRentComponent },
+  { path: 'verify-account', component: VerifyAccountComponent },
+  { path: 'register-login', component: RegisterLoginComponent },
+  { path: '', component: RegisterLoginComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'list-post', component: ListPostComponent },
+  { path: 'edit-post', component: EditPostComponent },
+  {
+    path: 'edit-post/:id',
+    component: EditPostComponent,
+  },
+  { path: 'add-friend', component: AddFriendComponent },
+  { path: 'unfriend', component: UnfriendComponent },
+  { path: 'personal-page', component: PersonalPageComponent },
+  { path: 'request-add-friend', component: RequestAddFriendComponent },
 
   { path: '', redirectTo: '/edit-profile', pathMatch: 'full' },
 
   { path: '**', redirectTo: '/edit-profile' },
-]
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

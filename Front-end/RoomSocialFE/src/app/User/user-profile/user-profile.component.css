@@ -1,0 +1,87 @@
+.profile-container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-bar {
+  width: 70%;
+}
+
+.profile-container input[type="text"] {
+  width: 30%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: #ccc;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  font-weight: bold;
+  margin-bottom: 100px;
+}
+
+.profile-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+}
+
+.profile-info {
+  width: 50%;
+  font-weight: bold;
+}
+
+.profile-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.profile-info li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  padding-left: 30px;
+}
+
+.profile-info i {
+  margin-right: 10px;
+}
+
+.profile-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-right: 30px;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #43d17d;
+  overflow: hidden; /* Ẩn phần ảnh vượt ra ngoài khung tròn */
+  position: relative;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo ảnh lấp đầy khung tròn mà không bị méo */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.profile-right h2 {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}

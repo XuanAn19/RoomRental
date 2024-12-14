@@ -1,0 +1,44 @@
+<app-user-profile></app-user-profile>
+
+<hr
+  style="
+    width: 60%;
+    border-top: 1px solid #d3d3d3;
+    display: block;
+    margin: 0 auto;
+  "
+/>
+<div class="container">
+  <div class="tabs-container">
+    <div class="tabs">
+      <span class="tab active" routerLink="/add-friend">Lời mời kết bạn</span>
+      <span class="tab" routerLink="/unfriend">Danh sách bạn bè</span>
+      <span class="tab" routerLink="/request-add-friend">Tìm kiếm bạn bè</span>
+    </div>
+  </div>
+
+  <div class="status-container">
+    <label for="status">Đăng trạng thái</label>
+    <div class="status-input">
+      <textarea
+        id="status"
+        placeholder="Nhập nội dung trạng thái..."
+        [(ngModel)]="newStatus"
+        (keydown)="onEnter($event)"
+      ></textarea>
+      <!-- Thêm sự kiện click vào icon để đăng bài -->
+      <span class="emoji-icon" (click)="postStatus()">
+        <i class="fa fa-smile-o" aria-hidden="true"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="post-container">
+    <div class="post" *ngFor="let post of posts">
+      <p class="date">{{ post.creat_at | date : "dd/MM/yyyy" }}</p>
+      <!-- Hiển thị ngày giờ bài đăng -->
+      <pre class="content">{{ post.content }}</pre>
+      <!-- Hiển thị nội dung bài đăng -->
+    </div>
+  </div>
+</div>

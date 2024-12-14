@@ -18,6 +18,12 @@ export class ApiService {
     );
   }
 
+  API_Basic_GetTypeRequest1(url: string): Observable<any[]> {
+    return this._http
+      .get<any[]>(`${this.baseUrl}${url}`)
+      .pipe(map((res) => res));
+  }
+
   API_Basic_GetTypeRequestParams(url: string, payload: any): Observable<any> {
     return this._http
       .get(`${this.baseUrl}${url}/${payload}`)
@@ -34,6 +40,15 @@ export class ApiService {
 
   API_Basic_PutTypeRequest(url: string, payload: any) {
     return this._http.put(`${this.baseUrl}${url}`, payload).pipe(
+      map((res) => {
+        return res;
+      })
+    );
+  }
+
+  // Hàm xóa
+  API_Basic_DeleteTypeRequest(url: string): Observable<any> {
+    return this._http.delete(`${this.baseUrl}${url}`).pipe(
       map((res) => {
         return res;
       })

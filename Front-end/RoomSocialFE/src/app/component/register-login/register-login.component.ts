@@ -128,6 +128,10 @@ export class RegisterLoginComponent {
         .subscribe(
           (actor) => {
             alert('Đăng nhập thành công');
+            //     this._router.navigate(['post-for-rent']);
+            this._router.navigate(['personal-page']);
+            console.log('Token negative: ' + this._token.getToken());
+            console.log('idUser:', this._token.getIdUser());
           },
           (error) => {
             console.error('Đăng nhập lỗi:', error);

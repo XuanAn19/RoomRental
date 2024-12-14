@@ -16,10 +16,28 @@ export class AuthService {
   }
 
   Call_API_LoginUser(credential: any): Observable<any> {
-    return this._api.API_Basic_PostTypeRequest('Authenticate/login', {
-      email: credential.email,
-      password: credential.password,
-    });
+    return this._api
+      .API_Basic_PostTypeRequest('Authenticate/login', {
+        email: credential.email,
+        password: credential.password,
+      })
+      .pipe(
+        map((response: any) => {
+          console.log('API Response:', response.accessToken);
+          if (response) {
+            console.log('Token:', response.accessToken);
+            const actor = response.user;
+            this._token.setToken(response.accessToken);
+            this._token.setIdUser(response.idUser);
+            console.log('Token stored:', this._token.getToken());
+            this._token.setUser(actor);
+            this.userSubject.next(actor);
+            return actor;
+          } else {
+            throw new Error('Thông tin đăng nhập không hợp lệ');
+          }
+        })
+      );
   }
 
   Call_API_RegisterUser(requestBody: any): Observable<any> {

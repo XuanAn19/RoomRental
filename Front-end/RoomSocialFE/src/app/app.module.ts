@@ -14,8 +14,26 @@ import { RegisterLoginComponent } from './component/register-login/register-logi
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import {
+  HttpClientModule,
+  provideHttpClient,
+  withFetch,
+} from '@angular/common/http';
 import { VerifyAccountComponent } from './component/verify-account/verify-account.component';
+// import { PostForRentComponent } from './component/post-for-rent/post-for-rent/post-for-rent.component';
+// import { ListPostComponent } from './component/list-post/list-post/list-post.component';
+// import { EditPostComponent } from './component/edit-post/edit-post/edit-post.component';
+import { TokenStoreService } from './service/token-store/token-store.service';
+import {
+  authInterceptorProviders,
+  MyInterceptorService,
+} from './service/my-interceptor/my-interceptor.service';
+import { SidebarComponent } from './UserManagement/sidebar/sidebar.component';
+import { AddFriendComponent } from './User/add-friend/add-friend.component';
+import { PersonalPageComponent } from './User/personal-page/personal-page.component';
+import { UnfriendComponent } from './User/unfriend/unfriend.component';
+import { UserProfileComponent } from './User/user-profile/user-profile.component';
+import { RequestAddFriendComponent } from './User/request-add-friend/request-add-friend.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +44,26 @@ import { VerifyAccountComponent } from './component/verify-account/verify-accoun
     ForgotPasswordComponent,
     HeaderComponent,
     RegisterLoginComponent,
-    VerifyAccountComponent,
+    SidebarComponent,
+    AddFriendComponent,
+    PersonalPageComponent,
+    UnfriendComponent,
+    UserProfileComponent,
+    RequestAddFriendComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
+  providers: [
+    provideHttpClient(withFetch()),
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptorService, multi: true },
+    TokenStoreService,
+    authInterceptorProviders,
   ],
   imports: [BrowserModule, AppRoutingModule, RouterModule, FormsModule],
   providers: [provideHttpClient(withFetch())],
