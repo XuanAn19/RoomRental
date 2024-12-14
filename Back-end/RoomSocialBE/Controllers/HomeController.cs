@@ -148,16 +148,23 @@ namespace RoomSocialBE.Controllers
         public async Task<ActionResult<List<RoomDTO>>> Getfindretail()
         {
             var categoryName = "Tìm bạn ở ghép";
-            var category = await _dataContext.Categories.FirstOrDefaultAsync(c => c.name != categoryName);
-            if (category == null)
+
+            var category = await _dataContext.Categories
+                .Where(c => c.name != categoryName)
+                .ToListAsync();
+
+            if (category == null || category.Count == 0)
             {
-                return NotFound("Category " + categoryName + " not found.");
+                return NotFound("No categories found excluding " + categoryName + ".");
             }
+
+            var categoryIds = category.Select(c => c.id).ToList();
+
             var rooms = await _dataContext.Rooms
                 .Include(r => r.User)
                 .Include(r => r.Address)
                 .Include(r => r.Category)
-                .Where(r => r.id_category == category.id && r.status == true)
+                .Where(r => categoryIds.Contains(r.id_category) && r.status == true)
                 .OrderByDescending(r => r.created_day)
                 .Select(r => new RoomDTO
                 {
@@ -178,8 +185,8 @@ namespace RoomSocialBE.Controllers
                         Id = r.User.Id,
                         UserName = r.User.UserName,
                         Email = r.User.Email,
-						PhoneNumber = r.User.PhoneNumber,
-						full_name = r.User.full_name
+                        PhoneNumber = r.User.PhoneNumber,
+                        full_name = r.User.full_name
                     },
                     address = new Address
                     {
@@ -189,7 +196,6 @@ namespace RoomSocialBE.Controllers
                         ward = r.Address.ward,
                         district = r.Address.district,
                         province = r.Address.province
-
                     },
                     category = new Category
                     {
@@ -199,7 +205,10 @@ namespace RoomSocialBE.Controllers
                 })
                 .ToListAsync();
 
-            if (rooms == null || rooms.Count == 0 || !rooms.Any()) return BadRequest("Rooms not found");
+            if (rooms == null || rooms.Count == 0)
+            {
+                return BadRequest("Rooms not found.");
+            }
 
             return Ok(rooms);
         }
