@@ -85,7 +85,7 @@ namespace RoomSocialBE.Controllers
                 return NotFound(new { status = "no", message = "User not found." });
             }
 
-            if (await _userManager.IsInRoleAsync(user, "Landlord"))
+            /*if (await _userManager.IsInRoleAsync(user, "Landlord"))
             {
                 var removeRoleResult = await _userManager.RemoveFromRoleAsync(user, "Landlord");
                 if (!removeRoleResult.Succeeded)
@@ -93,12 +93,13 @@ namespace RoomSocialBE.Controllers
                     return BadRequest(new { status = "no", message = "Failed to remove Landlord role." });
                 }
             }
+            await _userManager.RemoveFromRoleAsync(user, "User");
 
             var addRoleResult = await _userManager.AddToRoleAsync(user, "User");
             if (!addRoleResult.Succeeded)
             {
                 return BadRequest(new { status = "no", message = "Failed to update role to User." });
-            }
+            }*/
 
             user.is_true = null;
             user.UpdatedateVerify =DateTime.UtcNow;

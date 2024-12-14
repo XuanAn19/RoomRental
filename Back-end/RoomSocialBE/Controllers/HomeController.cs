@@ -47,8 +47,12 @@ namespace RoomSocialBE.Controllers
 			{
 				data = data.Where(c => c.title.Contains(search.SearchName) || c.description.Contains(search.SearchName));
 			}
+            if (!string.IsNullOrEmpty(search.CategoryName))
+            {
+                data = data.Where(c => c.Category.name.Contains(search.CategoryName));
+            }
 
-			if (search.From.HasValue)
+            if (search.From.HasValue)
 			{
 				data = data.Where(p => p.price >= search.From.Value);
 			}
@@ -77,55 +81,6 @@ namespace RoomSocialBE.Controllers
 						a.Address.street_name.Contains(search.Address)
 					);
 			}
-
-			if (data.Count() < 5)
-			{
-
-				var additionalData = new List<Room>();
-
-				if (!string.IsNullOrEmpty(search.SearchName))
-				{
-					additionalData = _dataContext.Rooms
-						.Where(c => c.title.Contains(search.SearchName) || c.description.Contains(search.SearchName))
-						.Include(r => r.User)
-						.Include(r => r.Address)
-						.Include(r => r.Category)
-						.ToList();
-				}
-
-				if (search.To.HasValue)
-				{
-					additionalData.AddRange(_dataContext.Rooms
-						.Where(p => p.price <= (search.To.Value * 2))
-						.Include(r => r.User)
-						.Include(r => r.Address)
-						.Include(r => r.Category)
-						.ToList());
-				}
-
-				if (search.ArceTo.HasValue)
-				{
-					additionalData.AddRange(_dataContext.Rooms
-						.Where(p => p.arge <= (search.ArceTo.Value * 1.5))
-						.Include(r => r.User)
-						.Include(r => r.Address)
-						.Include(r => r.Category)
-						.ToList());
-				}
-
-
-				var resultSet = data.Concat(additionalData).Distinct().ToList();
-
-				// Đảm bảo số lượng kết quả đủ 5
-				if (resultSet.Count < 5)
-				{
-					resultSet.AddRange(additionalData.Take(5 - resultSet.Count));
-				}
-
-				data = resultSet.AsQueryable();
-			}
-
-
 			
 			switch (search.SortBy.ToLower())
 			{
@@ -163,15 +118,21 @@ namespace RoomSocialBE.Controllers
 				status = r.status,
 				user = new ApplicationUser
 				{
-					Id = r.User.Id,
-
-					UserName = r.User.UserName,
-					Email = r.User.Email
+					 Id = r.User.Id,
+                        UserName = r.User.UserName,
+                        Email = r.User.Email,
+						PhoneNumber = r.User.PhoneNumber,
+						full_name = r.User.full_name
 				},
 				address = new Address
 				{
 					id = r.Address.id,
-				},
+                    number_house = r.Address.number_house,
+                    street_name = r.Address.street_name,
+                    ward = r.Address.ward,
+                    district = r.Address.district,
+                    province = r.Address.province
+                },
 				category = new Category
 				{
 					id = r.Category.id,
