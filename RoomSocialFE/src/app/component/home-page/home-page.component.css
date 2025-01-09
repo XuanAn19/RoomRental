@@ -1,0 +1,322 @@
+body{
+  margin: 0;
+  left: 0;
+  top: 0;
+}
+/* Tổng quan homepage-container */
+.homepage-container {
+  position: relative;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+/* Hình nền */
+.homepage-image {
+  width: 100%;
+  height: auto;
+  filter: brightness(0.6) contrast(1.2) saturate(0.8);
+}
+
+/* Text over Background (homepage-text) */
+.homepage-text {
+  position: absolute; /* Giữ vị trí trên hình nền */
+  top: 400px;           /* Đặt cách phía trên một khoảng */
+  left: 50%;          /* Đặt ở giữa ngang */
+  transform: translate(-50%, -50%);
+  z-index: 2;         /* Đảm bảo luôn trên các phần tử khác */
+  text-align: center;
+  width: 100%;        /* Không co lại */
+  pointer-events: none; /* Ngăn click vào khi có phần tử chồng lấn */
+}
+
+.homepage-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.homepage-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.homepage-button {
+  background-color: rgba(235, 234, 234, 0.8);
+  color: #131313;
+  border: none;
+  font-weight: bold;
+  padding: 15px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  pointer-events: auto; /* Cho phép click vào nút */
+}
+
+.homepage-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Room Container Tổng */
+.room-container {
+  position: relative; /* Không làm thay đổi ngữ cảnh định vị */
+  z-index: 1;         /* Dưới homepage-text */
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 0;
+  color: #131313;
+}
+
+.room-container h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left; /* Văn bản căn trái */
+}
+
+/* Danh sách các thẻ */
+.room-list {
+  display: flex;
+  flex-wrap: wrap; /* Tự xuống dòng khi không đủ chỗ */
+  gap: 20px;       /* Khoảng cách giữa các thẻ */
+  justify-content: space-between; /* Căn đều các thẻ */
+  margin-top: 20px; /* Tạo khoảng cách với tiêu đề */
+}
+
+/* Thẻ phòng trọ */
+.room-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 20px); /* Ba thẻ trên một hàng */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ẩn phần dư nếu có */
+  position: relative;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.icon-location{
+  width: 15px;
+  height: 20px;
+}
+.room-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); /* Tạo hiệu ứng nổi nhẹ */
+  cursor: pointer;
+}
+
+/* Ảnh phòng */
+.room-image {
+  width: 100%;
+  height: 100%;      /* Chiều cao cố định */
+  object-fit: cover;  /* Ảnh không bị méo */
+  border-bottom: 1px solid #ddd; /* Đường viền dưới ảnh */
+}
+
+/* Thông tin phòng */
+.room-info {
+  padding: 15px;
+  text-align: left; /* Thông tin căn trái */
+}
+
+.room-info h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.room-info .price {
+  font-size: 16px;
+  color: #55B3D9; /* Màu xanh giá */
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.room-info .group{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.room-info .group-bottom{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+}
+.room-info .icon-tim{
+  width: 20px;
+  height: 20px;
+}
+.room-info .location {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.room-info .date-posted {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* Nút yêu thích */
+.favorite-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #ddd;
+  transition: color 0.3s ease;
+}
+
+.favorite-button:hover {
+  color: #ff6b6b; /* Màu đỏ khi hover */
+}
+
+/* Button Xem thêm */
+/* Vùng chứa nút */
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Nút chính */
+/* Nút chính */
+.load-more-button {
+  display: flex; /* Sử dụng flexbox để sắp xếp nội dung */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa nội dung */
+  background-color: #CFCFCF;
+  color: #fff;
+  border: none;
+  padding: 15px 40px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  gap: 10px; /* Khoảng cách giữa text và icon */
+}
+
+.load-more-button:hover {
+  background-color: #bdbcbc;
+}
+
+/* Icon trong nút */
+.load-more-button .icon-down-arrow {
+  width: 20px;
+  height: 20px;
+  display: inline-block; /* Hiển thị inline để nằm cạnh text */
+  vertical-align: middle; /* Đảm bảo icon ngang hàng với text */
+}
+
+/* Location container */
+.location-container {
+  position: relative;
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;  /* Căn giữa container */
+  padding: 50px 0;  /* Khoảng cách trên và dưới */
+  color: #131313;
+  font-family: Arial, sans-serif;
+  text-align: left;  /* Căn trái tiêu đề */
+}
+
+/* Tiêu đề */
+.location-container h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Wrapper card (chứa các hình ảnh) */
+.wrapper-card {
+  display: flex;
+  justify-content: center; /* Căn giữa các hình ảnh */
+  gap: 20px;
+  width: 100%;
+}
+
+/* Thẻ hình ảnh */
+.location-card {
+  border-radius: 8px;
+  width: 400px;
+  height: auto;
+  text-align: center; /* Căn giữa nội dung bên trong */
+  padding: 10px;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+/* Hiệu ứng khi hover */
+.location-card:hover {
+  transform: translateY(-5px); /* Tạo hiệu ứng nổi nhẹ */
+  cursor: pointer;
+}
+
+/* Ảnh bên trong thẻ */
+.img-location-hot {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ảnh không bị méo */
+  border-radius: 5px;
+}
+
+.infomation-container {
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto; /* Căn giữa container */
+  padding: 50px 0; /* Khoảng cách trên và dưới */
+  font-family: Arial, sans-serif;
+  color: #131313;
+}
+
+.infomation-container h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 30px; /* Khoảng cách giữa tiêu đề và các mục */
+  text-align: left; /* Căn trái tiêu đề */
+  width: 100%; /* Đảm bảo tiêu đề chiếm hết chiều rộng */
+}
+
+/* Container cho các mục */
+.info-icons {
+  display: flex;
+  justify-content: space-between; /* Căn đều các mục */
+  align-items: flex-start; /* Đặt các mục thẳng hàng ở trên */
+  gap: 20px; /* Khoảng cách giữa các mục */
+  width: 100%;
+}
+
+/* Các mục thông tin (info) */
+.infomation-container .info {
+  display: flex; /* Dùng để căn giữa icon và văn bản */
+  flex-direction: column; /* Icon nằm trên, text nằm dưới */
+  align-items: center;
+  width: 30%; /* Mỗi mục chiếm 30% chiều rộng */
+  text-align: center;
+}
+
+.icon-info {
+  width: 150px; /* Kích thước icon */
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 15px; /* Khoảng cách giữa icon và đoạn văn */
+}
+
+.info p {
+  font-size: 20px;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+}

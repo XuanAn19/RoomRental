@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <app-header></app-header>
+  <div class="homepage-container">
+    <!-- Background -->
+    <img src="background-homepage.jpeg" alt="Background" class="homepage-image" />
+
+    <!-- Text over Background -->
+    <div class="homepage-text">
+      <h1>“Mạng xã hội” phòng trọ lớn nhất Việt Nam</h1>
+      <p>Tìm trọ nhanh chóng, đơn giản, an toàn, không phát sinh chi phí</p>
+      <button class="homepage-button">Tham gia ngay</button>
+    </div>
+
+    <!-- Room List -->
+    <div class="room-container">
+      <h2>Phòng trọ dành cho bạn</h2>
+      <div class="room-list">
+        <div class="room-card" *ngFor="let room of rooms">
+
+          <!-- Display Room Image -->
+          <img [src]="room.image" alt="{{room.title}}" class="room-image" />
+          <div class="room-info">
+            <p>{{ room.title }}</p>
+            <div class="group">
+              <p class="price">{{ room.price }}</p>
+              <p class="price">{{ room.area }}</p>
+            </div>
+            <p class="location">
+              <img src="/icon-location.png" alt="icon-location" class="icon-location">
+              <i class="fas fa-map-marker-alt"></i> {{ room.location }}
+            </p>
+            <div class="group-bottom">
+              <p class="date-posted">{{ room.datePosted }}</p>
+              <img src="/icon-tim.png" alt="icon-tim" class="icon-tim">
+            </div>
+          </div>
+          <!-- <button class="favorite-button">
+            <i class="fas fa-heart"></i>
+          </button> -->
+        </div>
+      </div>
+      <div class="load-more-container">
+        <button id="load-more" class="load-more-button">Xem thêm <img src="/icon-down-arrow.png" alt="icon-down-arrow" class="icon-down-arrow"></button>
+      </div>
+    </div>
+
+    <!-- Các điểm nóng -->
+    <div class="location-container">
+      <h2>Các địa điểm nóng</h2>
+      <div class="wrapper-card">
+        <div class="location-card">
+          <img src="/img-DN.png" alt="img-DN" class="img-location-hot">
+        </div>
+        <div class="location-card">
+          <img src="/img-HN.png" alt="img-HN" class="img-location-hot">
+        </div>
+        <div class="location-card">
+          <img src="/img-HCM.png" alt="img-HCM" class="img-location-hot">
+        </div>
+      </div>
+    </div>
+
+    <div class="infomation-container">
+      <h2>Chúng tôi cung cấp các dịch vụ</h2>
+      <div class="info-icons">
+        <div class="info">
+          <img src="/icon1-hp.png" alt="icon-rent-hp" class="icon-info">
+          <p>Cập nhật thường xuyên và đầy đủ các loại hình như: thuê phòng trọ, nhà riêng, thuê biệt thự, văn phòng, kho xưởng hay thuê mặt bằng kinh doanh giúp bạn nhanh chóng tìm được bất động sản ưng ý.</p>
+        </div>
+        <div class="info">
+          <img src="/icon2-hp.png" alt="icon-match-hp" class="icon-info">
+          <p>Tìm người thuê chung nhanh hơn bằng cách đăng tải bài viết trên chính trang web</p>
+        </div>
+        <div class="info">
+          <img src="/icon3-hp.png" alt="icon-appraisal-hp" class="icon-info">
+          <p>Các bình luận đánh giá tổng quan cung cấp góc nhìn khách quan của người đã thuê về nơi thuê bạn quan tâm, giúp bạn đưa ra quyết định đúng đắn cho nơi sắp thuê</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</body>
+</html>

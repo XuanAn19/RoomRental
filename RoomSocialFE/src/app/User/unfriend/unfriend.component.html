@@ -1,0 +1,40 @@
+<app-user-profile></app-user-profile>
+
+<hr
+  style="
+    width: 60%;
+    border-top: 1px solid #d3d3d3;
+    display: block;
+    margin: 0 auto;
+  "
+/>
+
+<div class="friends-container">
+  <div class="tabs">
+    <span class="tab" routerLink="/add-friend">Lời mời kết bạn</span>
+    <span class="tab active" routerLink="/unfriend">Danh sách bạn bè</span>
+    <span class="tab" routerLink="/request-add-friend">Tìm kiếm bạn bè</span>
+  </div>
+
+  <!-- Hiển thị thông báo nếu không có bạn bè -->
+  <div *ngIf="errorMessage" class="error-message">
+    <p>{{ errorMessage }}</p>
+  </div>
+  <div class="friend-list" *ngIf="friendsList.length > 0">
+    <div *ngFor="let friend of friendsList" class="friend">
+      <img
+        [src]="friend.avatar ? friend.avatar : 'blank_avatar.jpg'"
+        alt="Avatar"
+        class="friend-avatar"
+      />
+      <div class="friend-info">
+        <h4>{{ friend.name }}</h4>
+      </div>
+      <div class="friend-actions">
+        <button (click)="deleteRequest(friend.id)" class="delete">
+          Hủy kết bạn
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

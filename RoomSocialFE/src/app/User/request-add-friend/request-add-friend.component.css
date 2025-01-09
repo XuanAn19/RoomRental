@@ -1,0 +1,95 @@
+/* Friend List */
+.friends-container {
+  width: 50%;
+  background-color: #fff;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  margin: 40px auto;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+  /* border-bottom: 1px solid #ccc; */
+  padding-bottom: 5px;
+}
+
+.tab {
+  margin-right: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+
+.tab.active {
+  font-weight: bold;
+  /* border-bottom: 2px solid blue; */
+}
+
+.friend-list {
+  margin-top: 10px;
+}
+
+.friend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.friend img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 35px;
+}
+
+.friend-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.friend-info h4 {
+  margin: 8px;
+  font-size: 18px;
+}
+
+.friend-info button {
+  margin-top: 10px;
+  width: 100px;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00bcd4;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.friend-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.friend-actions span {
+  font-size: 14px;
+  color: #666;
+}
+
+.friend-actions button {
+  background-color: #ddd;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 10px;
+  cursor: pointer;
+  width: 108px;
+  text-align: center;
+  margin-top: 18px;
+}
+
+.friend-actions button:hover {
+  background-color: #ccc;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <img src="/logo-bat-dong-san.png" />
+        <b>CoDat</b>
+      </div>
+      <div class="link">
+        <a routerLink="/home-page">Trang chủ</a>
+        <a routerLink="/search">Cho thuê phòng trọ</a>
+        <a routerLink="/search">Tìm người ở ghép</a>
+      </div>
+      <div class="button" *ngIf="!token">
+        <a routerLink="/register-login" (click)="onLoginClick()">
+          <input
+            type="button"
+            value="Đăng nhập"
+            [ngClass]="{ active: isButtonActive }"
+          />
+        </a>
+        <a routerLink="/register-login">
+          <input type="button" value="Đăng ký" />
+        </a>
+        <input class="post" type="button" value="Đăng tin" />
+      </div>
+      <div class="button_account" *ngIf="token">
+        <button class="bookmark-btn" routerLink="/bookmark-list">
+          <i
+            class="fa fa-heart-o heart-icon"
+            style="font-size: 24px; color: #2c2c2c"
+          ></i>
+          <span class="badge">{{ bookmarkCount }}</span>
+        </button>
+        <button class="account_user" (click)="click_account()">
+          <img class="avt" [src]="img_avt ? img_avt : '/blank_avatar.jpg'" />
+          <p>{{ fullName }}</p>
+          <img class="right-arrow" src="right-arrow.png" />
+        </button>
+        <div class="button_intro" *ngIf="isClickAccount">
+          <div class="intro_inf">
+            <p class="text_register">Đăng kí làm người cho thuê</p>
+            <p class="text_des">Để được đăng tin cho thuê bất động sản</p>
+            <button
+              (click)="click_DangKyChuTro()"
+              [ngClass]="{ button_register_landlord: actor !== 'User' }"
+            >
+              Đăng kí ngay
+            </button>
+            <img src="flat.png" />
+          </div>
+          <div class="buttons" *ngIf="actor == 'User' || actor == 'Landlord'">
+            <button (click)="click_QuanLyTinDang()" *ngIf="actor == 'Landlord'">
+              <img src="icon_list.png" />
+              <p>Quản lý tin đăng</p>
+            </button>
+            <button (click)="click_QuanLyTaiKhoan()">
+              <img src="icon_user_border.png" />
+              <p>Quản lý tài khoản</p>
+            </button>
+            <button (click)="click_TimKiemBanBe()">
+              <img src="icon_user.png" />
+              <p>Tìm kiếm bạn bè</p>
+            </button>
+            <button class="logout" (click)="logout()">
+              <p>Đăng xuất</p>
+              <img src="icon_logout.png" />
+            </button>
+          </div>
+          <div class="buttons" *ngIf="actor == 'Admin'">
+            <button (click)="click_DuyetChuTro()">
+              <img src="icon_list.png" />
+              <p>Duyệt đơn làm chủ trọ</p>
+            </button>
+            <button class="logout" (click)="logout()">
+              <p>Đăng xuất</p>
+              <img src="icon_logout.png" />
+            </button>
+          </div>
+        </div>
+        <input class="post" type="button" value="Đăng tin" />
+      </div>
+    </div>
+  </body>
+</html>

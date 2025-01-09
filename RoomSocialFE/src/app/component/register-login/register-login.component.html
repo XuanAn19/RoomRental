@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <app-header (loginClicked)="onLoginClicked()"></app-header>
+    <div
+      class="register"
+      [ngStyle]="{ display: isClickNegative ? 'none' : 'block' }"
+    >
+      <img class="background-login-left" src="/background-login-left.png" />
+      <img class="background-login-right" src="/background-login-right.png" />
+      <img class="character-register" src="/character-register.png" />
+      <div class="form1">
+        <div class="negative-login">
+          <h2>Chào mừng trở lại</h2>
+          <h4>Để duy trì kết nối bạn cần đăng nhập</h4>
+          <input
+            type="button"
+            value="ĐĂNG NHẬP"
+            id="negative-login"
+            (click)="isNegative()"
+          />
+        </div>
+        <div class="form-register">
+          <h1>Tạo Tài Khoản</h1>
+          <div class="icon-social">
+            <img src="/icon-facebook.png" />
+            <img src="/icon-google.png" />
+          </div>
+          <p>hoặc sử dụng tài khoản của bạn</p>
+          <form (ngSubmit)="onSubmitRegister()">
+            <input
+              type="text"
+              placeholder="Họ tên"
+              name="full-name"
+              [(ngModel)]="user.fullName"
+              #fullNameControl="ngModel"
+              required
+            />
+            <div
+              *ngIf="
+                fullNameControl.invalid &&
+                (fullNameControl.dirty || fullNameControl.touched)
+              "
+              style="
+                color: red;
+                height: 20px;
+                margin-top: -20px;
+                text-align: left;
+                padding-left: 10px;
+              "
+            >
+              <p *ngIf="fullNameControl.errors?.['required']">
+                Họ tên là bắt buộc.
+              </p>
+            </div>
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              [(ngModel)]="user.email"
+              #emailControl="ngModel"
+              required
+              minlength="11"
+              maxlength="50"
+            />
+            <div
+              *ngIf="
+                emailControl.invalid &&
+                (emailControl.dirty || emailControl.touched)
+              "
+              style="
+                color: red;
+                height: 20px;
+                margin-top: -20px;
+                text-align: left;
+                padding-left: 10px;
+              "
+            >
+              <p *ngIf="emailControl.errors?.['required']">
+                Email là bắt buộc.
+              </p>
+              <p *ngIf="emailControl.errors?.['email']">Email không hợp lệ.</p>
+              <p *ngIf="emailControl.errors?.['maxlength']">
+                Email không được vượt quá 50 ký tự.
+              </p>
+            </div>
+            <input
+              type="tel"
+              placeholder="Số điện thoại"
+              name="number-phone"
+              [(ngModel)]="user.phoneNumber"
+              #numberPhoneControl="ngModel"
+              pattern="^\d{10}$"
+              required
+            />
+            <div
+              *ngIf="
+                numberPhoneControl.invalid &&
+                (numberPhoneControl.dirty || numberPhoneControl.touched)
+              "
+              style="
+                color: red;
+                height: 20px;
+                margin-top: -20px;
+                text-align: left;
+                padding-left: 10px;
+              "
+            >
+              <p *ngIf="numberPhoneControl.errors?.['required']">
+                Số điện thoại là bắt buộc.
+              </p>
+              <p *ngIf="numberPhoneControl.errors?.['pattern']">
+                Số điện thoại không hợp lệ.
+              </p>
+            </div>
+            <div class="password-input">
+              <input
+                class="input_password"
+                type="password"
+                placeholder="Mật khẩu"
+                name="password"
+                [(ngModel)]="user.password"
+                #passwordControl="ngModel"
+                required
+                minlength="6"
+                maxlength="20"
+                id="register-password"
+              />
+              <i
+                class="fa fa-eye-slash"
+                (click)="togglePasswordVisibility('register')"
+              ></i>
+            </div>
+            <div
+              *ngIf="
+                passwordControl.invalid &&
+                (passwordControl.dirty || passwordControl.touched)
+              "
+              style="
+                color: red;
+                height: 20px;
+                margin-top: -20px;
+                text-align: left;
+                padding-left: 10px;
+              "
+            >
+              <p *ngIf="passwordControl.errors?.['required']">
+                Mật khẩu là bắt buộc.
+              </p>
+            </div>
+            <div class="password-input">
+              <input
+                class="input_password"
+                type="password"
+                placeholder="Nhập lại mật khẩu"
+                name="password-again"
+                [(ngModel)]="passwordAgain"
+                #passwordAgainControl="ngModel"
+                required
+                minlength="6"
+                maxlength="20"
+                id="register-again-password"
+              />
+              <i
+                class="fa fa-eye-slash"
+                (click)="togglePasswordVisibility('register-again')"
+              ></i>
+            </div>
+            <div
+              *ngIf="
+                passwordAgainControl.invalid &&
+                (passwordAgainControl.dirty || passwordAgainControl.touched)
+              "
+              style="
+                color: red;
+                height: 20px;
+                margin-top: -20px;
+                text-align: left;
+                padding-left: 10px;
+              "
+            >
+              <p *ngIf="passwordAgainControl.errors?.['required']">
+                Nhập lại mật khẩu là bắt buộc.
+              </p>
+            </div>
+            <input type="submit" value="ĐĂNG KÝ" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <div
+      class="login"
+      [ngStyle]="{ display: isClickNegative ? 'block' : 'none' }"
+    >
+      <img class="background-login-left" src="/background-login-left.png" />
+      <img class="background-login-right" src="/background-login-right.png" />
+      <img class="character-login" src="/character-login.png" />
+      <div class="form2">
+        <div class="form-login">
+          <h1>Đăng Nhập</h1>
+          <div class="icon-social">
+            <img src="/icon-facebook.png" />
+            <img src="/icon-google.png" />
+          </div>
+          <p>hoặc sử dụng tài khoản của bạn</p>
+          <form (ngSubmit)="onSubmitLogin()">
+            <input
+              type="email"
+              placeholder="nguyenvana@gmail.com"
+              name="email"
+              [(ngModel)]="emailLogin"
+              #emailLoginControl="ngModel"
+              required
+              minlength="11"
+              maxlength="50"
+            />
+            <div
+              *ngIf="
+                emailLoginControl.invalid &&
+                (emailLoginControl.dirty || emailLoginControl.touched)
+              "
+              style="
+                color: red;
+                height: 20px;
+                margin-top: -20px;
+                text-align: left;
+                padding-left: 10px;
+              "
+            >
+              <p *ngIf="emailLoginControl.errors?.['required']">
+                Email là bắt buộc.
+              </p>
+              <p *ngIf="emailLoginControl.errors?.['email']">
+                Email không hợp lệ.
+              </p>
+              <p *ngIf="emailLoginControl.errors?.['maxlength']">
+                Email không được vượt quá 50 ký tự.
+              </p>
+            </div>
+            <div class="password-input">
+              <input
+                class="input_password"
+                type="password"
+                placeholder="Mật khẩu"
+                name="password"
+                [(ngModel)]="passwordLogin"
+                #passwordLoginControl="ngModel"
+                required
+                minlength="6"
+                maxlength="20"
+                id="login-password"
+              />
+              <i
+                class="fa fa-eye-slash"
+                (click)="togglePasswordVisibility('login')"
+              ></i>
+            </div>
+
+            <div
+              *ngIf="
+                passwordLoginControl.invalid &&
+                (passwordLoginControl.dirty || passwordLoginControl.touched)
+              "
+              style="
+                color: red;
+                height: 20px;
+                margin-top: -20px;
+                text-align: left;
+                padding-left: 10px;
+              "
+            >
+              <p *ngIf="passwordLoginControl.errors?.['required']">
+                Mật khẩu là bắt buộc.
+              </p>
+            </div>
+            <a routerLink="/forgot-password">Quên mật khẩu?</a>
+            <input type="submit" value="ĐĂNG NHẬP" />
+          </form>
+        </div>
+        <div class="negative-register">
+          <h2>Chào bạn!</h2>
+          <h4>Bạn có thể bắt đầu cuộc hành trình của mình với chúng tôi</h4>
+          <input
+            type="button"
+            value="ĐĂNG KÝ"
+            id="negative-register"
+            (click)="isNegative()"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

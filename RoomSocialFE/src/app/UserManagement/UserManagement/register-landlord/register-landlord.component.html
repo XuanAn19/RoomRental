@@ -1,0 +1,189 @@
+<app-header></app-header>
+<div class="content">
+  <app-sidebar></app-sidebar>
+  <div class="profile-container">
+    <h2>Quản lý tài khoản</h2>
+    <div class="tabs">
+      <a class="tab" routerLink="/edit-profile">Chỉnh sửa hồ sơ</a>
+      <a class="tab" routerLink="/change-password">Thay đổi mật khẩu</a>
+      <a class="tab active" routerLink="/register-landlord"
+        >ĐK làm người cho thuê</a
+      >
+    </div>
+
+    <div class="info-box">
+      <p>Để đăng ký làm người cho thuê, bạn cần thực hiện theo các bước sau:</p>
+      <ul>
+        <li>
+          Cung cấp các thông tin cá nhân, đảm bảo chính xác và rõ ràng về bạn
+        </li>
+        <li>Sau khi hoàn tất, ấn nút "Đăng ký"</li>
+      </ul>
+      <p><strong>Lưu ý sau khi trở thành người cho thuê</strong></p>
+      <ul>
+        <li>
+          Tên và ảnh đại diện đúng đắn để đăng ký sẽ được áp dụng lên tất cả các
+          tin đăng của bạn và hiển thị trên trang website CoDat.com.vn
+        </li>
+        <li>
+          Các thay đổi liên quan tới thông tin liên hệ sẽ cần được CoDat.com.vn
+          xét duyệt lại
+        </li>
+      </ul>
+    </div>
+
+    <form
+      class="register-form"
+      [formGroup]="registerForm"
+      (ngSubmit)="registerLandlord()"
+    >
+      <div class="form-group">
+        <label for="profile-picture">Ảnh đại diện</label>
+        <p class="note">
+          Ảnh nên chụp nửa người phía trên, nhìn rõ mặt và thể hiện sự chuyên
+          nghiệp của bạn
+        </p>
+
+        <div class="avatar-section">
+          <div class="avatar-container">
+            <img
+              *ngIf="avatarPreview; else defaultAvatar"
+              class="load-avatar"
+              [src]="avatarPreview"
+              alt="avatar"
+            />
+            <button
+              *ngIf="avatarPreview"
+              class="remove-avatar-btn"
+              (click)="removeAvatar()"
+            >
+              x
+            </button>
+            <ng-template #defaultAvatar>
+              <img
+                class="load-avatar"
+                src="/images/load-avatar.png"
+                alt="avatar"
+              />
+            </ng-template>
+          </div>
+          <label for="file-upload" class="upload-label">{{
+            fileNameAvatar
+          }}</label>
+          <input
+            id="file-upload"
+            type="file"
+            hidden
+            (change)="onFileSelected($event, 'avatar')"
+          />
+        </div>
+      </div>
+
+      <!-- Other fields like full name, phone number, and CCCD file input -->
+      <div class="form-group contact-infor">
+        <div class="half-group">
+          <label for="full-name" class="required">Họ và tên</label>
+          <input type="text" id="fullName" formControlName="fullName" />
+        </div>
+        <div class="half-group">
+          <label for="phone-number" class="required">Số điện thoại</label>
+          <input type="text" id="phone-number" formControlName="phoneNumber" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Ảnh chụp CCCD và chân dung cầm thẻ CCCD</label><br />
+        <div class="cccd">
+          <p>
+            1. Ảnh mặt trước và mặt sau CCCD không bị mất góc, đủ chi tiết và độ
+            ánh sáng
+          </p>
+        </div>
+
+        <!-- Upload CCCD images (both front and back) in one frame -->
+        <div class="upload-box-large">
+          <div class="cccd-container">
+            <div class="cccd-frame">
+              <img
+                *ngIf="cccdPreviews[0]; else defaultCCCD1"
+                class="load-avatar"
+                [src]="cccdPreviews[0]"
+                alt="CCCD Front"
+              />
+              <button
+                *ngIf="cccdPreviews[0]"
+                class="remove-cccd-btn"
+                (click)="removeCCCD(0)"
+              >
+                x
+              </button>
+              <img
+                *ngIf="cccdPreviews[1]; else defaultCCCD2"
+                class="load-avatar"
+                [src]="cccdPreviews[1]"
+                alt="CCCD Back"
+              />
+              <button
+                *ngIf="cccdPreviews[1]"
+                class="remove-cccd-btn"
+                (click)="removeCCCD(1)"
+              >
+                x
+              </button>
+
+              <ng-template #defaultCCCD1>
+                <img
+                  class="load-avatar"
+                  src="/images/load-image.png"
+                  alt="Default Front"
+                />
+              </ng-template>
+              <ng-template #defaultCCCD2> </ng-template>
+
+              <input
+                id="file-upload-cccd"
+                type="file"
+                hidden
+                (change)="onFileSelected($event, 'cccd')"
+                accept="image/*"
+                multiple
+              />
+            </div>
+            <label for="file-upload-cccd" class="upload-label">
+              Tải tệp lên
+            </label>
+          </div>
+        </div>
+
+        <!-- Checkbox and save button -->
+        <div class="form-group checkbox">
+          <input
+            type="checkbox"
+            id="agree-terms"
+            formControlName="agreeTerms"
+          />
+          <div>
+            <label for="agree-terms"
+              >Tôi đồng ý với các <a href="#">Điều khoản sử dụng</a>,
+              <a href="#">Chính sách bảo mật</a>, <a href="#">Quy chế</a> và
+              <a href="#">Chính sách</a> của CoDat.com.vn.</label
+            >
+            <label for="agree-terms"
+              >Tôi cam kết những nội dung nêu trên là đúng sự thật, nếu có xảy
+              ra tranh chấp, khiếu nại tôi xin chịu hoàn toàn trách nhiệm</label
+            >
+          </div>
+        </div>
+        <div class="save-button-container">
+          <button
+            class="save-button"
+            type="submit"
+            [disabled]="!registerForm.valid"
+          >
+            Đăng ký
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

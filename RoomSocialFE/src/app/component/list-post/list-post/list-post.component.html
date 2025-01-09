@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <app-header></app-header>
+    <div class="container">
+      <div class="sidebar">
+        <div class="name">
+          <img src="{{ img_avt }}" class="img-avatar" />
+          <p>{{ fullName }}</p>
+        </div>
+        <div class="negative">
+          <div class="title">
+            <img src="/post-manage.png" />
+            <p>Quản lý tin đăng</p>
+          </div>
+          <div class="negative-detail">
+            <a href="/post-for-rent">Đăng tin mới</a>
+            <a href="">Danh sách tin đăng</a>
+          </div>
+        </div>
+      </div>
+      <div class="list">
+        <div class="filter">
+          <h2>Danh sách tin</h2>
+          <div class="filter-group">
+            <div class="filter-title">
+              <input
+                [(ngModel)]="code"
+                type="text"
+                name="filter-title"
+                placeholder="Tìm theo mã tin, tiêu đề"
+              />
+              <button (click)="filterCode()">
+                <img src="/icon-search.png" />
+              </button>
+            </div>
+            <div class="filter-post">
+              <img src="/post-manage.png" />
+              <select
+                id="inputType"
+                class="form-select"
+                required
+                [(ngModel)]="selectedCategory"
+                (change)="searchCategory($event)"
+              >
+                <option [value]="0" name="Tất cả">Tất cả</option>
+                <option
+                  *ngFor="let category of listCategory"
+                  [value]="category.id"
+                  name="category.name"
+                >
+                  {{ category.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="list-show">
+            <button
+              [ngClass]="selectedFilter === 'all' ? 'active' : ''"
+              value="filter"
+              (click)="searchStatus('all')"
+            >
+              Tất cả ({{ totalPost }})
+            </button>
+            <button
+              [ngClass]="selectedFilter === 'showing' ? 'active' : ''"
+              value="filter"
+              (click)="searchStatus('showing')"
+            >
+              Đang hiển thị ({{ countVisible }})
+            </button>
+            <button
+              [ngClass]="selectedFilter === 'hidden' ? 'active' : ''"
+              value="filter"
+              (click)="searchStatus('hidden')"
+            >
+              Đã ẩn ({{ countHidden }})
+            </button>
+          </div>
+        </div>
+        <div class="post-detail" *ngFor="let post of filteredPosts">
+          <div class="form">
+            <div class="img">
+              <img [src]="post.images[0]" alt="Image" />
+            </div>
+            <div class="inf">
+              <div class="title">
+                <p [ngClass]="post.id_category === 4 ? 'co-living' : 'rent'">
+                  {{ post.id_category === 4 ? "Ở ghép" : "Cho thuê" }}
+                </p>
+                <p>
+                  {{ post.title }}
+                </p>
+              </div>
+              <div class="address">
+                <img src="/icon-address.png" />
+                <p>
+                  {{ post.address.number_house }} -
+                  {{ post.address.street_name }} - {{ post.address.ward }} -
+                  {{ post.address.district }} -
+                  {{ post.address.province }}
+                </p>
+              </div>
+              <div class="price-acreage">
+                <p class="price">{{ post.price }} triệu/ tháng</p>
+                <p class="acreage">{{ post.arge }}m <sup>2</sup></p>
+              </div>
+              <div class="inf-more">
+                <div class="content">
+                  <div class="code">
+                    <p>Mã tin</p>
+                    <p>{{ post.id }}</p>
+                  </div>
+                  <div class="date">
+                    <p>Ngày đăng</p>
+                    <p>{{ post.created_day | date : "dd/MM/yyyy" }}</p>
+                  </div>
+                  <div class="status">
+                    <p>Trạng thái</p>
+                    <p
+                      [ngClass]="
+                        post.status.toString() === 'true' ? 'show' : 'false'
+                      "
+                    >
+                      {{ post.status ? "Đang hiển thị" : "Đã ẩn" }}
+                    </p>
+                  </div>
+                </div>
+                <div class="button">
+                  <div class="hide-post">
+                    <button (click)="hidePost(post.id)">
+                      {{ post.status ? "Ẩn tin" : "Đăng lại" }}
+                    </button>
+                    <img *ngIf="post.status" src="/icon-hide.png" />
+                    <img *ngIf="!post.status" src="/load-hide.png" />
+                  </div>
+                  <div class="edit-post">
+                    <button>
+                      <a [routerLink]="['/edit-post', post.id]">Sửa tin</a>
+                    </button>
+                    <img src="/icon-edit.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

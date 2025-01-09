@@ -1,0 +1,45 @@
+<app-header></app-header>
+<div class="saved-list">
+  <h2>Tin đã lưu</h2>
+  <p>Tổng tin đã lưu ({{ savedItems.length }})</p>
+
+  <div *ngIf="savedItems.length === 0" class="empty-state">
+    <img src="/image-bookmark-null.png" alt="No saved items" />
+  </div>
+
+  <div *ngFor="let item of savedItems" class="listing-item">
+    <div class="image">
+      <img [src]="item.rooms.images[0]" [alt]="item.rooms.title" />
+      <!-- Hiển thị ảnh phòng đầu tiên -->
+    </div>
+    <div class="details">
+      <p class="title">{{ item.rooms.title }}</p>
+      <!-- Tiêu đề phòng -->
+      <p class="location">
+        <i
+          ><img src="/icon-location-bookmark.png" alt="icon-location-bookmark"
+        /></i>
+        {{ item.rooms.address?.street_name }},
+        {{ item.rooms.address?.district }}, {{ item.rooms.address?.province }}
+        <!-- Địa chỉ phòng -->
+      </p>
+      <div class="price-area">
+        <p class="price">{{ item.rooms.price }} triệu/tháng</p>
+        <!-- Giá phòng -->
+        <p class="area">{{ item.rooms.arge }} m²</p>
+        <!-- Diện tích phòng -->
+      </div>
+      <div class="footer">
+        <p class="date">{{ item.rooms.created_day | date : "dd/MM/yyyy" }}</p>
+        <!-- Thời gian đăng -->
+        <button class="favorite-btn" (click)="toggleBookMark(item)">
+          <i
+            [ngClass]="
+              item.isFavorite ? 'fa fa-heart text-red' : 'fa fa-heart-o'
+            "
+          ></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

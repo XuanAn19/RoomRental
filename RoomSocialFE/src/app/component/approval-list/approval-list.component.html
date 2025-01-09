@@ -1,0 +1,71 @@
+<app-header></app-header>
+<div class="container">
+  <h2>Danh sách duyệt</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Avatar</th>
+        <th>Họ Tên</th>
+        <th>Ngày đăng ký</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users" (click)="viewUserDetail(user.id)">
+        <td>
+          <img [src]="'https://localhost:7170/images/'+user.image" alt="Avatar" class="avatar">
+        </td>
+        <td>{{ user.full_name }}</td>
+        <td>{{ user.createdateerify | date: 'dd/MM/yyyy' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="popup" *ngIf="selectedUser">
+  <div class="popup-content">
+    <span class="close" (click)="closePopup()">&times;</span>
+    <h3>Thông tin chi tiết</h3>
+    <div class="profile">
+      <div class="details">
+        <label for="fullName"><b>Ảnh chân dung</b></label>
+        <img [src]="'https://localhost:7170/images/'+ selectedUser.image" class="avatar2" alt="Avatar">
+      </div>
+      <div class="details">
+        <label for="fullName">Họ và tên:</label>
+        <input id="fullName" type="text" [value]="selectedUser.full_name" disabled>
+        <label for="phoneNumber">Số điện thoại:</label>
+        <input id="phoneNumber" type="text" [value]="selectedUser.phoneNumber" disabled>
+      </div>
+    </div>
+    <hr>
+    <div class="cccd">
+      <span><b>Ảnh chụp CCCD và chân dung cầm thẻ CCCD</b></span>
+      <div class="cccd-images">
+        <img *ngFor="let image of selectedUser.images_CCCD"
+             [src]="'https://localhost:7170/' + image"
+             alt="CCCD" class="cccd-image">
+      </div>
+    </div>
+    <hr>
+    <div class="actions">
+      <!-- Nút từ chối -->
+      <button class="reject" (click)="toggleDropdown()">Từ chối
+        <img src="/icon-down-arrow-white.png" alt="icon-down-arrow" style="width: 20px; height: 20px;">
+      </button>
+
+      <!-- Dropdown danh sách lý do -->
+      <div class="dropdown-menu" *ngIf="showDropdown">
+        <ul>
+          <li (click)="selectReason('Hình ảnh không đạt chất lượng')">Hình ảnh không đạt chất lượng</li>
+          <li (click)="selectReason('Hình ảnh, thông tin không đúng')">Hình ảnh, thông tin không đúng</li>
+          <li (click)="selectReason('Lý do khác vui lòng liên hệ 0374653656 để được tư vấn')">Lý do khác vui lòng liên hệ 0123456789 để được tư vấn</li>
+        </ul>
+      </div>
+
+      <!-- <button class="reject" (click)="cancel()">Từ chối</button> -->
+      <!-- Nút duyệt -->
+      <button class="ok" (click)="confirm()">Duyệt</button>
+
+    </div>
+  </div>
+
