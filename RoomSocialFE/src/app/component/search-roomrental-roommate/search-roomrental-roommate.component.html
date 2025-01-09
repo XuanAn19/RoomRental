@@ -1,0 +1,584 @@
+<app-header></app-header>
+<div class="search-bar">
+  <!-- Tabs (Cho thuê, Tìm người ở ghép) -->
+  <div class="tabs">
+    <button
+      class="btn-rent"
+      [class.active]="selectedTab === 'rent'"
+      (click)="selectTab('rent')"
+    >
+      Cho thuê
+    </button>
+    <button
+      class="btn-roommate"
+      [class.active]="selectedTab === 'roommate'"
+      (click)="selectTab('roommate')"
+    >
+      Tìm người ở ghép
+    </button>
+  </div>
+
+  <!-- Start: Search Input -->
+  <div class="search-input-container">
+    <img class="search-icon" src="/icon-search.png" alt="Search" />
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      (ngModelChange)="onSearch()"
+      placeholder="Nhập từ khóa tìm kiếm..."
+      class="search-input"
+    />
+  </div>
+  <!-- End: Search Input -->
+
+  <!-- Start: Search Filters -->
+  <div class="filters">
+    <div class="separator"></div>
+    <!-- Start: Dropdown - Loại nhà -->
+    <div class="dropdown align-right">
+      <span class="filter-label" (click)="toggleDropdown('houseType')"
+        >Loại nhà</span
+      >
+      <img
+        src="/icon-down-arrow.png"
+        class="icon-down-arrow"
+        alt="icon-down-arrow"
+      />
+      <div class="dropdown-menu" [class.open]="isDropdownOpen.houseType">
+        <div class="dropdown-item">
+          <label for="radio1" class="custom-checkbox">
+            <img src="/icon-city.png" alt="icon-city" class="icon-house-type" />
+            Tất cả nhà đất
+            <input
+              id="radio1"
+              type="radio"
+              name="houseType"
+              value="Tất cả nhà đất"
+              (change)="onHouseTypeChange($event)"
+              class="custom-radio"
+            />
+            <span class="checkbox-style"></span>
+          </label>
+        </div>
+        <div class="dropdown-item">
+          <label for="radio2" class="custom-checkbox">
+            <img
+              src="/icon-city2.png"
+              alt="icon-city"
+              class="icon-house-type"
+            />
+            Phòng trọ, Nhà trọ
+            <input
+              id="radio2"
+              type="radio"
+              name="houseType"
+              value="Phòng trọ, Nhà trọ"
+              (change)="onHouseTypeChange($event)"
+              class="custom-radio"
+            />
+            <span class="checkbox-style"></span>
+          </label>
+        </div>
+        <div class="dropdown-item">
+          <label for="checkbox3" class="custom-checkbox">
+            <img
+              src="/icon-city3.png"
+              alt="icon-city"
+              class="icon-house-type"
+            />
+            Nhà thuê nguyên căn
+            <input
+              id="radio3"
+              type="radio"
+              name="houseType"
+              value="Nhà thuê nguyên căn"
+              (change)="onHouseTypeChange($event)"
+              class="custom-radio"
+            />
+            <span class="checkbox-style"></span>
+          </label>
+        </div>
+        <div class="dropdown-item">
+          <label for="radio4" class="custom-checkbox">
+            <img
+              src="/icon-city4.png"
+              alt="icon-city"
+              class="icon-house-type"
+            />
+            Căn hộ mini
+            <input
+              id="radio4"
+              type="radio"
+              name="houseType"
+              value="Căn hộ mini"
+              (change)="onHouseTypeChange($event)"
+              class="custom-radio"
+            />
+            <span class="checkbox-style"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <!-- End: Dropdown - Loại nhà -->
+
+    <!-- Start: Dropdown - Khu vực -->
+    <div class="separator"></div>
+    <div class="dropdown align-right">
+      <span class="filter-label" (click)="toggleDropdown('area')">Khu vực</span>
+      <img
+        src="/icon-down-arrow.png "
+        class="icon-down-arrow"
+        alt="icon-down-arrow"
+      />
+      <div class="dropdown-menu" [class.open]="isDropdownOpen.area">
+        <div class="dropdown-item">
+          <select
+            *ngIf="!isClick"
+            name="city"
+            required
+            class="form-select"
+            (change)="onCityChange($event)"
+          >
+            <option value="" selected>Tỉnh/Thành</option>
+            <option *ngFor="let city of cities" [value]="city.Id">
+              {{ city.Name }}
+            </option>
+          </select>
+          <select
+            *ngIf="isClick"
+            name="city"
+            required
+            class="form-select"
+            [(ngModel)]="selected_city"
+            (change)="onCityChange($event)"
+          >
+            <option value="{{ city_name }}">{{ city_name }}</option>
+            <option *ngFor="let city of cities" [value]="city.Id">
+              {{ city.Name }}
+            </option>
+          </select>
+        </div>
+        <div class="dropdown-item">
+          <select
+            name="district"
+            class="form-select"
+            [(ngModel)]="selected_district"
+            (change)="onDistrictChange($event)"
+          >
+            <label for="inputProvince" class="form-label">Quận/Huyện</label>
+            <option value="" selected>Quận/Huyện</option>
+            <option *ngFor="let district of districts" [value]="district.Id">
+              {{ district.Name }}
+            </option>
+          </select>
+        </div>
+        <div class="dropdown-item">
+          <select
+            name="ward"
+            class="form-select"
+            [(ngModel)]="selected_ward"
+            (change)="onWardChange($event)"
+          >
+            <option value="" selected>Phường/Xã</option>
+            <option *ngFor="let ward of wards" [value]="ward.Id">
+              {{ ward.Name }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!-- End: Dropdown - Khu vực -->
+
+    <!-- Start: Dropdown - Diện tích -->
+    <div class="separator"></div>
+    <div class="dropdown align-left">
+      <span class="filter-label" (click)="toggleDropdown('acreage')"
+        >Diện tích</span
+      >
+      <img
+        src="/icon-down-arrow.png"
+        class="icon-down-arrow"
+        alt="icon-down-arrow"
+      />
+
+      <div class="dropdown-menu" [class.open]="isDropdownOpen.acreage">
+        <div class="dropdown-range">
+          <div class="range-slider">
+            <div class="inputs-wrapper">
+              <input
+                type="number"
+                [(ngModel)]="acreageStart"
+                min="0"
+                max="100"
+                placeholder="Từ"
+              />
+              <span class="arrow">→</span>
+              <input
+                type="number"
+                [(ngModel)]="acreageEnd"
+                min="0"
+                max="100"
+                placeholder="Đến"
+              />
+            </div>
+            <mat-slider min="0" max="1000" thumbLabel tickInterval="10">
+              <input matSliderStartThumb [(ngModel)]="acreageStart" />
+              <input matSliderEndThumb [(ngModel)]="acreageEnd" />
+            </mat-slider>
+          </div>
+        </div>
+        <hr />
+        <ul class="dropdown-options">
+          <li *ngFor="let option of acreageOptions">
+            <label>
+              <input
+                type="radio"
+                name="area"
+                [value]="option.value"
+                [(ngModel)]="selectedArea"
+                (change)="
+                  setFixedAcreageRange(option.range[0], option.range[1])
+                "
+              />
+              {{ option.label }}
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- End: Dropdown - Diện tích -->
+
+    <!-- Start: Dropdown - Mức giá -->
+    <div class="separator"></div>
+    <div class="dropdown align-left">
+      <span class="filter-label" (click)="toggleDropdown('price')"
+        >Mức giá</span
+      >
+      <img
+        src="/icon-down-arrow.png"
+        class="icon-down-arrow"
+        alt="icon-down-arrdropdown-rangeow"
+      />
+      <div class="dropdown-menu" [class.open]="isDropdownOpen.price">
+        <div class="">
+          <div class="range-slider">
+            <div class="inputs-wrapper">
+              <input
+                type="number"
+                [(ngModel)]="priceStart"
+                (change)="onSearch()"
+                min="0"
+                max="50"
+                placeholder="Từ"
+              />
+              <span class="arrow">→</span>
+              <input
+                type="number"
+                [(ngModel)]="priceEnd"
+                (change)="onSearch()"
+                min="0"
+                max="50"
+                placeholder="Đến"
+              />
+            </div>
+            <mat-slider min="0" max="50" thumbLabel tickInterval="1">
+              <input matSliderStartThumb [(ngModel)]="priceStart" />
+              <input matSliderEndThumb [(ngModel)]="priceEnd" />
+            </mat-slider>
+          </div>
+        </div>
+        <hr />
+        <ul class="dropdown-options">
+          <li *ngFor="let option of priceOptions">
+            <label>
+              <input
+                type="radio"
+                name="area"
+                [value]="option.value"
+                [(ngModel)]="selectedArea"
+                (change)="setFixedPriceRange(option.range[0], option.range[1])"
+              />
+              {{ option.label }}
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- End: Dropdown - Mức giá -->
+  </div>
+
+  <!-- End: Search Filters -->
+</div>
+<div class="wrap-container">
+  <div class="container mt-4">
+    <!-- Nội dung -->
+    <div class="content mt-3">
+      <!-- Tabs -->
+      <div class="tab-content">
+        <div *ngIf="selectedTab === 'rent'">
+          <h4>Cho thuê</h4>
+          <h2>Cho thuê nhà đất trên toàn quốc</h2>
+          <h4>Hiện có: {{ getTotalRentPosts() | number }} tin</h4>
+        </div>
+        <div *ngIf="selectedTab === 'roommate'">
+          <h4>Tìm người ở ghép</h4>
+          <h2>Tìm người ở ghép</h2>
+          <h4>Hiện có: {{ getTotalRoommatePosts() | number }} tin</h4>
+        </div>
+      </div>
+
+      <!-- Error -->
+      <div *ngIf="rooms.length === 0 && !isLoading">
+        <p>Không tìm thấy kết quả phù hợp với từ khóa "{{ searchQuery }}"</p>
+      </div>
+
+      <div *ngIf="!isLoading && !hasResults" class="no-results">
+        Không có kết quả phù hợp.
+      </div>
+
+      <!-- Start: Danh sách cho thuê (rent)-->
+      <div *ngIf="selectedTab === 'rent'">
+        <div class="row">
+          <div></div>
+          <div class="col-12" *ngFor="let room of getFilteredRentList()">
+            <div class="card">
+              <div class="card-images">
+                <!-- Ảnh lớn -->
+                <!-- Lấy ảnh đầu tiên -->
+                <img
+                  class="main-image"
+                  [src]="room.images[0]"
+                  alt="Main Room Image"
+                />
+                <div class="side-images">
+                  <!-- Ảnh phụ -->
+                  <!-- Lấy ảnh từ vị trí 2, 3 -->
+                  <img
+                    *ngFor="let img of room.images.slice(1, 3)"
+                    [src]="img"
+                    alt="Side Image"
+                    class="side-image"
+                  />
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">{{ room.title }}</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <strong>{{ room.price }} triệu/tháng</strong>
+                  </li>
+                  <li>
+                    <strong>{{ room.arge }}m²</strong>
+                  </li>
+                  <li>
+                    {{ room.address.ward }} {{ "," }}
+                    {{ room.address.district }} {{ "," }}
+                    {{ room.address.province }}
+                  </li>
+                </ul>
+                <ul class="list-contact">
+                  <li class="user-info">
+                    <div class="avatar">
+                      <img
+                        [src]="
+                          'https://localhost:7170/images/' + room.user.image
+                        "
+                        alt="avatar"
+                      />
+                    </div>
+                    <div>
+                      <strong>{{ room.user.full_name }}</strong>
+                      <p>{{ room.create_day | date : "dd/MM/yyyy" }}</p>
+                    </div>
+                  </li>
+                  <ul class="contact-info">
+                    <li>
+                      <a
+                        href="tel:{{ room.user.phoneNumber }}"
+                        class="btn phone-btn"
+                      >
+                        <img
+                          src="icon-phone.png"
+                          alt="phone-icon"
+                          class="zalo-icon"
+                        />
+                        {{ room.user.phoneNumber }}
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://zalo.me/{{ room.user.phoneNumber }}"
+                        class="btn zalo-btn"
+                        target="_blank"
+                      >
+                        <img src="icon-zalo.png" alt="Zalo" class="zalo-icon" />
+                        Liên hệ Zalo
+                      </a>
+                    </li>
+                    <li>
+                      <button class="btn btn-icon share-btn">
+                        <img
+                          src="icon-share.png"
+                          alt="icon-share"
+                          class="share-icon"
+                        />
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="bookmark"
+                        (click)="toggleBookmark(room.id)"
+                      >
+                        <i
+                          [class]="
+                            isBookmarked(room.id)
+                              ? 'fa fa-heart'
+                              : 'fa fa-heart-o'
+                          "
+                          style="color: #55b3d9"
+                          [ngStyle]="{
+                            color: isBookmarked(room.id) ? '#55b3d9' : '#2f2f2f'
+                          }"
+                        ></i>
+                      </button>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End: Danh sách cho thuê (rent)-->
+
+      <!-- Start: Danh sách tìm người ở ghép (roommate) -->
+      <div *ngIf="selectedTab === 'roommate'">
+        <div class="row">
+          <div></div>
+          <div class="col-12" *ngFor="let room of getFilteredRoommateList()">
+            <div class="card">
+              <div class="card-images">
+                <!-- Ảnh lớn -->
+                <!-- Lấy ảnh đầu tiên -->
+                <img
+                  class="main-image"
+                  [src]="room.images[0]"
+                  alt="Main Room Image"
+                />
+                <div class="side-images">
+                  <!-- Ảnh phụ -->
+                  <!-- Lấy ảnh từ vị trí 2, 3 -->
+                  <img
+                    *ngFor="let img of room.images.slice(1, 3)"
+                    [src]="img"
+                    alt="Side Image"
+                    class="side-image"
+                  />
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">{{ room.title }}</h5>
+                <ul class="list-unstyled">
+                  <li>
+                    <strong>{{ room.price }} triệu/tháng</strong>
+                  </li>
+                  <li>
+                    <strong>{{ room.arge }}m²</strong>
+                  </li>
+                  <li>
+                    {{ room.address.ward }} {{ "," }}
+                    {{ room.address.district }} {{ "," }}
+                    {{ room.address.province }}
+                  </li>
+                </ul>
+                <ul class="list-contact">
+                  <li class="user-info">
+                    <div class="avatar">
+                      <img
+                        [src]="
+                          'https://localhost:7170/images/' + room.user.image
+                        "
+                        alt="avatar"
+                      />
+                    </div>
+                    <div>
+                      <strong>{{ room.user.full_name }}</strong>
+                      <p>{{ room.create_day | date : "dd/MM/yyyy" }}</p>
+                    </div>
+                  </li>
+                  <ul class="contact-info">
+                    <li>
+                      <a
+                        href="tel:{{ room.user.phoneNumber }}"
+                        class="btn phone-btn"
+                      >
+                        <img
+                          src="icon-phone.png"
+                          alt="phone-icon"
+                          class="zalo-icon"
+                        />
+                        {{ room.user.phoneNumber }}
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://zalo.me/{{ room.user.phoneNumber }}"
+                        class="btn zalo-btn"
+                        target="_blank"
+                      >
+                        <img src="icon-zalo.png" alt="Zalo" class="zalo-icon" />
+                        Liên hệ Zalo
+                      </a>
+                    </li>
+                    <li>
+                      <button class="btn btn-icon share-btn">
+                        <img
+                          src="icon-share.png"
+                          alt="icon-share"
+                          class="share-icon"
+                        />
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="bookmark"
+                        (click)="toggleBookmark(room.id)"
+                      >
+                        <i
+                          [class]="
+                            isBookmarked(room.id)
+                              ? 'fa fa-heart'
+                              : 'fa fa-heart-o'
+                          "
+                          style="color: #55b3d9"
+                          [ngStyle]="{
+                            color: isBookmarked(room.id) ? '#55b3d9' : '#2f2f2f'
+                          }"
+                        ></i>
+                      </button>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End: Danh sách tìm người ở ghép (roommate) -->
+    </div>
+  </div>
+  <!-- Star: Right side bar -->
+  <div class="right-sidebar">
+    <nav class="sidebar" *ngFor="let section of filterSections">
+      <div class="sidebar-section">
+        <h4>{{ section.section }}</h4>
+        <ul>
+          <li *ngFor="let item of section.items" class="sidebar-item">
+            {{ item.label }}
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!-- End: Right side bar -->
+</div>

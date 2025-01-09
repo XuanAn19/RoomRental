@@ -1,0 +1,146 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container that holds sidebar and content */
+.app-container {
+  /* margin: 50px 0 0 0; */
+  display: flex;
+  height: 100vh; /* Full screen height */
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 20%;
+  height: fit-content;
+  padding: 20px;
+  background: #fff;
+  color: #131414;
+  border-right: 1px solid #ddd;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Fixed to the left */
+  margin-top: 50px;
+  top: 0;
+  left: 0;
+}
+
+/* Content styles */
+.main-content {
+  margin-left: 20%; /* Match the sidebar width */
+  padding: 20px;
+  flex-grow: 1; /* Take up the remaining space */
+  overflow-y: auto; /* Allow scrolling if content is too large */
+}
+
+.sidebar,
+.sidebar span,
+.sidebar-links ul,
+.sidebar-links li,
+.sidebar-links a {
+  color: #000;
+}
+
+.sidebar-links ul {
+  font-weight: bold;
+}
+
+.sidebar-links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.profile-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-avatar {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.profile-avatar .avatar-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #4caf50; */
+}
+
+.avatar-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.avatar-container i {
+  font-size: 40px;
+  color: #73c6d9;
+  position: absolute;
+  z-index: 2;
+}
+.profile-avatar .avatar-circle .load-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Liệt kê các mục trong sidebar */
+.sidebar-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Mục li */
+.sidebar-links ul {
+  font-size: 16px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-links li {
+  font-size: 16px;
+  padding: 10px 20px;
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-links ul i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.sidebar-links li.sub-link {
+  padding-left: 30px;
+}
+
+/* Mục li hover */
+.sidebar-links li:hover {
+  background-color: #aeb1b4;
+  cursor: pointer;
+}
+
+/* Mục li khi active (được chọn) */
+.sidebar-links li.active {
+  background-color: #aeb1b4;
+}
+
+.sub-link {
+  font-weight: normal;
+  margin-left: 20px;
+}

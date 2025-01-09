@@ -1,0 +1,246 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+a:hover {
+  cursor: pointer;
+}
+
+.button_register_landlord {
+  pointer-events: none; /* Vô hiệu hóa các sự kiện chuột */
+  opacity: 0.5; /* Làm mờ button */
+  background-color: #d6d6d6; /* Tùy chỉnh màu nền */
+  cursor: not-allowed;
+}
+
+.navbar {
+  position: fixed;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  background-color: #fff;
+  padding: 0 10px;
+  top: 0;
+  border-bottom: 1px solid grey;
+  width: 100%;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  display: flex;
+  margin-left: 100px;
+  gap: 20px;
+}
+
+.link a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.link a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #55b3d9;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.link a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.button,
+.button_account {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+}
+
+.button input,
+.button_account input {
+  border: none;
+  background: none;
+  font-weight: bold;
+}
+
+.button .post,
+.button_account .post {
+  color: #fff;
+  background-color: #55b3d9;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.button_account .post {
+  height: 40px;
+  margin-top: 5px;
+}
+
+.button_account {
+  position: relative;
+  gap: 70px;
+}
+
+.account_user {
+  position: relative;
+  display: flex;
+  text-decoration: none;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: none;
+  background: none;
+  right: 0;
+  margin-top: -5px;
+}
+
+.account_user .right-arrow,
+.account_user p {
+  margin-top: 20px;
+}
+
+.account_user .avt {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.account_user .right-arrow {
+  width: 10px;
+  transform: rotate(90deg);
+  margin-top: 5px;
+}
+
+.button_account .button_intro {
+  position: absolute;
+  top: 50px; /* Cách thanh header 50px */
+  left: -90px;
+  box-shadow: 4px 4px 10px 2px #a1a3a4;
+  border-radius: 10px;
+  z-index: 50; /* Đảm bảo không che header */
+  background-color: #fff;
+}
+
+.button_account .button_intro .intro_inf {
+  width: 300px;
+  height: 175px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px;
+  color: #fff;
+  background: linear-gradient(to right, #74c6db, #3e6a75);
+}
+
+.button_account .intro_inf .text_register {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.button_account .intro_inf .text_des {
+  width: 170px;
+  margin-top: -10px;
+}
+
+.button_account .intro_inf img {
+  width: 150px;
+  margin-top: -150px;
+  margin-left: 140px;
+}
+
+.button_account .intro_inf button {
+  background-color: #55b3d9;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 15px;
+  margin-top: 20px;
+}
+
+.button_account .intro_inf .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.button_account .buttons button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: calc(100% - 40px);
+  height: 30px;
+  margin: 10px 20px;
+  border: none;
+  border-bottom: 1px solid rgb(179, 178, 178);
+  background: none;
+}
+
+.button_account .buttons button p {
+  margin-top: 15px;
+}
+
+.button_account .buttons .logout {
+  display: flex;
+  background-color: #55b3d9;
+  color: #fff;
+  width: 120px;
+  font-weight: 600;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+  margin-left: 150px;
+}
+
+.bookmark-btn {
+  position: relative; /* Để đặt huy hiệu lên trên trái tim */
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.bookmark-btn:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.heart-icon {
+  font-size: 32px; /* Kích thước trái tim */
+  color: #2c2c2c; /* Màu trái tim */
+}
+
+.badge {
+  position: absolute;
+  top: 5px; /* Điều chỉnh vị trí huy hiệu theo trục dọc */
+  right: -10px; /* Điều chỉnh vị trí huy hiệu theo trục ngang */
+  background-color: #4fc3f7; /* Màu nền huy hiệu */
+  color: white; /* Màu số trong huy hiệu */
+  border-radius: 50%; /* Làm tròn huy hiệu */
+  font-size: 12px; /* Kích thước chữ trong huy hiệu */
+  width: 20px; /* Chiều rộng huy hiệu */
+  height: 20px; /* Chiều cao huy hiệu */
+  display: flex;
+  justify-content: center; /* Căn giữa số */
+  align-items: center; /* Căn giữa số */
+  font-weight: bold; /* Làm đậm số */
+  border: 2px solid white; /* Viền trắng quanh huy hiệu */
+}

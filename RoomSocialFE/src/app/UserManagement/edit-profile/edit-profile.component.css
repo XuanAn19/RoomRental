@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.app-container {
+  margin-top: 50px;
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/********** Sidebar *****/
+.content {
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+  /* align-items: flex-start; Đảm bảo các phần tử ngang hàng */
+  /* margin-top: 25px;
+  padding: 20px; */
+}
+
+.sidebar {
+  width: 20%;
+  height: fit-content;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* content */
+.profile-container {
+  width: 55%;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabs container */
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #ddd;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* Tab link */
+.tab {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #666464;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.tab.active,
+.tab:hover {
+  color: #131414;
+  font-weight: bold;
+  border-bottom: 2px solid #00a2e8;
+}
+
+a[routerLink] {
+  /* color: black; */
+  text-decoration: none;
+}
+
+/*****PROFILE******/
+
+.profile-form h3 {
+  margin-top: 0;
+}
+
+.avatar-section {
+  text-align: center;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.avatar-container .load-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 0;
+  object-fit: cover;
+  box-shadow: none;
+  border: none;
+}
+
+.avatar-container img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.avatar-container i {
+  font-size: 40px;
+  color: #73c6d9;
+  position: absolute;
+  z-index: 2;
+}
+.avatar-section img {
+  border-radius: 50%;
+
+  z-index: 1;
+}
+
+.upload-button {
+  display: block;
+  margin-top: 5px;
+
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+}
+.avatar-container .load-avatar {
+  width: 100%;
+  height: 100%;
+  /* object-fit: contain; Ensure the image is fully visible without being cut off */
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+
+/*******FORM GROUP*******/
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+.name-input input {
+  width: 40%; /* Làm cho ô nhập họ tên ngắn lại */
+}
+
+.form-group.contact-infor {
+  display: flex;
+  gap: 20px;
+}
+.contact-info {
+  display: flex;
+  gap: 20px; /* Khoảng cách giữa hai ô input */
+  flex-wrap: wrap;
+}
+
+.half-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.half-group label {
+  margin-bottom: 5px;
+  /* display: block; */
+}
+
+.half-group input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #c6c0c0;
+}
+
+/* Link styling */
+.change-phone-link {
+  font-size: 14px;
+  color: #73c6d9;
+  margin-top: 5px;
+  display: block;
+  text-decoration: none;
+}
+
+.save-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.save-button {
+  background: #88e8f2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 23px;
+}
+
+.save-button:hover {
+  background: #73c6d9;
+}
+.error-message {
+  color: red;
+  font-size: 0.875em;
+}
+
+.avatar-container {
+  position: relative; /* Ensure button is placed relative to this container */
+  display: inline-block;
+}
+
+.remove-avatar-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 9px;
+  height: 8px;
+  font-size: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  z-index: 1; /* Ensure the button appears above the image */
+}
+
+.remove-avatar-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}

@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="profile-container">
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Tìm kiếm..."
+      [(ngModel)]="searchKey"
+      (input)="onSearch()"
+    />
+  </div>
+
+  <div class="profile-content">
+    <div class="profile-info">
+      <ul>
+        <li><i class="fa fa-phone"></i> {{ userProfile.phone }}</li>
+        <li><i class="fa fa-envelope"></i> {{ userProfile.email }}</li>
+        <!-- <li><i class="fa fa-map-marker"></i> Địa chỉ</li> -->
+      </ul>
+    </div>
+
+    <div class="stats">
+      <span>{{ userProfile.posts }} bài viết</span>
+      <span>{{ userProfile.friends }} bạn bè</span>
+    </div>
+
+    <div class="profile-right">
+      <div class="avatar">
+        <img
+          [src]="userProfile.post"
+          alt="Avatar"
+          (error)="handleImageError($event)"
+        />
+      </div>
+      <h2>{{ userProfile.name }}</h2>
+    </div>
+  </div>
+</div>
