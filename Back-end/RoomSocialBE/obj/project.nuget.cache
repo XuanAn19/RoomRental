@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "sny7dFM2IVxR33wCrRXQPHJO0qGl67R6Gy0f2J+hvr9BZWRGcysAJ2PQ/nNO7PokGZ1RipyYtBr1+ZXBBUJ4IA==",
+  "dgSpecHash": "tbJx1vS/vcETkWV+qFkbccwEzxgjR5OUWaGLoHAyUdU5qUOndpgKeE3Bp4EzQSGAqVn2VLlXrvgsvtuNz+Rabg==",
   "success": true,
   "projectFilePath": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\RoomSocialBE.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\bouncycastle.cryptography\\2.4.0\\bouncycastle.cryptography.2.4.0.nupkg.sha512",

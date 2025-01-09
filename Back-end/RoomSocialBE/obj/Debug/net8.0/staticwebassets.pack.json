@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\wwwroot\\images\\227f5f93-5167-4287-b0df-599f9becfe5a.jpg",
+      "PackagePath": "staticwebassets\\images\\227f5f93-5167-4287-b0df-599f9becfe5a.jpg"
+    },
+    {
+      "Id": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\wwwroot\\images\\51ce614c-4873-454e-9698-74c8fea3c349.jpg",
+      "PackagePath": "staticwebassets\\images\\51ce614c-4873-454e-9698-74c8fea3c349.jpg"
+    },
+    {
+      "Id": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\wwwroot\\images\\99702086-cca3-487e-91fd-c3fdfad4e6e0.jpg",
+      "PackagePath": "staticwebassets\\images\\99702086-cca3-487e-91fd-c3fdfad4e6e0.jpg"
+    },
+    {
+      "Id": "E:\\dotnet App\\PTPMCN\\Back-end\\RoomSocialBE\\wwwroot\\images\\b6f0ebcd-8c5f-4dcb-b127-377009910ffc.jpg",
+      "PackagePath": "staticwebassets\\images\\b6f0ebcd-8c5f-4dcb-b127-377009910ffc.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.RoomSocialBE.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.RoomSocialBE.props",
+      "PackagePath": "build\\RoomSocialBE.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.RoomSocialBE.props",
+      "PackagePath": "buildMultiTargeting\\RoomSocialBE.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.RoomSocialBE.props",
+      "PackagePath": "buildTransitive\\RoomSocialBE.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
